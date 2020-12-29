@@ -20,7 +20,7 @@ php et un langage informatique "de tipe seveur" pour povoire lutiliser il vous f
 nous ecrirons no ficher "scripte php" dans le dosier wwww de Wampserver
 
 ***
-##bien demarer
+## bien demarer
 1. ou eccrie le du PHP
 2. creation  d'un script php
 
