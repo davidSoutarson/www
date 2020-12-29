@@ -7,4 +7,4 @@ se ficher a pour but de mieux comprendre php et de pouvoir utiliser se lengage d
 4. les conditon et les boucle Voire code source
 5. les tableau Voire code source
 6. les Varibles prédefinies et Varibles externes Voire code source
-7. les formulaires
+7. les formulaires Voire code source
