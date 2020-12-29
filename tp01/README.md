@@ -38,6 +38,6 @@ pour signaler la fi n de ligne.
 En résumé pour affi cher la phrase Hello World! en PHP, le code complet
 est :
 
- /#  <?php_ <br>
+ /#  /<?php_ <br>
   echo "Hello wrold!" ;<br>
  ?> " <br>
