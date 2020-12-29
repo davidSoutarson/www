@@ -18,3 +18,19 @@ php et un langage informatique "de tipe seveur" pour povoire lutiliser il vous f
 1. definition serveur locale:
 
 nous ecrirons no ficher "scripte php" dans le dosier wwww de Wampserver
+
+***
+##bien demarer
+1. ou eccrie le du PHP
+2. creation  d'un script php
+
+### a. Afficher des chaînes de caractères avec PHP
+1. Étape 1 : En premier  il est nécessaire d’utiliser une fonction
+d’affi chage intitulée echo.
+2. Étape 2 : Ensuite, il est obligatoire en PHP d’entourer les chaînes
+de caractères avec des single quotes ou double quotes signifiant <br>
+respectivement apostrophes ou guillemets en anglais,
+3. Étape 3 : Puis, à l’intérieur des balises PHP, nous utilisons echo pour
+procéder à l’affi chage de notre phrase.
+4. Étape 4: Enfi n, une ligne de code en PHP se termine par un point-virgule
+pour signaler la fi n de ligne.
