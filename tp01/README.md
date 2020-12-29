@@ -14,4 +14,4 @@ php et un langage informatique "de tipe seveur" pour povoire lutiliser il vous f
 "Wampserver" sur votre machine Wampserver et un serveur local
 1. definition serveur locale:
 
-on ecrira ficher "scripte" dans le dosier wwww de Wampserver
+nous ecrirons no ficher "scripte php" dans le dosier wwww de Wampserver
