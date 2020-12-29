@@ -8,3 +8,9 @@ se ficher a pour but de mieux comprendre php et de pouvoir utiliser se lengage d
 5. les tableau Voire code source
 6. les Varibles prédefinies et Varibles externes Voire code source
 7. les formulaires Voire code source
+***
+## instalation de php
+php et un langage informatique "de tipe seveur" pour povoire lutiliser il vous faut intaller
+"Wampserver" sur votre machine Wampserver et un serveur local
+definition serveur locale:
+on ecrira ficher "scripte" dans le dosier wwww de Wampserver
