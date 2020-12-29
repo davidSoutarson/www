@@ -6,6 +6,7 @@
   </head>
   <body>
     <h1>traveau pratique</h1>
+    <p>david - Soutarson</p>
     <?php
     // du code php
     echo "helo world!";
