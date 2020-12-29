@@ -34,3 +34,10 @@ respectivement apostrophes ou guillemets en anglais,
 procéder à l’affi chage de notre phrase.
 4. Étape 4: Enfi n, une ligne de code en PHP se termine par un point-virgule
 pour signaler la fi n de ligne.
+
+En résumé pour affi cher la phrase Hello World! en PHP, le code complet
+est :
+
+<? php <br>
+echo "Hello wrold!" ;<br>
+?> <br>
