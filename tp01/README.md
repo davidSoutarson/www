@@ -9,9 +9,8 @@ se ficher a pour but de mieux comprendre php et de pouvoir utiliser se lengage d
 6. les Varibles prédefinies et Varibles externes Voire code source
 7. les formulaires Voire code source
 
-la metion voire le code source sinifie que pour bien conpre se qui attait fais
-
- il faux lire le code avec la fontin goole aficher le code souse de la page
+la metion voire le code source sinifie que pour bien conpre se qui attait fais <br>
+il faux lire le code avec la fontin goole aficher le code souse de la page
 ***
 ## instalation de php
 php et un langage informatique "de tipe seveur" pour povoire lutiliser il vous faut intaller
