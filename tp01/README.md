@@ -12,5 +12,5 @@ se ficher a pour but de mieux comprendre php et de pouvoir utiliser se lengage d
 ## instalation de php
 php et un langage informatique "de tipe seveur" pour povoire lutiliser il vous faut intaller
 "Wampserver" sur votre machine Wampserver et un serveur local
-definition serveur locale:
+1. definition serveur locale:
 on ecrira ficher "scripte" dans le dosier wwww de Wampserver
