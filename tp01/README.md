@@ -53,3 +53,20 @@ permettent de distinguer les commentaires du code PHP en les colorisant différe
 
  ***
 ## les variable et constante
+
+Les variables sont un élément fondamental de tout langage de programmation. <br>
+Elles peuvent être des nombres, des chaînes de caractères, des tableaux, des résultats mathématiques, etc.<br>
+Les variables sont considérées comme des boîtes pratiques dans lesquelles nous rangeons ces<br>
+données que nous pourrons ensuite utiliser ou modifier quand nous le voulons.<br>
+
+Les variables en PHP sont écrites avec : <br>
+– le symbole dollar $ qui permet d’identifier une variable ;<br>
+– le nom de la variable. <br>
+Elles sont donc sous la forme : $nomDeLaVariable. <br>
+
+Elles peuvent contenir des informations très variées. Par exemple, nous pouvons enregistrer <br>
+dans une variable le jour de la semaine (prenons lundi). Cette variable que nous pourrions <br>
+appeler $jour sera utilisable en permanence tout au long de notre script et sa valeur pourra <br>
+être modifiée lorsque le jour de la semaine changera. <br>
+Cette variable pourra donc contenir « lundi » ou « mardi » ou n’importe quel jour de notre <br>
+choix. Nous disons que « lundi » ou « mardi » est la valeur contenue dans la variable. <br>
