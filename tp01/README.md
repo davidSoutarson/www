@@ -41,3 +41,15 @@ est :
  \<?php <br>
   echo "Hello wrold!" ;<br>
  ?> " <br>
+
+### la sintax de base:
+
+ atantion sigle quotes ou double quotes ou antislash :Alt Gr + touche 8 <br>
+permet dechaper un caractére
+
+les commeter: /* */ ; // ; # sons les diferant type de comenter
+Notons pour conclure sur ce point que la plupart des éditeurs de code <br>
+permettent de distinguer les commentaires du code PHP en les colorisant différemment.<br>
+
+ ***
+##les variable et constante
