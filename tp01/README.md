@@ -52,4 +52,4 @@ Notons pour conclure sur ce point que la plupart des éditeurs de code <br>
 permettent de distinguer les commentaires du code PHP en les colorisant différemment.<br>
 
  ***
-##les variable et constante
+## les variable et constante
