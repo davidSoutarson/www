@@ -89,6 +89,9 @@ permet dechaper un caractére
 les commeter: /* */ ; // ; # sons les diferant type de comenter
 Notons pour conclure sur ce point que la plupart des éditeurs de code <br>
 permettent de distinguer les commentaires du code PHP en les colorisant différemment.<br>
+il est tres impotent de bien comenter son code en php car nous pouvons coder neau propre fontion
+
+la diferance entre "guillemets" et 'apostrophes'
 
  ***
 ## les variable et constante
@@ -119,8 +122,8 @@ les varibles doive avoir un nom explisite: $firstnames = david ; <br>
 les variable ne doive pas contenir de  caractères spéciaux ni accentués (é, ô, ù, *, #, etc.) ;<br>
 Un nom de variable s’il contient plusieurs mots, doit se noter en lowerCamelCase : (exemple : $maVariableEstLongue) ;<br>
 
-atention: Le nom est sensible à la casse (majuscule/minuscule). Ainsi $abc est
-une variable différente de $ABC, $Fruit est une variable différente de
+atention: Le nom est sensible à la casse (majuscule/minuscule). Ainsi $abc est <br>
+une variable différente de $ABC, $Fruit est une variable différente de <br>
 $fruit
 
 ### III  Utiliser une variable
@@ -128,12 +131,30 @@ $fruit
 
 ### IV Concaténer une variable
 
-Il est souvent nécessaire d’afficher un texte qui doit contenir une variable.
+Il est souvent nécessaire d’afficher un texte qui doit contenir une variable.<br>
 
-Pour afficher en même temps une chaîne de caractères et une variable,
-il suffit de placer ces deux éléments l’un après l’autre en les séparant par
-un point.
+Pour afficher en même temps une chaîne de caractères et une variable,<br>
+il suffit de placer ces deux éléments l’un après l’autre en les séparant par <br>
+un point.<br>
 
-Le point permet de juxtaposer les deux éléments. On parle d’opérateur
-de concaténation. Il est recommandé de mettre un espace avant et après
+Le point permet de juxtaposer les deux éléments. On parle d’opérateur <br>
+de concaténation. Il est recommandé de mettre un espace avant et après <br>
 le point pour une meilleure lisibilité.
+
+### l'intrution include
+
+elle permet de faire des intruction le contenue d'un fichier <br>
+
+pour utiliser la fonction includ
+
+1. nous allon créer plusieurs fichier ex formulaires.php menuHeader.php footeur.php
+
+2. le code a ecrire et: <br>
+
+quand les fichier son dans un maime dosier
+
+include ("menuHeader");  entre des balise php !
+
+<?php <br>
+  include ("footeur.php");<br>
+?><br>

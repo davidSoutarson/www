@@ -7,7 +7,13 @@
   <body>
     <h1>traveau pratique</h1>
     <p>david - Soutarson</p>
+
+
+
     <?php
+    //cecie se pase apprer dans laprentisage
+    // includ
+    include ("menuHeader.php");
     // du code php
     echo "helo world!<br>";
     echo 'je suis un chaine ecrite en simple cote voire code source<br>';
@@ -27,5 +33,14 @@
 
      ?>
 
+    <form class="" action="index.html" method="post">
+      <input type="text" name="chanteste" value="champTextImput">
+    </form>
+
+    <?php
+    include ("footeur.php");
+     ?>
+
+    </form>
   </body>
 </html>
