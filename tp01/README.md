@@ -11,10 +11,49 @@ se ficher a pour but de mieux comprendre php et de pouvoir utiliser se lengage d
 
 la metion voire le code source sinifie que pour bien conpre se qui attait fais <br>
 il faux lire le code avec la fontin goole aficher le code souse de la page
+
+PHP Hypertext Preprocessor
+
+le php séxecute côté serveur et permet de dynamiser un site.
+
+un site dynamique = change tout seul en fonction du visiteur ou de ninporte quel autre <br>
+parametre (heure, saison, etc.) permete d'interagire avec les visiteur
+
+pancer au viteur se conectent a leur compt via un etpase de conection sur un site; <br>
+
+les concurent de PHP: PHP C/c++; Django: Piton ; JEE: java ; Ruby and rayse: Ruby ; etc...
+les langage siter son conplementer ou enfant parent :
+
+### Pourqoi le Php?
+1. Simplicité de prise en main.
+2. Grande communauté
+3. Fonction prétes à lemploi <br>
+-personelement se quiconte pour developer un bon programe se nes pas tant la thechno du developeur qui conte <br>
+Mes pluto sa tres bonne metrise des basse sur cette thechno sa curiositer et sa logique de programation "please keep it simple "<br>
+-atention se nest pas pour  autemt quil faille iniore les autre langage car plus vous aler conaitre conaitre d otre langage plus vous aller
+polivat soyer curieu soyer pasioner. <br>
+
 ***
 ## instalation de php
 php et un langage informatique "de tipe seveur" pour povoire lutiliser il vous faut intaller
 "Wampserver" sur votre machine Wampserver et un serveur local
+
+rapele des consepte de base.
+
+### Relation client / serveur
+
+1. client = Ordinateur qui demende une page web
+2. serveur = Mega-Ordinateur, qui ne sarrête jamis et qui vas envoyer la page web <br>
+demendée au client
+3. Pour un site dynamique, le serveur génère potentellement différemment une pagge donnée pour <br>
+chaque visiteur qui la demende.
+
+-Le PHP GENERE DU HTML:
+
+.un client  nest pas cable de lire du PhP. <br>
+.Rôle principal et et intérét du PHP = génèrer et envoyer une page en HTML (ou en CSS) différente pour chaque visiteur.
+
+wamps manps
 1. definition serveur locale:
 
 nous ecrirons no ficher "scripte php" dans le dosier wwww de Wampserver
