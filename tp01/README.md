@@ -59,10 +59,13 @@ Elles peuvent être des nombres, des chaînes de caractères, des tableaux, des 
 Les variables sont considérées comme des boîtes pratiques dans lesquelles nous rangeons ces<br>
 données que nous pourrons ensuite utiliser ou modifier quand nous le voulons.<br>
 
-Les variables en PHP sont écrites avec : <br>
+### Les variables en PHP sont écrites avec : <br>
 – le symbole dollar $ qui permet d’identifier une variable ;<br>
 – le nom de la variable. <br>
 Elles sont donc sous la forme : $nomDeLaVariable. <br>
+
+ex  $nomDeLaVariable = 123 ;
+    $nomDeLaVariable = "valeur" ;
 
 Elles peuvent contenir des informations très variées. Par exemple, nous pouvons enregistrer <br>
 dans une variable le jour de la semaine (prenons lundi). Cette variable que nous pourrions <br>
@@ -70,3 +73,28 @@ appeler $jour sera utilisable en permanence tout au long de notre script et sa v
 être modifiée lorsque le jour de la semaine changera. <br>
 Cette variable pourra donc contenir « lundi » ou « mardi » ou n’importe quel jour de notre <br>
 choix. Nous disons que « lundi » ou « mardi » est la valeur contenue dans la variable. <br>
+
+### II  Nommer une variable
+
+les varibles doive avoir un nom explisite: $firstnames = david ; <br>
+les variable ne doive pas contenir de  caractères spéciaux ni accentués (é, ô, ù, *, #, etc.) ;<br>
+Un nom de variable s’il contient plusieurs mots, doit se noter en lowerCamelCase : (exemple : $maVariableEstLongue) ;<br>
+
+atention: Le nom est sensible à la casse (majuscule/minuscule). Ainsi $abc est
+une variable différente de $ABC, $Fruit est une variable différente de
+$fruit
+
+### III  Utiliser une variable
+
+
+### IV Concaténer une variable
+
+Il est souvent nécessaire d’afficher un texte qui doit contenir une variable.
+
+Pour afficher en même temps une chaîne de caractères et une variable,
+il suffit de placer ces deux éléments l’un après l’autre en les séparant par
+un point.
+
+Le point permet de juxtaposer les deux éléments. On parle d’opérateur
+de concaténation. Il est recommandé de mettre un espace avant et après
+le point pour une meilleure lisibilité.
