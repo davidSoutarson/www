@@ -101,6 +101,10 @@ Elles peuvent être des nombres, des chaînes de caractères, des tableaux, des 
 Les variables sont considérées comme des boîtes pratiques dans lesquelles nous rangeons ces<br>
 données que nous pourrons ensuite utiliser ou modifier quand nous le voulons.<br>
 
+info utile
+"les varible son temporer les varible créer durant la generation d'une pages vont
+etre suprimer pas de stocage disque dur utilisateur"
+
 ### Les variables en PHP sont écrites avec : <br>
 – le symbole dollar $ qui permet d’identifier une variable ;<br>
 – le nom de la variable. <br>

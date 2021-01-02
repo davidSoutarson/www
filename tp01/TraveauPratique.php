@@ -2,13 +2,13 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="description" content="pages webe a bute pedagogique pour mieux metriser les langage du webe html php css sql jS">
+    <title>DS-TP-webeLangage</title>
   </head>
   <body>
     <h1>traveau pratique</h1>
     <p>david - Soutarson</p>
-
-
+    <h2>tes ton is les Base de PHP</h2>
 
     <?php
     //cecie se pase apprer dans laprentisage
@@ -31,12 +31,26 @@
     $second = 'world';
     echo $first . $second ;
 
-     ?>
+    echo "<br> une varible peut stocker une chaine de caracter un nombre entier int un ; <br>
+    nonbre desimale float ou un boulein bool true or false ses mots sons ecrit sans guillemets <br>";
 
+    $vrai = true;
+    echo 'resuta:' .$vrai. ':et le resuta de $vrai <br>';
+    $faut = false;
+    echo 'resulta:' .$faut. ':et le resuta de $faut <br>';
+
+    echo "aficcher une date <br>";
+    echo 'Date actuelle :' .date('d-m-Y').'<br>';
+    echo 'date autrement :' .date('D/M/Y').'<br>';
+     ?>
+    <br> <br> <br>
     <form class="" action="index.html" method="post">
       <input type="text" name="chanteste" value="champTextImput">
     </form>
-
+    <h2>Un site webe ne dois jamet rebler a ca </h2>
+    <p>il sagie de travaille en locale. dans un bute pedagogique conten un demo
+      des mosibiliter de basse des webe Langage</p>
+      <button type="button" name="button"> Seryeu viste le menu </button>
     <?php
     include ("footeur.php");
      ?>
