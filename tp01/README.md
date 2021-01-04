@@ -101,7 +101,7 @@ Elles peuvent être des nombres, des chaînes de caractères, des tableaux, des 
 Les variables sont considérées comme des boîtes pratiques dans lesquelles nous rangeons ces<br>
 données que nous pourrons ensuite utiliser ou modifier quand nous le voulons.<br>
 
-info utile
+info util
 "les varible son temporer les varible créer durant la generation d'une pages vont
 etre suprimer pas de stocage disque dur utilisateur"
 
@@ -162,3 +162,20 @@ include ("menuHeader");  entre des balise php !
 <?php <br>
   include ("footeur.php");<br>
 ?><br>
+
+### l'intuction date
+
+permet d'obtenire un date elle peut etre formater comme cecie :
+
+echo 'date actuelle' .date('d/m/Y'). 'br';
+
+d :Repésente le jour du mois (entre 01 et 31)
+m :Repésente un mois (entre 01 et 12)
+n :Repésente un mois (entre 1 et 12)
+M :Repésente un mois ecrie en abrégé (jan pour jannuary janvier)
+Y :Repésente une année (ex 2021)
+I :Repésente jour de la semaine (ex Manday)
+N :Repésente jour de la semaine ( entre 1 et 7, Manday =1 Sunday = 7)
+H :Repésente les heure (entre 00 et 23 )
+i :Repésente les minute (entre 00 et 59 )  
+s :Repésente les secondes (entre 00 et 59 )

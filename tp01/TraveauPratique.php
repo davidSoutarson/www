@@ -42,6 +42,32 @@
     echo "aficcher une date <br>";
     echo 'Date actuelle :' .date('d-m-Y').'<br>';
     echo 'date autrement :' .date('D/M/Y').'<br>';
+    echo 'A l\'anglise :' .date('Y.m.d'). '<br>';
+    echo 'jour :' .date('l d'). '<br>';
+    echo 'Date complete :' .date('d/m/y H:i:s'). '<br>';
+    date_default_timezone_set("Europe/Paris");//choix du fuseaux horaires Supporté
+    echo 'heur hiver:' .date('H/i/s'). '<br>';
+    echo 'Date complete :' .date('d/m/y H:i:s'). '<br>';
+    echo 'Date en tout letre :' .date('l d M Y'). '<br>';
+
+
+
+    echo "<br> <br> <br> une traduction de la date en Francai a laide de tableau <br>";
+
+    #1er ecrie une variable contenent un tableau des jours apeler:$jour
+    #nous atribuon une chaine de cacter au premier element de notre tableaun pour fasiliter le formatage de la date par la suite
+    $jour = array('','Lundi','Mardi','Mercredi','jeudi','Vendredi','Samedi','Dimanche');//nous avons fais en sort que lindex 0 du tableau sois vide
+    #2eme ecrie une variable contenent un tableau des Mois apeler:$mois
+    $mois = array('','Janvier','Fevrier','Mars','Avril','Mai','juin','juiller','Août','Septembre','Octobre','Novembre','Décembre');//nous avons fais en sort que lindex 0 du tableau sois vide
+    #3eme recuperation de la date a laide des cle index de not tableau
+    echo $jour[date('N')].' '.date('d'). ' ' .$mois[date('n')]. ' ' .date('Y'). '<br>';
+
+
+
+
+
+
+
      ?>
     <br> <br> <br>
     <form class="" action="index.html" method="post">
