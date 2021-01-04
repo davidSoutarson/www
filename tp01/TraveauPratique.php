@@ -81,7 +81,7 @@
 
     echo $saison[0]. '<br>' .$saison [1]. '<br>'.$saison [2]. '<br>'.$saison [3]. '<br>';
 
-    echo $saison [('0').('1').('2').('3')];
+    #echo $saison [('0').('1').('2').('3')];// comment faire 
 
 
 
