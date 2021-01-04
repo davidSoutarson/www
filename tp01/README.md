@@ -174,8 +174,10 @@ m :Repésente un mois (entre 01 et 12)
 n :Repésente un mois (entre 1 et 12)
 M :Repésente un mois ecrie en abrégé (jan pour jannuary janvier)
 Y :Repésente une année (ex 2021)
-I :Repésente jour de la semaine (ex Manday)
+l :Repésente jour de la semaine (ex Manday)
 N :Repésente jour de la semaine ( entre 1 et 7, Manday =1 Sunday = 7)
 H :Repésente les heure (entre 00 et 23 )
 i :Repésente les minute (entre 00 et 59 )  
 s :Repésente les secondes (entre 00 et 59 )
+
+## les tableau Voire code source

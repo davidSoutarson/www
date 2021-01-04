@@ -39,6 +39,8 @@
     $faut = false;
     echo 'resulta:' .$faut. ':et le resuta de $faut <br>';
 
+    echo "Grase au varible nous pour fair des teste conditionelle ex: if (\$age == < 18){\echo \"vous naver pas lage requi pour ...\"; } <br>";
+
     echo "aficcher une date <br>";
     echo 'Date actuelle :' .date('d-m-Y').'<br>';
     echo 'date autrement :' .date('D/M/Y').'<br>';
@@ -62,9 +64,14 @@
     #3eme recuperation de la date a laide des cle index de not tableau
     echo $jour[date('N')].' '.date('d'). ' ' .$mois[date('n')]. ' ' .date('Y'). '<br>';
 
+  #ou alede de tableau sans chine vide mes iterent a partire de -1: [('N')-1]
+  echo "ou alede de tableau sans chaine vide mes iterent a partire de -1: [('N')-1] voire script <br>";
 
-
-
+    $jour = array( 'Lundi','Mardi','Mercredi','jeudi','Vendredi','Samedi','Dimanche');//nous avons fais en sort que lindex 0 du tableau sois vide
+    #2eme ecrie une variable contenent un tableau des Mois apeler:$mois
+    $mois = array('Janvier','Fevrier','Mars','Avril','Mai','juin','juiller','Août','Septembre','Octobre','Novembre','Décembre');//nous avons fais en sort que lindex 0 du tableau sois vide
+    #3eme recuperation de la date a laide des cle index de not tableau
+    echo $jour[date('N')-1].' '.date('d'). ' ' .$mois[date('n')-1]. ' ' .date('Y'). '<br>';
 
 
 
@@ -75,7 +82,7 @@
     </form>
     <h2>Un site webe ne dois jamet rebler a ca </h2>
     <p>il sagie de travaille en locale. dans un bute pedagogique conten un demo
-      des mosibiliter de basse des webe Langage</p>
+      des posibiliter de basse des webe Langage</p>
       <button type="button" name="button"> Seryeu viste le menu </button>
     <?php
     include ("footeur.php");
