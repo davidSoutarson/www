@@ -181,3 +181,19 @@ i :Repésente les minute (entre 00 et 59 )
 s :Repésente les secondes (entre 00 et 59 )
 
 ## les tableau Voire code source
+
+A. Affichage d’une valeur du tableau
+L’affichage d’une valeur du tableau ou de toutes les valeurs du tableau
+ne s’effectue pas directement avec la fonction echo, car un tableau
+n’est pas une chaîne de caractères ou un nombre. Un tableau est certes
+une variable, mais il s’agit d’une variable particulière qui est, comme
+nous l’avons vu, une association structurée de valeurs et de clefs.
+Si nous faisons le test echo $saisons, nous constatons en effet que
+nous n’affichons rien d’autre que array. PHP nous indique ainsi que la
+variable que nous voulons afficher est un tableau de données.
+
+bien sapro priet par imitation
+2 compreention  " traduction" epliqerr chaque catarere et epase vide
+3 la varion des gamme exemple
+
+4 faire atention a pas se disperser

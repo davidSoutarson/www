@@ -71,7 +71,17 @@
     #2eme ecrie une variable contenent un tableau des Mois apeler:$mois
     $mois = array('Janvier','Fevrier','Mars','Avril','Mai','juin','juiller','Août','Septembre','Octobre','Novembre','Décembre');//nous avons fais en sort que lindex 0 du tableau sois vide
     #3eme recuperation de la date a laide des cle index de not tableau
-    echo $jour[date('N')-1].' '.date('d'). ' ' .$mois[date('n')-1]. ' ' .date('Y'). '<br>';
+    echo $jour[date('N')-1].' '.date('d'). ' ' .$mois[date('n')-1]. ' ' .date('Y'). '';
+
+    echo "<h2>Les tablaux </h2> <br>";
+
+    $saison  = array(0 => 'Eté', 1=> 'Automne', 2 => 'Hiver' , 3 => 'Printemps');
+
+    echo $saison[2]. '<br>';
+
+    echo $saison[0]. '<br>' .$saison [1]. '<br>'.$saison [2]. '<br>'.$saison [3]. '<br>';
+
+    echo $saison [('0').('1').('2').('3')];
 
 
 
