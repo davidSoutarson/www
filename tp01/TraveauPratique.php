@@ -81,16 +81,18 @@
 
     echo $saison[0]. '<br>' .$saison [1]. '<br>'.$saison [2]. '<br>'.$saison [3]. '<br>';
 
-    #echo $saison [('0').('1').('2').('3')];// comment faire 
+    #echo $saison [('0').('1').('2').('3')];// comment faire
 
+    #$moisEtSaison = array(0 =>'Eté' .$mois [6] .$mois [7] .$mois [8],1 => 'Automne' .$mois [9] .$mois [10] .$mois [11],);
 
+  #echo $moisEtSaison[0] "<br>"[1];
 
      ?>
     <br> <br> <br>
     <form class="" action="index.html" method="post">
       <input type="text" name="chanteste" value="champTextImput">
     </form>
-    <h2>Un site webe ne dois jamet rebler a ca </h2>
+    <h2>Un site webe ne dois jamait resembler a ca </h2>
     <p>il sagie de travaille en locale. dans un bute pedagogique conten un demo
       des posibiliter de basse des webe Langage</p>
       <button type="button" name="button"> Seryeu viste le menu </button>
