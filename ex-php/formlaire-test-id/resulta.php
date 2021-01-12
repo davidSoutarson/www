@@ -60,7 +60,7 @@
   }
    else
    {
-    
+
 
          echo '<br>!!! votre prenon est ' .$prenom.
          ' votre email : ' .$email. ' et couleur :' .$color. '<br>';
@@ -70,7 +70,7 @@
          echo 'votre couleur préfèrée est : ' .$_GET['color']. '<br>';
    }
 
-       echo 'bonjour,votre prénom est : ' .$_GET['prenom'].'<br>' ;
+       echo 'bonjour,votre prénom est : ' .$_GET['prenom2'].'<br>' ;
        echo 'votre email est : ' .$_GET['email'].'<br>';
        echo 'votre couleur préfèrée est : ' .$_GET['color']. '<br>';
      ?>
