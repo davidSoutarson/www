@@ -17,8 +17,16 @@
                   <li><a href="tableauMultidimention.php">tableaux Multidimention</a></li>
                 </ul>
            </li>
-          <li> <a href="VariablesPrédéfiniesServer.php"> Les Varible pres defini et Varible externe exemple utilisation du pHP</a> </li>
-          <li> <a href="#"> Les Formulaires exemple utilisation du pHP</a> </li>
+          <li> <a href="VariablesPrédéfiniesServer.php"> Les Varible pres defini et Varible externe exemple utilisation du pHP</a>
+              <ul>
+                <li><a href="fonction.php">les fonctions</a></li>
+                <li><a href="fonction-string.php">Fontion String php</a></li>
+              </ul>
+           </li>
+          <li> <a href="formulair.php"> Les Formulaires exemple utilisation du pHP</a></li>
+              <ul>
+                <li> <a href="resulta.php">resultas fomulaires</a></li>
+              </ul>
           <li> <a href="#"> Les exemple utilisation du pHP</a> </li>
         </ul>
       </nav>
