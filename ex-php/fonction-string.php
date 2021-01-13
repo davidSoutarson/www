@@ -9,7 +9,7 @@
     <?php
 
         echo strlen ("Bonjour à tous").'<br>';
-        echo str_word_count ("Bonjour à tous",0,à ).'<br>';
+        echo str_word_count ("Bonjour à tous",0,'à').'<br>';
         echo str_word_count ("Salut l' ami").'<br>';
         echo str_word_count ("Bonjour a tous ").'<br>';
 
@@ -22,6 +22,10 @@
         $minmaj = "Bonjour, Vous aLLez bIEN ?";
         echo strtolower ($minmaj).'<br>';
         echo strtoupper ($minmaj).'<br>';
+
+        echo strpos("Bonjour","o");
+        echo strpos("Bonjour a tous","tous");
+        echo strpos("Bonjour","e");
      ?>
 
   </body>
