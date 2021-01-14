@@ -6,7 +6,7 @@
   </head>
   <body>
 
-      <?php include ("header.php") ?>
+      <?php include ("header.php"); ?>
 
     <main>
       <h1>covoiturage</h1>
