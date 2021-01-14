@@ -5,15 +5,9 @@
     <title>covoiturage</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li> <a href="index.php"> retoure </a> </li>
-          <li> <a href="#"> </a> </li>
-        </ul>
-      </nav>
 
-    </header>
+      <?php include ("header.php") ?>
+
     <main>
       <h1>covoiturage</h1>
       <p> covoiturage  aplication pedagogique  demander par esecade dans le but de se familiariser avec le php </p>
