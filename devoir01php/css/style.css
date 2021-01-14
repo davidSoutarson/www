@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+label{
+  display: inline-block ;
+  color: #fff ;
+  background-color: gray;
+  border-radius: 10px 10px / 5px 5px;
+  border: 2px solid black ;
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+  width: 150px;
+
+}
+
+.chamVile{
+  display: inline-block ;
+  border-radius: 10px 10px / 5px 5px;
+  border: 5px solid red ;
+  margin: 5px;
+  padding: 5px;
+
+}
+
+.chamInfo{
+  display: inline-block;
+  border-radius: 10px 10px / 5px 5px;
+  border: 2px solid gray;
+  margin: 5px;
+  padding: 5px;
+
+}
+
+.valider{
+  display: block;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: 8px solid blue ;
+  color: blue;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+}
