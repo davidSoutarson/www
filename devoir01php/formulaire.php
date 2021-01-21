@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
     <meta charset="utf-8">
     <title>fomulaire covoiturage</title>
     <link rel="stylesheet" href="css/style.css">
@@ -38,7 +38,7 @@
 
 
                     echo '<ul id = "selectVille">';
-                    foreach ($villeAriver as $key => $value) {
+                    foreach ($villeArive as $key => $value) {
 
                         #panser a modifier le nobre de ville
                         if ($key < 6) {
@@ -316,16 +316,17 @@
                ,'Villefranche-de-Rouergue','Villeneuve','Vimenet','Viviez' ),
 
              #ville du departement des Bouches-du-Rhône 13 compts 119 ville
-             12 => array( 'Aix-en-Provence','Allauch','Alleins','Arles','Aubagne','Aureille','Auriol','Aurons','Barbentane','Beaurecueil','Belcodène','Berre-l\'Étang','Bouc-Bel-Air','Boulbon','Cabannes','Cabriès'
-             ,'Cadolive','Carnoux-en-Provence','Carry-le-Rouet','Cassis','Ceyreste','Charleval','Châteauneuf-le-Rouge','Châteauneuf-les-Martigues','Châteaurenard','Cornillon-Confoux','Coudoux','Cuges-les-Pins'
-             ,'Éguilles','Ensuès-la-Redonne','Eygalières','Eyguières','Eyragues','Fontvieille','Fos-sur-Mer','Fuveau','Gardanne','Gémenos','Gignac-la-Nerthe','Grans','Graveson','Gréasque','Istres','Jouques'
-             ,'La Barben','La Bouilladisse','La Ciotat','La Destrousse','La Fare-les-Oliviers','La Penne-sur-Huveaune','La Roque-d\'Anthéron','Lamanon','Lambesc','Lançon-Provence','Le Puy-Sainte-Réparade'
-             ,'Le Rove','Le Tholonet','Les Baux-de-Provence','Les Pennes-Mirabeau','Maillane','Mallemort','Marignane','Marseille','Martigues','Mas-Blanc-des-Alpilles','Maussane-les-Alpilles','Meyrargues'
-             ,'Meyreuil','Mimet','Miramas','Mollégès','Mouriès','Noves','Orgon','Paradou','Pélissanne','Peynier','Peypin','Peyrolles-en-Provence','Plan-d\'Orgon','Plan-de-Cuques','Port-de-Bouc'
-             ,'Port-Saint-Louis-du-Rhône','Puyloubier','Rognac','Rognes','Rognonas','Roquefort-la-Bédoule','Roquevaire','Rousset','Saint-Andiol','Saint-Antonin-sur-Bayon'
-             ,'Saint-Cannat','Saint-Chamas','Saint-Estève-Janson','Saint-Étienne-du-Grès','Saint-Marc-Jaumegarde','Saint-Martin-de-Crau','Saint-Mitre-les-Remparts','Saint-Paul-lès-Durance'
-             ,'Saint-Pierre-de-Mézoargues','Saint-Rémy-de-Provence','Saint-Savournin','Saint-Victoret','Saintes-Maries-de-la-Mer','Salon-de-Provence','Sausset-les-Pins','Sénas','Septèmes-les-Vallons'
-             ,'Simiane-Collongue','Tarascon','Trets','Vauvenargues','Velaux','Venelles','Ventabren','Vernègues','Verquières','Vitrolles'),
+             12 => array(
+               'Aix-en-Provence','Allauch','Alleins','Arles','Aubagne','Aureille','Auriol','Aurons','Barbentane','Beaurecueil','Belcodène','Berre-l\'Étang','Bouc-Bel-Air','Boulbon','Cabannes','Cabriès'
+               ,'Cadolive','Carnoux-en-Provence','Carry-le-Rouet','Cassis','Ceyreste','Charleval','Châteauneuf-le-Rouge','Châteauneuf-les-Martigues','Châteaurenard','Cornillon-Confoux','Coudoux','Cuges-les-Pins'
+               ,'Éguilles','Ensuès-la-Redonne','Eygalières','Eyguières','Eyragues','Fontvieille','Fos-sur-Mer','Fuveau','Gardanne','Gémenos','Gignac-la-Nerthe','Grans','Graveson','Gréasque','Istres','Jouques'
+               ,'La Barben','La Bouilladisse','La Ciotat','La Destrousse','La Fare-les-Oliviers','La Penne-sur-Huveaune','La Roque-d\'Anthéron','Lamanon','Lambesc','Lançon-Provence','Le Puy-Sainte-Réparade'
+               ,'Le Rove','Le Tholonet','Les Baux-de-Provence','Les Pennes-Mirabeau','Maillane','Mallemort','Marignane','Marseille','Martigues','Mas-Blanc-des-Alpilles','Maussane-les-Alpilles','Meyrargues'
+               ,'Meyreuil','Mimet','Miramas','Mollégès','Mouriès','Noves','Orgon','Paradou','Pélissanne','Peynier','Peypin','Peyrolles-en-Provence','Plan-d\'Orgon','Plan-de-Cuques','Port-de-Bouc'
+               ,'Port-Saint-Louis-du-Rhône','Puyloubier','Rognac','Rognes','Rognonas','Roquefort-la-Bédoule','Roquevaire','Rousset','Saint-Andiol','Saint-Antonin-sur-Bayon'
+               ,'Saint-Cannat','Saint-Chamas','Saint-Estève-Janson','Saint-Étienne-du-Grès','Saint-Marc-Jaumegarde','Saint-Martin-de-Crau','Saint-Mitre-les-Remparts','Saint-Paul-lès-Durance'
+               ,'Saint-Pierre-de-Mézoargues','Saint-Rémy-de-Provence','Saint-Savournin','Saint-Victoret','Saintes-Maries-de-la-Mer','Salon-de-Provence','Sausset-les-Pins','Sénas','Septèmes-les-Vallons'
+               ,'Simiane-Collongue','Tarascon','Trets','Vauvenargues','Velaux','Venelles','Ventabren','Vernègues','Verquières','Vitrolles'),
 
              #ville du departement du Calvados 14 compts 527 ville
              13 => array(
@@ -524,14 +525,13 @@
                ,'Trédarzec','Trédias','Trédrez-Locquémeau','Tréduder','Treffrin','Tréfumel','Trégastel','Tréglamus','Trégomeur','Trégonneau','Trégrom','Trégueux','Tréguidel','Tréguier','Trélévern','Trélivan','Trémargat','Trémel','Tréméreuc','Trémeur','Tréméven','Trémorel','Trémuson','Tréogan','Tressignaux','Trévé'
                ,'Tréveneuc','Trévérec','Trévou-Tréguignec','Trévron','Trézény','Troguéry','Uzel','Vildé-Guingalan','Yffiniac','Yvias','Yvignac-la-Tour'),
 
-             #ville du departement de la Creuse 23 compts 000 ville
+             #ville du departement de la Creuse 23 compts 256 ville
              22 => array(
                'Ahun',' Ajain',' Alleyrat',' Anzême',' Arfeuille-Châtain',' Arrènes',' Ars',' Aubusson',' Auge',' Augères',' Aulon',' Auriat',' Auzances',' Azat-Châtenet',' Azerables',' Banize',' Basville',' Bazelat',' Beissat',' Bellegarde-en-Marche'
-               ,' Bénévent-l\'Abbaye',' Bétête',' Blaudeix',' Blessac',' Bonnat',' Bord-Saint-Georges',' Bosmoreau-les-Mines',' Bosroger'
-               'Bourganeuf',' Boussac',' Boussac-Bourg',' Brousse',' Budelière',' Bussière-Dunoise',' Bussière-Nouvelle',' Bussière-Saint-Georges',' Ceyroux',' Chamberaud',' Chambon-Sainte-Croix',' Chambon-sur-Voueize'
-               ,' Chambonchard',' Chamborand',' Champagnat',' Champsanglard',' Chard',' Charron',' Châtelard',' Châtelus-le-Marcheix',' Châtelus-Malvaleix',' Chavanat',' Chénérailles',' Chéniers',' Clairavaux',' Clugnat'
-               ,' Colondannes',' Cressat',' Crocq',' Crozant',' Croze',' Domeyrot',' Dontreix',' Dun-le-Palestel',' Évaux-les-Bains',' Faux-la-Montagne',' Faux-Mazuras',' Felletin',' Féniers',' Flayat',' Fleurat',' Fontanières'
-               ,' Fransèches',' Fresselines',' Fursac',' Gartempe',' Genouillac',' Gentioux-Pigerolles',' Gioux',' Glénic',' Gouzon',' Guéret',' Issoudun-Létrieix',' Jalesches',' Janaillat',' Jarnages',' Jouillat',' La Brionne'
+               ,' Bénévent-l\'Abbaye',' Bétête',' Blaudeix',' Blessac',' Bonnat',' Bord-Saint-Georges',' Bosmoreau-les-Mines',' Bosroger','Bourganeuf',' Boussac',' Boussac-Bourg',' Brousse',' Budelière',' Bussière-Dunoise',' Bussière-Nouvelle'
+               ,' Bussière-Saint-Georges',' Ceyroux',' Chamberaud',' Chambon-Sainte-Croix',' Chambon-sur-Voueize',' Chambonchard',' Chamborand',' Champagnat',' Champsanglard',' Chard',' Charron',' Châtelard',' Châtelus-le-Marcheix',' Châtelus-Malvaleix'
+               ,' Chavanat',' Chénérailles',' Chéniers',' Clairavaux',' Clugnat',' Colondannes',' Cressat',' Crocq',' Crozant',' Croze',' Domeyrot',' Dontreix',' Dun-le-Palestel',' Évaux-les-Bains',' Faux-la-Montagne',' Faux-Mazuras',' Felletin',' Féniers'
+               ,' Flayat',' Fleurat',' Fontanières',' Fransèches',' Fresselines',' Fursac',' Gartempe',' Genouillac',' Gentioux-Pigerolles',' Gioux',' Glénic',' Gouzon',' Guéret',' Issoudun-Létrieix',' Jalesches',' Janaillat',' Jarnages',' Jouillat',' La Brionne'
                ,' La Celle-Dunoise',' La Celle-sous-Gouzon',' La Cellette',' La Chapelle-Baloue',' La Chapelle-Saint-Martial',' La Chapelle-Taillefert',' La Chaussade',' La Courtine',' La Forêt-du-Temple',' La Mazière-aux-Bons-Hommes'
                ,' La Nouaille',' La Pouge',' La Saunière',' La Serre-Bussière-Vieille',' La Souterraine',' La Villedieu',' La Villeneuve',' La Villetelle',' Ladapeyre',' Lafat',' Lavaufranche',' Lavaveix-les-Mines',' Le Bourg-d\'Hem'
                ,' Le Chauchet',' Le Compas',' Le Donzeil',' Le Grand-Bourg',' Le Mas-d\'Artige',' Le Monteil-au-Vicomte',' Lépaud',' Lépinas',' Les Mars',' Leyrat',' Linard-Malval',' Lioux-les-Monges',' Lizières',' Lourdoueix-Saint-Pierre'
@@ -547,25 +547,114 @@
                ,' Saint-Vaury',' Saint-Victor-en-Marche',' Saint-Yrieix-la-Montagne',' Saint-Yrieix-les-Bois',' Sainte-Feyre',' Sainte-Feyre-la-Montagne',' Sannat',' Sardent',' Savennes',' Sermur',' Soubrebost',' Soumans',' Sous-Parsat',' Tardes',' Tercillat',' Thauron'
                ,' Toulx-Sainte-Croix',' Trois-Fonds',' Vallière',' Vareilles',' Verneiges',' Vidaillat',' Viersat',' Vigevill','Villard'),
 
-             #vill,' du departement _________ 24 compts 000 ville
+             #vill,' du departement de la Dordogne 24 compts 505 ville
              23 => array(
+               'Abjat-sur-Bandiat','Agonac','Ajat','Allas-les-Mines','Allemans','Alles-sur-Dordogne','Angoisse','Anlhiac','Annesse-et-Beaulieu','Antonne-et-Trigonant','Archignac','Aubas','Audrix','Augignac','Auriac-du-Périgord','Azerat','Badefols-d\'Ans','Badefols-sur-Dordogne','Baneuil','Bardou'
+               ,'Bars','Bassillac et Auberoche','Bayac','Beaumontois en Périgord','Beaupouyet','Beauregard-de-Terrasson','Beauregard-et-Bassac','Beauronne','Beleymas','Berbiguières','Bergerac','Bertric-Burée','Besse','Beynac-et-Cazenac','Biras','Biron','Boisse','Boisseuilh','Bonneville-et-Saint-Avit-de-Fumadières'
+               ,'Borrèze','Bosset','Bouillac','Boulazac Isle Manoire','Bouniagues','Bourdeilles','Bourg-des-Maisons','Bourg-du-Bost','Bourgnac','Bourniquel','Bourrou','Bouteilles-Saint-Sébastien','Bouzic','Brantôme en Périgord','Brouchaud','Bussac','Busserolles','Bussière-Badil','Calès','Calviac-en-Périgord'
+               ,'Campagnac-lès-Quercy','Campagne','Campsegret','Capdrot','Carlux','Carsac-Aillac','Carsac-de-Gurson','Carves','Castelnaud-la-Chapelle','Castels et Bézenac','Cause-de-Clérans','Cazoulès','Celles','Cénac-et-Saint-Julien','Chalagnac','Chalais','Champagnac-de-Belair','Champagne-et-Fontaine'
+               ,'Champcevinel','Champniers-et-Reilhac','Champs-Romain','Chancelade','Chantérac','Chapdeuil','Chassaignes','Château-l\'Évêque','Châtres','Cherval','Cherveix-Cubas','Chourgnac','Cladech','Clermont-d\'Excideuil','Clermont-de-Beauregard','Colombier','Coly-Saint-Amand','Comberanche-et-Épeluche','Condat-sur-Trincou'
+               ,'Condat-sur-Vézère','Conne-de-Labarde','Connezac','Corgnac-sur-l\'Isle','Cornille','Coubjours','Coulaures','Coulounieix-Chamiers','Cours-de-Pile','Coursac','Coutures','Coux et Bigaroque-Mouzens','Couze-et-Saint-Front','Creyssac','Creysse','Creyssensac-et-Pissot','Cubjac-Auvézère-Val d\'Ans','Cunèges'
+               ,'Daglan','Doissat','Domme','Douchapt','Douville','Douzillac','Dussac','Échourgnac','Église-Neuve-d\'Issac','Église-Neuve-de-Vergt','Escoire','Étouars','Excideuil','Eygurande-et-Gardedeuil','Eymet','Eyraud-Crempse-Maurens','Eyzerac','Fanlac','Faurilles','Faux','Firbeix','Fleurac','Florimont-Gaumier','Fonroque'
+               ,'Fossemagne','Fougueyrolles','Fouleix','Fraisse','Gabillou','Gageac-et-Rouillac','Gardonne','Gaugeac','Génis','Ginestet','Gout-Rossignol','Grand-Brassac','Granges-d\'Ans','Grignols','Grives','Groléjac','Grun-Bordas','Hautefaye','Hautefort','Issac','Issigeac','Jaure','Javerlhac-et-la-Chapelle-Saint-Robert','Jayac'
+               ,'Journiac','Jumilhac-le-Grand','La Bachellerie','La Cassagne','La Chapelle-Aubareil','La Chapelle-Faucher','La Chapelle-Gonaguet','La Chapelle-Grésignac','La Chapelle-Montabourlet','La Chapelle-Montmoreau','La Chapelle-Saint-Jean','La Coquille','La Dornac','La Douze','La Feuillade','La Force'
+               ,'La Jemaye-Ponteyraud','La Roche-Chalais','La Rochebeaucourt-et-Argentine','La Roque-Gageac','La Tour-Blanche-Cercles','Lacropte','Lalinde','Lamonzie-Montastruc','Lamonzie-Saint-Martin','Lamothe-Montravel','Lanouaille','Lanquais','Larzac','Lavalade','Lavaur','Le Bourdeix','Le Bugue','Le Buisson-de-Cadouin'
+               ,'Le Fleix','Le Lardin-Saint-Lazare','Le Pizou','Léguillac-de-l\'Auche','Lembras','Lempzours','Les Coteaux Périgourdins','Les Eyzies','Les Farges','Les Lèches','Limeuil','Limeyrat','Liorac-sur-Louyre','Lisle','Lolme','Loubejac','Lunas','Lusignac','Lussas-et-Nontronneau','Manzac-sur-Vern','Marcillac-Saint-Quentin'
+               ,'Mareuil en Périgord','Marnac','Marquay','Marsac-sur-l\'Isle','Marsalès','Mauzac-et-Grand-Castang','Mauzens-et-Miremont','Mayac','Mazeyrolles','Ménesplet','Mensignac','Mescoules','Meyrals','Mialet','Milhac-de-Nontron','Minzac','Molières','Monbazillac','Monestier','Monfaucon','Monmadalès','Monmarvès','Monpazier'
+               ,'Monplaisant','Monsac','Monsaguel','Montagnac-d\'Auberoche','Montagnac-la-Crempse','Montagrier','Montaut','Montazeau','Montcaret','Montferrand-du-Périgord','Montignac','Montpeyroux','Montpon-Ménestérol','Montrem','Mouleydier','Moulin-Neuf','Mussidan','Nabirat','Nadaillac','Nailhac','Nanteuil-Auriac-de-Bourzac'
+               ,'Nantheuil','Nanthiat','Nastringues','Naussannes','Négrondes','Neuvic','Nontron','Orliac','Orliaguet','Parcoul-Chenaud','Paulin','Paunat','Paussac-et-Saint-Vivien','Pays de Belvès','Payzac','Pazayac','Périgueux','Petit-Bersac','Peyrignac','Peyrillac-et-Millac','Peyzac-le-Moustier','Pezuls','Piégut-Pluviers'
+               ,'Plaisance','Plazac','Pomport','Pontours','Port-Sainte-Foy-et-Ponchapt','Prats-de-Carlux','Prats-du-Périgord','Pressignac-Vicq','Preyssac-d\'Excideuil','Prigonrieux','Proissans','Queyssac','Quinsac','Rampieux','Razac-d\'Eymet','Razac-de-Saussignac','Razac-sur-l\'Isle','Ribagnac','Ribérac','Rouffignac-de-Sigoulès'
+               ,'Rouffignac-Saint-Cernin-de-Reilhac','Rudeau-Ladosse','Sadillac','Sagelat','Saint Aulaye-Puymangou','Saint Privat en Périgord','Saint-Agne','Saint-Amand-de-Vergt','Saint-André-d\'Allas','Saint-André-de-Double','Saint-Antoine-de-Breuilh'
+               ,'Saint-Aquilin','Saint-Astier','Saint-Aubin-de-Cadelech','Saint-Aubin-de-Lanquais','Saint-Aubin-de-Nabirat','Saint-Avit-de-Vialard','Saint-Avit-Rivière','Saint-Avit-Sénieur','Saint-Barthélemy-de-Bellegarde','Saint-Barthélemy-de-Bussière','Saint-Capraise-d\'Eymet','Saint-Capraise-de-Lalinde','Saint-Cassien',
+               'Saint-Cernin-de-l\'Herm','Saint-Cernin-de-Labarde','Saint-Chamassy','Saint-Crépin-d\'Auberoche','Saint-Crépin-et-Carlucet','Saint-Cybranet','Saint-Cyprien','Saint-Cyr-les-Champagnes','Saint-Estèphe','Saint-Étienne-de-Puycorbier','Saint-Félix-de-Bourdeilles','Saint-Félix-de-Reillac-et-Mortemart','Saint-Félix-de-Villadeix'
+               ,'Saint-Front-d\'Alemps','Saint-Front-de-Pradoux','Saint-Front-la-Rivière','Saint-Front-sur-Nizonne','Saint-Geniès','Saint-Georges-Blancaneix','Saint-Georges-de-Montclard','Saint-Géraud-de-Corps','Saint-Germain-de-Belvès','Saint-Germain-des-Prés','Saint-Germain-du-Salembre','Saint-Germain-et-Mons','Saint-Géry','Saint-Geyrac'
+               ,'Saint-Hilaire-d\'Estissac','Saint-Jean-d\'Ataux','Saint-Jean-d\'Estissac','Saint-Jean-de-Côle','Saint-Jory-de-Chalais','Saint-Jory-las-Bloux','Saint-Julien-de-Lampon','Saint-Julien-Innocence-Eulalie','Saint-Just','Saint-Laurent-des-Hommes','Saint-Laurent-des-Vignes','Saint-Laurent-la-Vallée','Saint-Léon-d\'Issigeac'
+               ,'Saint-Léon-sur-l\'Isle','Saint-Léon-sur-Vézère','Saint-Louis-en-l\'Isle','Saint-Maime-de-Péreyrol','Saint-Marcel-du-Périgord','Saint-Marcory','Saint-Martial-d\'Albarède','Saint-Martial-d\'Artenset','Saint-Martial-de-Nabirat','Saint-Martial-de-Valette','Saint-Martial-Viveyrol','Saint-Martin-de-Fressengeas','Saint-Martin-de-Gurson'
+               ,'Saint-Martin-de-Ribérac','Saint-Martin-des-Combes','Saint-Martin-l\'Astier','Saint-Martin-le-Pin','Saint-Méard-de-Drône','Saint-Méard-de-Gurçon','Saint-Médard-d\'Excideuil','Saint-Médard-de-Mussidan','Saint-Mesmin','Saint-Michel-de-Double','Saint-Michel-de-Montaigne','Saint-Michel-de-Villadeix','Saint-Nexans'
+               ,'Saint-Pancrace','Saint-Pantaly-d\'Excideuil','Saint-Pardoux-de-Drône','Saint-Pardoux-et-Vielvic','Saint-Pardoux-la-Rivière','Saint-Paul-de-Serre','Saint-Paul-la-Roche','Saint-Paul-Lizonne','Saint-Perdoux','Saint-Pierre-d\'Eyraud','Saint-Pierre-de-Chignac','Saint-Pierre-de-Côle','Saint-Pierre-de-Frugie','Saint-Pompont'
+               ,'Saint-Priest-les-Fougères','Saint-Rabier','Saint-Raphaël','Saint-Rémy','Saint-Romain-de-Monpazier','Saint-Romain-et-Saint-Clément','Saint-Saud-Lacoussière','Saint-Sauveur','Saint-Sauveur-Lalande','Saint-Seurin-de-Prats','Saint-Séverin-d\'Estissac','Saint-Sulpice-d\'Excideuil','Saint-Sulpice-de-Roumagnac','Saint-Victor'
+               ,'Saint-Vincent-de-Connezac','Saint-Vincent-de-Cosse','Saint-Vincent-Jalmoutiers','Saint-Vincent-le-Paluel','Saint-Vincent-sur-l\'Isle','Saint-Vivien','Sainte-Croix','Sainte-Croix-de-Mareuil','Sainte-Eulalie-d\'Ans','Sainte-Foy-de-Belvès','Sainte-Foy-de-Longas','Sainte-Mondane','Sainte-Nathalène','Sainte-Orse','Sainte-Radegonde'
+               ,'Sainte-Trie','Salagnac','Salignac-Eyvigues','Salles-de-Belvès','Salon','Sanilhac','Sarlande','Sarlat-la-Canéda','Sarliac-sur-l\'Isle','Sarrazac','Saussignac','Savignac-de-Miremont','Savignac-de-Nontron','Savignac-Lédrier','Savignac-les-Églises','Sceau-Saint-Angel','Segonzac','Sergeac','Serres-et-Montguyard','Servanches'
+               ,'Sigoulès-et-Flaugeac','Simeyrols','Singleyrac','Siorac-de-Ribérac','Siorac-en-Périgord','Sorges et Ligueux en Périgord','Soudat','Soulaures','Sourzac','Tamniès','Teillots','Temple-Laguyon','Terrasson-Lavilledieu','Teyjat','Thénac','Thenon','Thiviers','Thonac','Tocane-Saint-Apre','Tourtoirac','Trélissac','Trémolat','Tursac'
+               ,'Urval','Val de Louyre et Caudeau','Vallereuil','Valojoulx','Vanxains','Varaignes','Varennes','Vaunac','Vélines','Vendoire','Verdon','Vergt','Vergt-de-Biron','Verteillac','Veyrignac','Veyrines-de-Domme','Veyrines-de-Vergt','Vézac','Villac','Villamblard','Villars','Villefranche-de-Lonchat'
+               ,'Villefranche-du-Périgord','Villetoureix','Vitrac'),
 
+             #ville du departement du Doubs 25 compts 573 ville
+             24 => array(
+               'Abbans-Dessous','Abbans-Dessus','Abbenans','Abbévillers','Accolans','Adam-lès-Passavant','Adam-lès-Vercel','Aibre','Aïssey','Allenjoie','Allondans','Amagney','Amancey','Amathay-Vésigneux','Amondans','Anteuil','Appenans','Arbouans','Arc-et-Senans','Arc-sous-Cicon','Arc-sous-Montenot','Arcey','Arçon','Aubonne'
+               ,'Audeux','Audincourt','Autechaux','Autechaux-Roide','Avanne-Aveney','Avilley','Avoudrey','Badevel','Bannans','Bart','Bartherans','Battenans-les-Mines','Battenans-Varin','Baume-les-Dames','Bavans','Belfays','Belleherbe','Belmont','Belvoir','Berche','Berthelange','Besançon','Bethoncourt','Beure','Beutal','Bians-les-Usiers','Bief','Blamont','Blarians','Blussangeaux','Blussans','Bolandoz','Bondeval','Bonnal','Bonnay','Bonnétage','Bonnevaux','Bouclans','Boujailles','Bourguignon','Bournois','Boussières','Bouverans','Braillans','Branne','Breconchaux','Bremondans','Brères','Bretigney','Bretigney-Notre-Dame','Bretonvillers'
+               ,'Brey-et-Maison-du-Bois','Brognard','Buffard','Bugny','Bulle','Burgille','Burnevillers','Busy','By','Byans-sur-Doubs','Cademène','Cendrey','Cernay-l\'Église','Cessey','Chaffois','Chalèze','Chalezeule','Chamesey','Chamesol','Champagney','Champlive','Champoux'
+               ,'Champvans-les-Moulins','Chantrans','Chapelle-d\'Huin','Chapelle-des-Bois','Charmauvillers','Charmoille','Charnay','Charquemont','Chassagne-Saint-Denis','Châteauvieux-les-Fossés','Châtelblanc','Châtillon-Guyotte','Châtillon-le-Duc','Châtillon-sur-Lison','Chaucenne','Chaux-lès-Passavant','Chaux-Neuve'
+               ,'Chay','Chazot','Chemaudin et Vaux','Chenecey-Buillon','Chevigney-lès-Vercel','Chevigney-sur-l\'Ognon','Chevroz','Chouzelot','Cléron','Colombier-Fontaine','Consolation-Maisonnettes','Corcelle-Mieslot','Corcelles-Ferrières','Corcondray','Côtebrune','Cour-Saint-Maurice','Courcelles','Courcelles-lès-Montbéliard','Courchapon'
+               ,'Courtefontaine','Courtetain-et-Salans','Courvières','Crosey-le-Grand','Crosey-le-Petit','Crouzet-Migette','Cubrial','Cubry','Cusance','Cuse-et-Adrisans','Cussey-sur-l\'Ognon','Cussey-sur-Lison','Dambelin','Dambenois','Dammartin-les-Templiers','Dampierre-les-Bois','Dampierre-sur-le-Doubs','Dampjoux','Damprichard'
+               ,'Dannemarie','Dannemarie-sur-Crète','Dasle','Deluz','Désandans','Déservillers','Devecey','Dommartin','Dompierre-les-Tilleuls','Domprel','Doubs','Dung','Durnes','Échay','Échenans','Échevannes','École-Valentin','Écot','Écurcey','Émagny'
+               ,'Épenouse','Épenoy','Épeugney','Esnans','Étalans','Éternoz','Étouvans','Étrabonne','Étrappe','Étray','Étupes','Évillers','Exincourt','Eysson','Faimbe','Fallerans','Ferrières-le-Lac','Ferrières-les-Bois','Fertans','Fesches-le-Châtel','Fessevillers','Feule','Flagey','Flagey-Rigney','Flangebouche'
+               ,'Fleurey','Fontain','Fontaine-lès-Clerval','Fontenelle-Montby','Fontenotte','Fourbanne','Fourcatier-et-Maison-Neuve','Fourg','Fournet-Blancheroche','Fournets-Luisans','Frambouhans','Franey','Franois','Frasne','Froidevaux','Fuans','Gellin','Gémonval','Geneuille','Geney','Gennes','Germéfontaine','Germondans','Gevresin','Gilley','Glamondans'
+               ,'Glay','Glère','Gondenans-les-Moulins','Gondenans-Montby','Gonsans','Gouhelans','Goumois','Goux-lès-Dambelin','Goux-les-Usiers','Goux-sous-Landet','Grand\'Combe-Châteleu','Grand\'Combe-des-Bois','Grand-Charmont','Grandfontaine','Grandfontaine-sur-Creuse'
+               ,'Granges-Narboz','Grosbois','Guillon-les-Bains','Guyans-Durnes','Guyans-Vennes','Hauterive-la-Fresse','Hérimoncourt','Houtaud','Huanne-Montmartin','Hyémondans','Hyèvre-Magny','Hyèvre-Paroisse','Indevillers','Issans','Jallerange','Jougne','L\'Écouvotte'
+               ,'L\'Hôpital-du-Grosbois','L\'Hôpital-Saint-Lieffroy','L\'Isle-sur-le-Doubs','La Bosse','La Bretenière','La Chaux','La Chenalotte','La Chevillotte','La Cluse-et-Mijoux','La Grange','La Longeville','La Planée','La Prétière','La Rivière-Drugeon','La Sommette','La Tour-de-Sçay'
+               ,'La Vèze','Labergement-Sainte-Marie','Laire','Laissey','Lanans','Landresse','Lantenne-Vertière','Lanthenans','Larnod','Laval-le-Prieuré','Lavans-Quingey','Lavans-Vuillafans','Lavernay','Laviron','Le Barboux','Le Bélieu','Le Bizot','Le Crouzet','Le Gratteris','Le Luhier','Le Mémont','Le Moutherot'
+               ,'Le Puy','Le Russey','Le Val','Le Vernoy','Les Alliés','Les Auxons','Les Bréseux','Les Combes','Les Écorces','Les Fins','Les Fontenelles','Les Fourgs','Les Grangettes','Les Gras','Les Hôpitaux-Neufs','Les Hôpitaux-Vieux','Les Plains-et-Grands-Essarts','Les Pontets','Les Premiers Sapins','Les Terres-de-Chaux'
+               ,'Les Villedieu','Levier','Liebvillers','Liesle','Lizine','Lods','Lombard','Lomont-sur-Crête','Longechaux','Longemaison','Longevelle-lès-Russey','Longevelle-sur-Doubs','Longeville','Longevilles-Mont-d\'Or','Loray','Lougres','Luxiol','Magny-Châtelard','Maîche','Maisons-du-Bois-Lièvremont','Malans','Malbrans','Malbuisson'
+               ,'Malpas','Mamirolle','Mancenans','Mancenans-Lizerne','Mandeure','Marchaux-Chaudefontaine','Marvelise','Mathay','Mazerolles-le-Salin','Médière','Mercey-le-Grand','Mérey-sous-Montrond','Mérey-Vieilley','Mésandans','Meslières','Mesmay','Métabief','Miserey-Salines','Moncey','Moncley','Mondon','Mont-de-Laval','Mont-de-Vougney'
+               ,'Montagney-Servigney','Montancy','Montandon','Montbéliard','Montbéliardot','Montbenoît','Montécheroux','Montenois','Montfaucon','Montferrand-le-Château','Montflovin','Montgesoye','Montivernage','Montjoie-le-Château','Montlebon','Montmahoux','Montperreux','Montrond-le-Château','Montussaint','Morre','Morteau','Mouthe'
+               ,'Mouthier-Haute-Pierre','Myon','Naisey-les-Granges','Nancray','Nans','Nans-sous-Sainte-Anne','Narbief','Neuchâtel-Urtière','Noël-Cerneux','Noirefontaine','Noironte','Nommay','Novillars','Ollans','Onans','Orchamps-Vennes','Orgeans-Blanchefontaine','Ornans','Orsans','Orve','Osse','Osselle-Routelle'
+               ,'Ougney-Douvot','Ouhans','Ouvans','Oye-et-Pallet','Palantine','Palise','Paroy','Passavant','Passonfontaine','Pays-de-Clerval','Pelousey','Péseux','Pessans','Petite-Chaux','Pierrefontaine-lès-Blamont','Pierrefontaine-les-Varans','Pirey','Placey','Plaimbois-du-Miroir','Plaimbois-Vennes'
+               ,'Pompierre-sur-Doubs','Pont-de-Roide-Vermondans','Pont-les-Moulins','Pontarlier','Pouilley-Français','Pouilley-les-Vignes','Pouligney-Lusans','Présentevillers','Provenchère','Puessans','Pugey','Quingey','Rahon','Rancenay','Randevillers','Rang','Raynans','Recologne','Reculfoz','Rémondans-Vaivre'
+               ,'Remoray-Boujeons','Renédale','Rennes-sur-Loue','Reugney','Rigney','Rignosot','Rillans','Roche-lès-Clerval','Roche-lez-Beaupré','Rochejean','Roches-lès-Blamont','Rognon','Romain','Ronchaux','Rondefontaine','Roset-Fluans','Rosières-sur-Barbèche','Rosureux','Rougemont','Rougemontot','Rouhe','Roulans'
+               ,'Ruffey-le-Château','Rurey','Saint-Antoine','Saint-Georges-Armont','Saint-Gorgon-Main','Saint-Hilaire','Saint-Hippolyte','Saint-Juan','Saint-Julien-lès-Montbéliard','Saint-Julien-lès-Russey','Saint-Maurice-Colombier','Saint-Point-Lac','Saint-Vit','Sainte-Anne','Sainte-Colombe','Sainte-Marie'
+               ,'Sainte-Suzanne','Samson','Sancey','Saône','Saraz','Sarrageois','Saules','Sauvagney','Scey-Maisières','Séchin','Seloncourt','Semondans','Septfontaines','Serre-les-Sapins','Servin','Silley-Amancey','Silley-Bléfond','Sochaux','Solemont','Sombacour','Soulce-Cernay','Sourans','Soye','Surmont'
+               ,'Taillecourt','Tallans','Tallenay','Tarcenay-Foucherans','Thiébouhans','Thise','Thoraise','Thulay','Thurey-le-Mont','Torpes','Touillon-et-Loutelet','Tournans','Trépot','Tressandans','Trévillers','Trouvans','Urtière','Uzelle','Vaire','Val-de-Roulans','Valdahon','Valentigney','Valleroy'
+               ,'Valonne','Valoreille','Vandoncourt','Vaucluse','Vauclusotte','Vaudrivillers','Vaufrey','Vaux-et-Chantegrue','Velesmes-Essarts','Vellerot-lès-Belvoir','Vellerot-lès-Vercel','Vellevans','Venise','Vennans','Vennes','Vercel-Villedieu-le-Camp','Vergranne','Verne','Vernierfontaine'
+               ,'Vernois-lès-Belvoir','Verrières-de-Joux','Vieilley','Viéthorey','Vieux-Charmont','Villars-lès-Blamont','Villars-Saint-Georges','Villars-sous-Dampjoux','Villars-sous-Écot','Ville-du-Pont','Villeneuve-d\'Amont','Villers-Buzon','Villers-Chief','Villers-Grélot','Villers-la-Combe'
+               ,'Villers-le-Lac','Villers-Saint-Martin','Villers-sous-Chalamont','Villers-sous-Montrond','Voillans','Voires','Vorges-les-Pins','Voujeaucourt','Vuillafans','Vuillecin','Vyt-lès-Belvoir'),
+
+             #ville du departement de la Drôme 26 compts 573 ville
+             25 => array(
+               'Albon','Aleyrac','Alixan','Allan','Allex','Ambonil','Ancône','Andancette','Anneyron','Aouste-sur-Sye','Arnayon','Arpavon','Arthémonay','Aubenasson','Aubres','Aucelon','Aulan','Aurel','Autichamp','Ballons','Barbières','Barcelonne','Barnave','Barret-de-Lioure','Barsac'
+               ,'Bathernay','Beaufort-sur-Gervanne','Beaumont-en-Diois','Beaumont-lès-Valence','Beaumont-Monteux','Beauregard-Baret','Beaurières','Beausemblant','Beauvallon','Beauvoisin','Bellecombe-Tarendol','Bellegarde-en-Diois','Bénivay-Ollon','Bésayes','Bésignan','Bézaudun-sur-Bîne'
+               ,'Bonlieu-sur-Roubion','Bouchet','Boulc','Bourdeaux','Bourg-de-Péage','Bourg-lès-Valence','Bouvante','Bouvières','Bren','Brette','Buis-les-Baronnies','Chabeuil','Chabrillan','Chalancon','Chamaloc','Chamaret','Chanos-Curson','Chantemerle-les-Blés','Chantemerle-lès-Grignan'
+               ,'Charens','Charmes-sur-l\'Herbasse','Charols','Charpey','Chastel-Arnaud','Châteaudouble','Châteauneuf-de-Bordette','Châteauneuf-de-Galaure','Châteauneuf-du-Rhône','Châteauneuf-sur-Isère','Châtillon-en-Diois','Châtillon-Saint-Jean','Chatuzange-le-Goubet','Chaudebonne'
+               ,'Chauvac-Laux-Montaux','Chavannes','Clansayes','Claveyson','Cléon-d\'Andran','Clérieux','Cliousclat','Cobonne','Colonzelle','Combovin','Comps','Condillac','Condorcet','Cornillac','Cornillon-sur-l\'Oule','Crépol','Crest','Crozes-Hermitage','Crupies','Curnier','Die','Dieulefit'
+               ,'Divajeu','Donzère','Échevis','Épinouze','Érôme','Espeluche','Espenel','Establet','Étoile-sur-Rhône','Eurre','Eygalayes','Eygaliers','Eygluy-Escoulin','Eymeux','Eyroles','Eyzahut','Fay-le-Clos','Félines-sur-Rimandoule','Ferrassières','Francillon-sur-Roubion','Génissieux'
+               ,'Gervans','Geyssans','Gigors-et-Lozeron','Glandage','Grane','Granges-les-Beaumont','Grignan','Gumiane','Hauterives','Hostun','Izon-la-Bruisse','Jaillans','Jonchères','La Bâtie-des-Fonds','La Bâtie-Rolland','La Baume-Cornillane','La Baume-d\'Hostun','La Baume-de-Transit'
+               ,'La Bégude-de-Mazenc','La Chapelle-en-Vercors','La Charce','La Chaudière','La Coucourde','La Garde-Adhémar','La Laupie','La Motte-Chalancon','La Motte-de-Galaure','La Motte-Fanjas','La Penne-sur-l\'Ouvèze','La Répara-Auriples','La Roche-de-Glun','La Roche-sur-Grane','La Roche-sur-le-Buis'
+               ,'La Rochette-du-Buis','La Touche','Laborel','Lachau','Lapeyrouse-Mornay','Larnage','Laval-d\'Aix','Laveyron','Le Chaffal','Le Chalon','Le Grand-Serre','Le Pègue','Le Poët-Célard','Le Poët-en-Percip','Le Poët-Laval','Le Poët-Sigillat','Lemps','Lens-Lestang','Léoncel','Les Granges-Gontardes'
+               ,'Les Pilles','Les Prés','Les Tonils','Les Tourrettes','Lesches-en-Diois','Livron-sur-Drôme','Loriol-sur-Drôme','Luc-en-Diois','Lus-la-Croix-Haute','Malataverne','Malissard','Manas','Manthes','Marches','Margès','Marignac-en-Diois','Marsanne','Marsaz','Menglon','Mercurol-Veaunes','Mérindol-les-Oliviers'
+               ,'Mévouillon','Mirabel-aux-Baronnies','Mirabel-et-Blacons','Mirmande','Miscon','Mollans-sur-Ouvèze','Montauban-sur-l\'Ouvèze','Montaulieu','Montboucher-sur-Jabron','Montbrison-sur-Lez','Montbrun-les-Bains','Montchenu','Montclar-sur-Gervanne','Montéléger','Montélier','Montélimar'
+               ,'Montferrand-la-Fare','Montfroc','Montguers','Montjoux','Montjoyer','Montlaur-en-Diois','Montmaur-en-Diois','Montmeyran','Montmiral','Montoison','Montréal-les-Sources','Montségur-sur-Lauzon','Montvendre','Moras-en-Valloire','Mornans','Mours-Saint-Eusèbe','Mureils','Nyons','Omblèze'
+               ,'Orcinas','Oriol-en-Royans','Ourches','Parnans','Pelonne','Pennes-le-Sec','Peyrins','Peyrus','Piégon','Piégros-la-Clastre','Pierrelatte','Pierrelongue','Plaisians','Plan-de-Baix','Pommerol','Ponet-et-Saint-Auban','Ponsas','Pont-de-Barret','Pont-de-l\'Isère','Pontaix'
+               ,'Portes-en-Valdaine','Portes-lès-Valence','Poyols','Pradelle','Propiac','Puy-Saint-Martin','Puygiron','Ratières','Réauville','Recoubeau-Jansac','Reilhanette','Rémuzat','Rimon-et-Savel','Rioms','Roche-Saint-Secret-Béconne','Rochebaudin','Rochebrune','Rochechinard','Rochefort-en-Valdaine'
+               ,'Rochefort-Samson','Rochefourchat','Rochegude','Romans-sur-Isère','Romeyer','Rottier','Roussas','Rousset-les-Vignes','Roussieux','Roynac','Sahune','Saillans','Saint-Agnan-en-Vercors','Saint-Andéol','Saint-Auban-sur-l\'Ouvèze','Saint-Avit','Saint-Bardoux','Saint-Barthélemy-de-Vals'
+               ,'Saint-Benoit-en-Diois','Saint-Christophe-et-le-Laris','Saint-Dizier-en-Diois','Saint-Donat-sur-l\'Herbasse','Saint-Ferréol-Trente-Pas','Saint-Gervais-sur-Roubion','Saint-Jean-en-Royans','Saint-Julien-en-Quint','Saint-Julien-en-Vercors','Saint-Laurent-d\'Onay','Saint-Laurent-en-Royans'
+               ,'Saint-Marcel-lès-Sauzet','Saint-Marcel-lès-Valence','Saint-Martin-d\'Août','Saint-Martin-en-Vercors','Saint-Martin-le-Colonel','Saint-Maurice-sur-Eygues','Saint-May','Saint-Michel-sur-Savasse','Saint-Nazaire-en-Royans','Saint-Nazaire-le-Désert','Saint-Pantaléon-les-Vignes','Saint-Paul-lès-Romans'
+               ,'Saint-Paul-Trois-Châteaux','Saint-Rambert-d\'Albon','Saint-Restitut','Saint-Roman','Saint-Sauveur-en-Diois','Saint-Sauveur-Gouvernet','Saint-Sorlin-en-Valloire','Saint-Thomas-en-Royans','Saint-Uze','Saint-Vallier','Saint-Vincent-la-Commanderie','Sainte-Croix','Sainte-Eulalie-en-Royans'
+               ,'Sainte-Euphémie-sur-Ouvèze','Sainte-Jalle','Salettes','Salles-sous-Bois','Saou','Saulce-sur-Rhône','Sauzet','Savasse','Séderon','Serves-sur-Rhône','Solaure en Diois','Solérieux','Souspierre','Soyans','Suze','Suze-la-Rousse','Tain-l\'Hermitage','Taulignan','Tersanne','Teyssières'
+               ,'Triors','Truinas','Tulette','Upie','Vachères-en-Quint','Val-Maravel','Valaurie','Valdrôme','Valence','Valherbasse','Valouse','Vassieux-en-Vercors','Vaunaveys-la-Rochette','Venterol','Vercheny','Verclause','Vercoiran','Véronne','Vers-sur-Méouge','Vesc','Villebois-les-Pins'
+               ,'Villefranche-le-Château','Villeperdrix','Vinsobres','Volvent'), );
+
+
+          /*   #ville du departement _________ 27 compts 000 ville
+             26 => array(
+               'teste01 2 27'),
+             #ville du departement _________ 28 compts 000 ville
+             27 => array(
+               'teste01 2 28'
              ),
-             
-             #vill,' du departement _________ 25 compts 000 ville
-             24 => array('',),
-             #vill,' du departement _________ 26 compts 000 ville
-             25 => array('',),
-             #vill,' du departement _________ 27 compts 000 ville
-             26 => array('',),
-             #vill,' du departement _________ 28 compts 000 ville
-             27 => array('',),
-             #vill,' du departement _________ 29 compts 000 ville
-             28 => array('',),
-             #vill,' du departement _________ 30 compts 000 ville
-             29 => array('',),
-             #vill,' du departement _________ 00 compts 000 ville
-             30 => array('',),
+             #ville du departement _________ 29 compts 000 ville
+             28 => array(
+               'teste01 2 29'
+             ),
+             #ville du departement _________ 30 compts 000 ville
+             29 => array(
+               'teste01 2 30'
+             ),
+             #ville du departement _________ 0 compts 000 ville
+             30 => array(
+               'teste01 2 31'
+             ),
+
+             #ville du departement _________ 0 compts 000 ville
              31 => array('',),
              32 => array('',),
              33 => array('',),
@@ -635,26 +724,25 @@
              94 => array('',),
              95 => array('',),
 
-            );
+           );*/
 
-            #echo "les grande ville :" .$departementFR [1][3].': ok <br>';
+            echo "les grande ville :" .$departementFR [11][0].': ok <br>';
 
-            #for ($ligne = 0; $ligne < 1 ; $ligne++) {
-            #  $membre_no = $ligne+1;
-              #echo 'ville de l\'ain '.$membre_no. '<br>';
-              #echo '<ol>';
+          /*for ($ligne = 0; $ligne < 11  ; $ligne++) {
+              $membre_no = $ligne+1;
+              echo 'ville de l\'ain '.$membre_no. '<br>';
+              echo '<ol>';
 
-              #for ($col=0; $col < 393 ; $col++) {
-                #echo '<li>'. $departementFR[$ligne][$col].'</li>';
-              #}
-            #  echo '</0l>';
-            #}
+              for ($col=0; $col < 50 ; $col++) {
+                echo '<li>'. $departementFR[$ligne][$col].'</li>';
+              }
+              echo '</0l>';
+
+              echo $departementFR[11][1];*/
+
 
             var_dump($departementFR);
-
-
           ?>
-
       </main>
     </div>
   </body>
