@@ -30,10 +30,10 @@
           <p> <input type="number" name="numeroDeTelephone" value="" required pattern="[0-9]+" placeholder="numéro de telephone"> </p>
 
           <p> <label for="villeDeDepart">sectioner une ville de ville de depart</label> </p>
-          <p> <input type="text" name="villeDeDepart" value="teste ville"> <label for="heureDeDepeart">indiquer une  heure de depeart <input type="time" name="heureDeDepeart" value="" placeholder="09 30"> </label>  </p>
+          <p> <input type="text" name="villeDeDepart" value="teste ville"> <label for="heureDeDepeart">indiquer une  heure de depeart <input type="time" name="heureDeDepeart" value="" > </label>  </p>
 
 
-          <p> <input type="submit" name="validation" value="validation"> </p>
+          <p> <input type="submit" name="validation" value=""> </p>
 
         </form>
 
@@ -46,6 +46,15 @@
 
           var_dump($_POST);
 
+          $nom = $_POST['nom'];
+          $prenom = $_POST['prenom'];
+          $email = $_POST['email'];
+          $tel = $_POST['numeroDeTelephone'];
+          $villeDepart = $_POST['villeDeDepart'];
+          $heure = $_post['heureDeDepeart']
+        #  $validation = $_POST['validation'];
+
+          echo ' votre nom est : ' . $nom . 'votre prenom est : ' . $prenom . ' votre email : '. $email . 'votre tel : ' . $tel . ' depart de : ' . $villeDepart . ' a : ' . $heure . '<br>';
 
          ?>
 
