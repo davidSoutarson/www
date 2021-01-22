@@ -40,10 +40,12 @@
         <!-- teste et condition du formulaire -->
         <?php
           /*
-          # je vais devoir verifier si tout mes chant de formulaire son renplie par l'utilisateur avent validation
-          #
+          - je vais devoir verifier si tous les chant de formulaire son remplie par l'utilisateur avent validation
 
           */
+
+          var_dump($_POST);
+
 
          ?>
 
