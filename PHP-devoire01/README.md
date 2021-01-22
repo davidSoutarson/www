@@ -1,4 +1,4 @@
-#aprentisage du php
+# aprentisage du php
 
 ## PHP devoir 01
 
