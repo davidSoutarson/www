@@ -30,31 +30,55 @@
           <p> <input type="number" name="numeroDeTelephone" value="" required pattern="[0-9]+" placeholder="numéro de telephone"> </p>
 
           <p> <label for="villeDeDepart">sectioner une ville de ville de depart</label> </p>
-          <p> <input type="text" name="villeDeDepart" value="teste ville"> <label for="heureDeDepeart">indiquer une  heure de depeart <input type="time" name="heureDeDepeart" value="" > </label>  </p>
+        <!--  <p>   <input type="checkbox" name="villeDeDepart" value="villeDeDepart" placeholder="villeDeDepart" > -->
 
+            <?php
+              $villeDeDepart = array('Paris','Oreléans','Dublin','Nice','Tour' );
 
-          <p> <input type="submit" name="validation" value=""> </p>
+                echo '<p>';
+              for ($i=0; $i < 5 ; $i++) {
+
+                echo  $villeDeDepart[$i].  '<input type="checkbox" name= "villeDeDepart"  value='. $villeDeDepart[$i] .' > ';
+                // code...
+              }
+              echo '</p>';
+
+             ?>
+
+             <label for="villeDeDepart"> <select class="ville" name="villeDeDepart"> </label>
+
+             </select>
+
+             <p> <label for="heureDeDepeart">indiquer une  heure de depeart <input type="time" name="heureDeDepeart" value="" > </label>  </p>
+
+          <p> <input type="submit" name="validation" value="valider"> </p>
 
         </form>
 
         <!-- teste et condition du formulaire -->
         <?php
-          /*
-          - je vais devoir verifier si tous les chant de formulaire son remplie par l'utilisateur avent validation
 
-          */
+        #  - je vais devoir verifier si tous les chant de formulaire son remplie par l'utilisateur avent validation
 
-          var_dump($_POST);
+
+
+        #  var_dump($_POST);
 
           $nom = $_POST['nom'];
           $prenom = $_POST['prenom'];
           $email = $_POST['email'];
           $tel = $_POST['numeroDeTelephone'];
           $villeDepart = $_POST['villeDeDepart'];
-          $heure = $_post['heureDeDepeart']
-        #  $validation = $_POST['validation'];
+          $heure = $_POST['heureDeDepeart'];
+          $validation = $_POST['validation'];
 
-          echo ' votre nom est : ' . $nom . 'votre prenom est : ' . $prenom . ' votre email : '. $email . 'votre tel : ' . $tel . ' depart de : ' . $villeDepart . ' a : ' . $heure . '<br>';
+         echo ' votre nom est : ' . $nom . '<br>';
+         echo ' votre prenom est : ' . $prenom . '<br>';
+         echo ' votre email : '. $email . ' votre tel : ' . $tel . '<br>';
+         echo ' depart de : ' . $villeDepart .  '<br>';
+         echo 'aficher heure sesie :' . $heure . '<br>';
+         echo 'validation : ' . $validation . '<br>';
+
 
          ?>
 
