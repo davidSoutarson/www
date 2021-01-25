@@ -13,14 +13,14 @@
 
       <h1>COVOITURAGE</h1>
       <div class="logo">
-        <img src="logo.jpg" alt="inmage sevent de logo a l'aplication">
+        <a href="index.php"><img src="img/logo-covoit.jpg" width="100" alt="inmage sevent de logo a l'aplication"></a>
       </div>
 
       <nav>
         <ul>
-          <li> <a href="index.php">accueile</a> </li>
-          <li> <a href="vue-api-php/formulaire.php">covoiturage</a> </li>
-          <li> <a href="vue-api-php/aide">aide</a> </li>
+        <!--  <li> <a href="index.php"> <img src="img/retourAccueil.jpg" alt=""> accueile</a> </li> -->
+          <li> <a href="vue-api-php/formulaire.php"> <img src="img/direction.jpg" alt=""> </a> </li>
+          <li> <a href="vue-api-php/aide"> <img src="img/Aide.jpg" width="200" alt=""> </a> </li>
         </ul>
       </nav>
     </header>
