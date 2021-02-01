@@ -16,3 +16,10 @@ a{
   border: 5px solid rgba( 250, 0, 0, 0.5);
 
 }
+
+
+.formCovoite{
+  width: 450px ;
+  margin: 0 auto;
+  border: 5px solid rgba( 0, 250, 0, 0.5);
+}
