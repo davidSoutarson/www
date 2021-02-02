@@ -19,18 +19,6 @@
 
           <p> <label for="nom">écriver votre nom</label> </p>
           <p> <input type="text" name="nom" value=""  placeholder="écriver votre nom ici" > </p>
-          <?php
-            if(!empty($nom))
-            {
-                echo ' votre nom est : ' . $nom . '<br>';
-              }
-              else
-              {
-              echo "merci de serire votre prenom";
-            }
-
-           ?>
-
           <p> <label for="prenom">écriver votre prénom</label> </p>
           <p> <input type="text" name="prenom" value=""  placeholder="ecriver votre prenom ici" > </p>
 
@@ -44,7 +32,7 @@
         <!--  <p>   <input type="radio" name="villeDeDepart" value="villeDeDepart" placeholder="villeDeDepart" > -->
 
             <?php
-              $villeDeDepart = array('Paris','Oreléans','Dublin','Nice','Tour' );
+              $villeDeDepart = array('Paris','Oreléans','Dublin','Nice','Tours' );
 
                 echo '<p>';
               for ($i=0; $i < 5 ; $i++) {
@@ -54,12 +42,20 @@
               }
               echo '</p>';
 
+              echo ' <p> <label for="heureDeDepeart">indiquer une  heure de depeart <input type="time" name="heureDeDepeart" value="" > </label>  </p> ';
+
+              if ( (empty($nom)) or (empty($prenom)) or (empty($email)) or (empty($tel)) or (!isset ($villeDepart)) or (empty($heure)) )
+                {
+                  echo "Atention tout les camp doive etre remplie avent validation";
+                }
+                else {
+                  echo "Braveaux";
+                }
+
+                echo '  <p> <input type="submit" name="validation" value="valider"> </p>';
 
              ?>
 
-             <p> <label for="heureDeDepeart">indiquer une  heure de depeart <input type="time" name="heureDeDepeart" value="" > </label>  </p>
-
-          <p> <input type="submit" name="validation" value="valider"> </p>
 
         </form>
 
@@ -69,21 +65,74 @@
         <!-- teste et condition du formulaire -->
         <?php
 
-        #  - je vais devoir verifier si tous les chant de formulaire son remplie par l'utilisateur avent validation
+            $nom = $_POST['nom'];
+            $prenom = $_POST['prenom'];
+            $email = $_POST['email'];
+            $tel = $_POST['numeroDeTelephone'];
+            $villeDepart = $_POST['villeDeDepart'];
+            $heure = $_POST['heureDeDepeart'];
+            $validation = $_POST['validation'];
 
-        #  var_dump($_POST);
+          $proposionDeTrager = [
+            id => 0, ['depart'=>'Paris','arriver' => 'Nantes','proposHeureDepart'=>'11:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Thomas'],
+            id => 1,['depart'=>'Oreléans','arriver' => 'Nantes','proposHeureDepart'=>'05:15','proposHeureArriver'=> '09:32' , 'conducteure' => 'Mathieu'],
+            id => 2,['depart'=>'Dublin','arriver' => 'Tours','proposHeureDepart'=>'07:23','proposHeureArriver'=> '08:50' , 'conducteure' => 'Nathanaël'],
+            id => 3,['depart'=>'Paris','arriver' => 'Oreléans','proposHeureDepart'=>'03:00','proposHeureArriver'=> '05:26' , 'conducteure' => 'Clément'],
+            id => 4,['depart'=>'Nice','arriver' => 'Nice','proposHeureDepart'=>'10:00','proposHeureArriver'=> '12:09' , 'conducteure' => 'Audrey'],
+            id => 5,['depart'=>'Nice','arriver' => 'Nantes','proposHeureDepart'=>'10:40','proposHeureArriver'=> '13:00' , 'conducteure' => 'Pollux'],
+            id => 6,['depart'=>'Tours','arriver' => 'Tours','proposHeureDepart'=>'11:00','proposHeureArriver'=> '16:10' , 'conducteure' => 'Edourd'],
+            id => 7,['depart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'16:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Priscilla'],
+            id => 8,['depart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
 
-          $nom = $_POST['nom'];
-          $prenom = $_POST['prenom'];
-          $email = $_POST['email'];
-          $tel = $_POST['numeroDeTelephone'];
-          $villeDepart = $_POST['villeDeDepart'];
-          $heure = $_POST['heureDeDepeart'];
-          $validation = $_POST['validation'];
+          ];
+
+            echo $proposionDeTrager[0][depart]. ' ? <br> --- --- --- <br>';
+            echo $proposionDeTrager[0][proposHeureDepart]. ' ? <br> --- --- --- <br>';
+            echo $proposionDeTrager[0][arriver]. ' ? <br> --- --- --- <br>';
+            echo $proposionDeTrager[0][proposHeureArriver]. ' ? <br> --- --- --- <br>';
+            echo $proposionDeTrager[0][conducteure]. ' ? <br> --- --- --- <br>';
+
+            echo 'vous soueter partire de : ' .$villeDepart. '<br>';
+
+            if (
+              #condition a ameliaure id ville !!!
+                 ( $villeDepart == $proposionDeTrager[0][depart])
+                 or
+                 ( $villeDepart == $proposionDeTrager[1][depart])
+                 or
+                 ( $villeDepart == $proposionDeTrager[2][depart])
+                 or
+                 ( $villeDepart == $proposionDeTrager[4][depart])
+                 and
+                 ($proposionDeTrager[0][depart] == $proposionDeTrager[3][depart])
+              )
+            {
+              $n=1;
+              $n++;
+                echo '<br> il y a ' .$n. ' depart de :'  .$villeDepart. ' FAITE VOTRE CHOIX : (-: <br>';
+
+                #plus deux deux propositions posible
+                echo '<h3> p1  depart de : ' .$proposionDeTrager[0][depart]. ' ' .$proposionDeTrager[0][arriver]. '</h3> ' ;
+                echo '<h3> p2  depart de : ' .$proposionDeTrager[3][depart]. ' ' .$proposionDeTrager[3][arriver]. '</h3> ' ;
+            };
+
+            foreach ($proposionDeTrager as $key => $value) {
+
+               #echo $key. ' a : ' .$value. ' ???.<br> ';
+               echo "<br>";
+               foreach ($value as $key => $value) {
+
+                  echo $key. ' a : ' .$value. '//';
+
+                }
+            };
+
+echo "<br>________________________ teste________________________________ <br>";
 
          echo ' votre nom est : ' . $nom . '<br>';
          echo ' votre prenom est : ' . $prenom . '<br>';
-         echo ' votre email : '. $email . ' votre tel : ' . $tel . '<br>';
+         echo ' votre email : '. $email . '<br>';
+         echo ' votre tel : ' . $tel . '<br>';
          echo ' depart de : ' . $villeDepart .  '<br>';
          echo 'aficher heure sesie :' . $heure . '<br>';
          echo 'validation : ' . $validation . '<br>_________<br>';
@@ -94,7 +143,24 @@
          }
          else
          {
-           echo "merci de serire votre prenom <br>";
+           echo "merci de sesire votre nom <br>";
+         }
+
+         if(!empty($prenom))
+         {
+               echo ' votre prenom est : ' . $prenom . '<br>';
+         }
+         else
+         {
+           echo "merci de sesire votre prenom <br>";
+         }
+         if(!empty($prenom))
+         {
+               echo ' votre email est : ' . $email. '<br>';
+         }
+         else
+         {
+           echo "merci de sesire votre email <br>";
          }
 
          if (isset ($villeDepart))
@@ -107,11 +173,29 @@
 
          if (!empty($heure))
          {
-           echo "vous soueter partire a : '.$heure.'  <br>" ;
+           echo "vous soueter partire a : '=>' '.$heure.'  <br>" ;
+           if  ($proposionDeTrager[0][proposHeureDepart] >= ($heure))
+           {
+             echo "heure disponible :" .$proposionDeTrager[0][proposHeureDepart]. '//' .$proposionDeTrager[3][proposHeureDepart]. '. <br>';
+           }
+           else {
+             echo "horaire nom diponible pour votre recher <br>";
+           }
+
          }
          else {
            echo "vous devez indiquer un heure de depart <br>";
          }
+
+        if (
+            (empty($nom))or(empty($prenom))or(empty($email))or(empty($tel))or(!isset ($villeDepart))or(empty($heure))
+          )
+          {
+            echo "tout les camt doive etre remplie";
+          }
+          else {
+            echo "Braveaux";
+          }
 
          ?>
 
