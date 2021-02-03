@@ -73,6 +73,10 @@
             $heure = $_POST['heureDeDepeart'];
             $validation = $_POST['validation'];
 
+
+
+
+
           $proposionDeTrager = [
             id => 0, ['depart'=>'Paris','arriver' => 'Nantes','proposHeureDepart'=>'11:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Thomas'],
             id => 1,['depart'=>'Oreléans','arriver' => 'Nantes','proposHeureDepart'=>'05:15','proposHeureArriver'=> '09:32' , 'conducteure' => 'Mathieu'],
@@ -129,7 +133,7 @@
 
 echo "<br>________________________ teste________________________________ <br>";
 
-         echo ' votre nom est : ' . $nom . '<br>';
+         echo ' votre nom est : ' . $nom . '<br>'
          echo ' votre prenom est : ' . $prenom . '<br>';
          echo ' votre email : '. $email . '<br>';
          echo ' votre tel : ' . $tel . '<br>';
@@ -148,7 +152,7 @@ echo "<br>________________________ teste________________________________ <br>";
 
          if(!empty($prenom))
          {
-               echo ' votre prenom est : ' . $prenom . '<br>';
+               echo ' votre prenom est : '. $prenom .'<br>';
          }
          else
          {
@@ -176,7 +180,7 @@ echo "<br>________________________ teste________________________________ <br>";
            echo "vous soueter partire a : '=>' '.$heure.'  <br>" ;
            if  ($proposionDeTrager[0][proposHeureDepart] >= ($heure))
            {
-             echo "heure disponible :" .$proposionDeTrager[0][proposHeureDepart]. '//' .$proposionDeTrager[3][proposHeureDepart]. '. <br>';
+             echo "heure disponible :".$proposionDeTrager[0][proposHeureDepart].'//' .$proposionDeTrager[3][proposHeureDepart].'. <br>';
            }
            else {
              echo "horaire nom diponible pour votre recher <br>";
