@@ -13,52 +13,59 @@
       <main>
 
         <h1>covoiturage</h1>
-        <p>decription courte api covoiturage </h2>
+        <h2>decription courte api covoiturage </h2>
         <!--formulaire utilisent la methode POST. La sicle contenue dans  latribue action et lui meme : formulaire.php -->
         <form class="formCovoite" action="formulaire.php" method="post">
-
+<!--Erreur detecter par w3c L 20 L 31  et 41: la valeur de l' forattribut de l' labelélément doit être l'ID d'un contrôle de formulaire non masqué.: Coriger par ajout id apre input -->
           <p> <label for="nom">écriver votre nom</label> </p>
-          <p> <input type="text" name="nom" value=""  placeholder="écriver votre nom ici" > </p>
+          <p> <input id= "nom" type="text" name="nom" value=""  placeholder="écriver votre nom ici" > </p>
+
           <p> <label for="prenom">écriver votre prénom</label> </p>
-          <p> <input type="text" name="prenom" value=""  placeholder="ecriver votre prenom ici" > </p>
+          <p> <input id="prenom" type="text" name="prenom" value=""  placeholder="ecriver votre prenom ici" > </p>
 
           <p> <label for="email">écriver votre email</label> </p>
-          <p> <input type="email" name="email" value="" placeholder="ecriver vortre email ici" > </p>
+          <p> <input id="email" type="email" name="email" value="" placeholder="ecriver vortre email ici" > </p>
 
           <p> <label for="numeroDeTelephone">écriver numérot de telephone a 10 chifre </label> </p>
-          <p> <input type="number" name="numeroDeTelephone" value=""  placeholder="numéro de telephone"> </p>
+          <p> <input id="numeroDeTelephone" type="number" name="numeroDeTelephone" value=""  placeholder="numéro de telephone"> </p>
 
           <p> <label for="villeDeDepart">sectioner une ville de ville de depart</label> </p>
-        <!--  <p>   <input type="radio" name="villeDeDepart" value="villeDeDepart" placeholder="villeDeDepart" > -->
 
             <?php
               $villeDeDepart = array('Paris','Oreléans','Dublin','Nice','Tours' );
 
+# Erreur detecter par w3c L 38 L 44 : mais il me semble qu modification nuirer a la presentation actuele
                 echo '<p>';
               for ($i=0; $i < 5 ; $i++) {
 
-                echo  $villeDeDepart[$i].  '<input type="radio" name= "villeDeDepart"  value='. $villeDeDepart[$i] .' > ';
+                echo  $villeDeDepart[$i].  '<input id="villeDeDepart" type="radio" name= "villeDeDepart"  value='. $villeDeDepart[$i] .' > ';
                 // code...
               }
               echo '</p>';
-
-              echo ' <p> <label for="heureDeDepeart">indiquer une  heure de depeart <input type="time" name="heureDeDepeart" value="" > </label>  </p> ';
+#  Erreur detecter par w3c L 47 : tout input descendant d'un labelélément avec un for attribut doit avoir une valeur d'ID correspondant à cet for attribut.
+#Corection ajoutet id id="heureDeDepeart" aprrer imput
+              echo ' <p> <label for="heureDeDepeart">indiquer une  heure de depeart <input id="heureDeDepeart" type="time" name="heureDeDepeart" value="" > </label>  </p> ';
 
               if ( (empty($nom)) or (empty($prenom)) or (empty($email)) or (empty($tel)) or (!isset ($villeDepart)) or (empty($heure)) )
                 {
                   echo "Atention tout les camp doive etre remplie avent validation";
                 }
                 else {
-                  echo "Braveaux";
+                  echo "<p>verifer si les rensgement founie son exate </p>";
+                  echo ' votre nom est : ' . $nom . '<br>';
+                  echo ' votre prenom est : ' . $prenom . '<br>';
+                  echo ' votre email : '. $email . '<br>';
+                  echo ' votre tel : ' . $tel . '<br>';
+                  echo ' depart de : ' . $villeDepart .  '<br>';
+                  echo 'vous chercer un depar a :' . $heure . ' heure <br>';
+                echo "string";
                 }
 
                 echo '  <p> <input type="submit" name="validation" value="valider"> </p>';
 
              ?>
 
-
         </form>
-
 
         <div class="resulta">
 
@@ -74,9 +81,6 @@
             $validation = $_POST['validation'];
 
 
-
-
-
           $proposionDeTrager = [
             id => 0, ['depart'=>'Paris','arriver' => 'Nantes','proposHeureDepart'=>'11:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Thomas'],
             id => 1,['depart'=>'Oreléans','arriver' => 'Nantes','proposHeureDepart'=>'05:15','proposHeureArriver'=> '09:32' , 'conducteure' => 'Mathieu'],
@@ -90,11 +94,12 @@
 
           ];
 
-            echo $proposionDeTrager[0][depart]. ' ? <br> --- --- --- <br>';
-            echo $proposionDeTrager[0][proposHeureDepart]. ' ? <br> --- --- --- <br>';
-            echo $proposionDeTrager[0][arriver]. ' ? <br> --- --- --- <br>';
-            echo $proposionDeTrager[0][proposHeureArriver]. ' ? <br> --- --- --- <br>';
-            echo $proposionDeTrager[0][conducteure]. ' ? <br> --- --- --- <br>';
+  #tete de comprention personelle
+          #  echo $proposionDeTrager[0][depart]. ' ? <br> --- --- --- <br>';
+          #  echo $proposionDeTrager[0][proposHeureDepart]. ' ? <br> --- --- --- <br>';
+          #  echo $proposionDeTrager[0][arriver]. ' ? <br> --- --- --- <br>';
+          #  echo $proposionDeTrager[0][proposHeureArriver]. ' ? <br> --- --- --- <br>';
+          #  echo $proposionDeTrager[0][conducteure]. ' ? <br> --- --- --- <br>';
 
             echo 'vous soueter partire de : ' .$villeDepart. '<br>';
 
@@ -128,12 +133,14 @@
 
                   echo $key. ' a : ' .$value. '//';
 
+              
+
                 }
             };
 
 echo "<br>________________________ teste________________________________ <br>";
 
-         echo ' votre nom est : ' . $nom . '<br>'
+         echo ' votre nom est : ' . $nom . '<br>';
          echo ' votre prenom est : ' . $prenom . '<br>';
          echo ' votre email : '. $email . '<br>';
          echo ' votre tel : ' . $tel . '<br>';
@@ -198,7 +205,13 @@ echo "<br>________________________ teste________________________________ <br>";
             echo "tout les camt doive etre remplie";
           }
           else {
-            echo "Braveaux";
+             echo "<p>verifer si les rensgement founie son exate </p>";
+             echo ' votre nom est : ' . $nom . '<br>';
+             echo ' votre prenom est : ' . $prenom . '<br>';
+             echo ' votre email : '. $email . '<br>';
+             echo ' votre tel : ' . $tel . '<br>';
+             echo ' depart de : ' . $villeDepart .  '<br>';
+             echo 'vous chercer un depar a :' . $heure . ' heure <br>';
           }
 
          ?>
