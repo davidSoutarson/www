@@ -1,5 +1,5 @@
-##bounjour bienvenue sur le dosier WWWW
+## bounjour bienvenue sur le dossier WWWW
 
-## se dosier contient mon aprentisage du php
+## se dossier contient mon aprentisage du php
 
-##le pfichier ex_php contient mes exemple et mes note pour mes revition
+## le pfichier ex_php contient mes exemple et mes note pour mes revition
