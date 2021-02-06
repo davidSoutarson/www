@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -11,7 +13,7 @@
       <?php include("header.php");  ?>
 
       <main>
-
+<!--Tout et a refaire -->
         <h1>covoiturage</h1>
         <h2>decription courte api covoiturage </h2>
         <!--formulaire utilisent la methode POST. La sicle contenue dans  latribue action et lui meme : formulaire.php -->
@@ -103,6 +105,7 @@
 
             echo 'vous soueter partire de : ' .$villeDepart. '<br>';
 
+            #conditon a redre dinamique et pour les ville
             if (
               #condition a ameliaure id ville !!!
                  ( $villeDepart == $proposionDeTrager[0][depart])
@@ -133,7 +136,8 @@
 
                   echo $key. ' a : ' .$value. '//';
 
-              
+
+              }
 
                 }
             };
@@ -177,6 +181,8 @@ echo "<br>________________________ teste________________________________ <br>";
          if (isset ($villeDepart))
          {
            echo "vous aver choisie : '.$villeDepart.' comme ville de depart <br>" ;
+            #il me anque un boucle de verification
+            # echo "heure disponible :".$proposionDeTrager[0][proposvilleDepart].'//' .$proposionDeTrager[3][proposvilleDepart].'. <br>';
          }
          else {
            echo "vous devez choisir un ville de depart <br>";
@@ -187,6 +193,7 @@ echo "<br>________________________ teste________________________________ <br>";
            echo "vous soueter partire a : '=>' '.$heure.'  <br>" ;
            if  ($proposionDeTrager[0][proposHeureDepart] >= ($heure))
            {
+             #il me anque un boucle de verification
              echo "heure disponible :".$proposionDeTrager[0][proposHeureDepart].'//' .$proposionDeTrager[3][proposHeureDepart].'. <br>';
            }
            else {
