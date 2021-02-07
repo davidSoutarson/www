@@ -47,6 +47,8 @@ pour afficher les valeurs contenues dans ce tableau. qui devait être toutes les
           id => 6,['proposDepart'=>'Tours','arriver' => 'Tours','proposHeureDepart'=>'11:00','proposHeureArriver'=> '16:10' , 'conducteure' => 'Edourd'],
           id => 7,['proposDepart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'16:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Priscilla'],
           id => 8,['proposDepart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
+          id => 9,['proposDepart'=>'CoolTeste','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
+          id => 10,['proposDepart'=>'CoolTeste','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
         ];
         #les resulta aficher et son ce de la premire ligne du tableau
           echo 'ville'.$proposionDeTrager[0][proposDepart]. ' le resulta aficher est son ce de la premire ligne du tableau <br>';
@@ -54,27 +56,37 @@ pour afficher les valeurs contenues dans ce tableau. qui devait être toutes les
           echo 'heure'.$proposionDeTrager[0][proposHeureDepart]. ' le resulta aficher est son ce de la premire ligne du tableau <br>';
 
         # vais afichier tous les propositions dE Depart  du tableaux
-        echo "<br> vais afichier tous les propositions dE Depart  du tableaux <br>";
+        echo "<br> vais afichier tous les propositions de Depart  du tableaux <br>";
         foreach ($proposionDeTrager as $id => $tablaeuPorosition) {
           // code..
           $conteur = $n++;
 
-          echo ''.$conteur.'';
+          echo $conteur;
           echo 'proposition de depart ville : '.$proposionDeTrager[$conteur-1][proposDepart]. ' // <br>';
-          $villeProposerAuDepart = array($conteur-1 =>[proposDepart], );
+
+          $ville = $proposionDeTrager[$conteur-1][proposDepart];
+
+          # $aficheVille = array( );
+           $aficheVille [$conteur] = " $ville ";
+
+        }
+        # la fontion print_r me ser a verfier que je recupaire bien un tableaux
+      #  print_r($aficheVille);
+
+        #je peut aficher les vile de fasont dinamique avec cette boucle
+        #car de recuper la valuer de conter qui et egale a talle de mon tableaux $proposionDeTrager = []
+        $a = 1;
+        while ($a <= $conteur) {
+          echo $aficheVille[$a]." ";
+          $a++;
         }
 
 
-        $villeProposerAuDepart = $proposionDeTrager[$conteur-1][proposDepart];
-        echo $villeProposerAuDepart;
 
 
+       ?>
 
 
-
-
-
-         ?>
 
 
       </div>
