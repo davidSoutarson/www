@@ -19,7 +19,7 @@
       <nav>
         <ul>
         <!--  <li> <a href="index.php"> <img src="img/retourAccueil.jpg" alt=""> accueile</a> </li> -->
-          <li> <a href="vue-api-php/formulaire02.php"> <img src="img/direction.jpg" alt=""> </a> </li>
+          <li> <a href="vue-api-php/formulaire.php"> <img src="img/direction.jpg" alt=""> </a> </li>
           <li> <a href="vue-api-php/aide"> <img src="img/Aide.jpg" width="200" alt=""> </a> </li>
         </ul>
       </nav>
