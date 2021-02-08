@@ -71,8 +71,14 @@ pour afficher les valeurs contenues dans ce tableau. qui devait être toutes les
 
           $ville = $proposionDeTrager[$conteur-1][proposDepart];
 
+          #echo $conteur .'//';
+
+
           # $aficheVille = array( );
            $aficheVille [$conteur] = " $ville ";
+
+           $vPropose = $proposionDeTrager[$conteur-2][proposDepart];
+           echo "<br>".$vPropose."<br>";
         }
 #_____________________________fin boucle foreach et creation varable $aficheVille ________________________________
 
@@ -93,10 +99,11 @@ pour afficher les valeurs contenues dans ce tableau. qui devait être toutes les
 
       #  echo '<br> depar de .... a ..... ariver a ..... a...... prorser par......<br>';
 
-          for ($i=0; $i <= $conteur ; $i++) {
+          for ($i=0; $i <= $conteur-1 ; $i++) {
             #Reponse
-            /* echo'<br> depar de '.$proposionDeTrager[$i][proposDepart]. ' a ' .$proposionDeTrager[$i][proposHeureDepart]. ' ariver a '
-            .$proposionDeTrager[$i][arriver]. ' a '.$proposionDeTrager[$i][proposHeureArriver]. ' prorser par '.$proposionDeTrager[$i][conducteure].'.'; */
+             echo'<br> depar de' .$proposionDeTrager[$i][proposDepart]. ' a ' .$proposionDeTrager[$i][proposHeureDepart]. ' ariver a '
+            .$proposionDeTrager[$i][arriver]. ' a '.$proposionDeTrager[$i][proposHeureArriver]. ' prorser par '.$proposionDeTrager[$i][conducteure].'.';
+
           }
 
           echo "<br>_________FIN DE TESTE SUR TABLEAU _____________<br>";
@@ -120,9 +127,42 @@ pour afficher les valeurs contenues dans ce tableau. qui devait être toutes les
                 {
                   $Erreur01 = "vous navez pas rempli tout les champs";
                 }
+                else {
+                   echo $parcourireVille  = (int) $choixDeVille ; #stoke un entier corespomdant au choix de villle de utilisateur
+                   echo $aficheVille [$parcourireVille] ; #stoke la vile selectioner par lutilisateur
+
+                   $vChoi = $aficheVille [$parcourireVille-1];
+                   echo "<br>".$vChoi."<br>";
+
+                   echo'<br> depar de '.$proposionDeTrager[$parcourireVille-1][proposDepart]. ' a ' .$proposionDeTrager[$parcourireVille-1][proposHeureDepart]. ' ariver a '
+                   .$proposionDeTrager[$parcourireVille-1][arriver]. ' a '.$proposionDeTrager[$parcourireVille-1][proposHeureArriver]. ' prorser par '.$proposionDeTrager[$parcourireVille-1][conducteure].'.<br>';
+
+                   #teste
+                   for ($i=0; $i <= $conteur-1 ; $i++) {
+                     #Reponse
+                      echo'<br> depar de' .$proposionDeTrager[$i][proposDepart]. ' a ' .$proposionDeTrager[$i][proposHeureDepart]. ' ariver a '
+                     .$proposionDeTrager[$i][arriver]. ' a '.$proposionDeTrager[$i][proposHeureArriver]. ' prorser par '.$proposionDeTrager[$i][conducteure].'.';
+
+                   }
+
+
+                }
+           }
+
+           if (('$vPropose') == ('$vChoi'))
+           {
+
+             echo '<br>_____<br>'.$vPropose.'=='.$vChoi. '<br>';
+             echo "choix valider <br>";
+           }
+           else  {
+              echo '<br>_____<br>'.$vPropose.'='.$vChoi. '<br>';
+               echo "choix valider <br>";
            }
 
            echo ''.$Erreur01. '<br>';
+
+
 
 
        ?>
