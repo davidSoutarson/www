@@ -49,44 +49,123 @@ pour afficher les valeurs contenues dans ce tableau. qui devait être toutes les
           id => 8,['proposDepart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
           id => 9,['proposDepart'=>'CoolTeste','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
           id => 10,['proposDepart'=>'CoolTeste','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
+          id => 11,['proposDepart'=>'Paris','arriver' => 'Nantes','proposHeureDepart'=>'11:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Thomas'],
+          id => 12,['proposDepart'=>'Oreléans','arriver' => 'Nantes','proposHeureDepart'=>'05:15','proposHeureArriver'=> '09:32' , 'conducteure' => 'Mathieu'],
+          id => 13,['proposDepart'=>'Dublin','arriver' => 'Tours','proposHeureDepart'=>'07:23','proposHeureArriver'=> '08:50' , 'conducteure' => 'Nathanaël'],
+          id => 14,['proposDepart'=>'Paris','arriver' => 'Oreléans','proposHeureDepart'=>'03:00','proposHeureArriver'=> '05:26' , 'conducteure' => 'Clément'],
         ];
+          echo "<br>__________TESTE 1 _____________<br>";
+
         #les resulta aficher et son ce de la premire ligne du tableau
-          echo 'ville'.$proposionDeTrager[0][proposDepart]. ' le resulta aficher est son ce de la premire ligne du tableau <br>';
+        #  echo ''.$proposionDeTrager[0][proposDepart]. ' le resulta aficher est son ce de la premire ligne du tableau <br>';
 
-          echo 'heure'.$proposionDeTrager[0][proposHeureDepart]. ' le resulta aficher est son ce de la premire ligne du tableau <br>';
+        #  echo ''.$proposionDeTrager[0][proposHeureDepart]. ' le resulta aficher est son ce de la premire ligne du tableau <br>';
 
-        # vais afichier tous les propositions dE Depart  du tableaux
-        echo "<br> vais afichier tous les propositions de Depart  du tableaux <br>";
+      #  echo "<br> vais afichier tous les propositions de Depart  du tableaux <br>";
         foreach ($proposionDeTrager as $id => $tablaeuPorosition) {
-          // code..
+
           $conteur = $n++;
 
-          echo $conteur;
-          echo 'proposition de depart ville : '.$proposionDeTrager[$conteur-1][proposDepart]. ' // <br>';
+        #  echo $conteur;
+        #  echo 'proposition de depart ville : '.$proposionDeTrager[$conteur-1][proposDepart]. ' // <br>';
 
           $ville = $proposionDeTrager[$conteur-1][proposDepart];
 
           # $aficheVille = array( );
            $aficheVille [$conteur] = " $ville ";
-
         }
+#_____________________________fin boucle foreach et creation varable $aficheVille ________________________________
+
+
         # la fontion print_r me ser a verfier que je recupaire bien un tableaux
       #  print_r($aficheVille);
 
-        #je peut aficher les vile de fasont dinamique avec cette boucle
+        # echo "je peut aficher les vile de fasont dinamique avec cette boucle <br>";
         #car de recuper la valuer de conter qui et egale a talle de mon tableaux $proposionDeTrager = []
+
+          echo "<br>__________TESTE 2 boucle while _____________<br>";
         $a = 1;
         while ($a <= $conteur) {
-          echo $aficheVille[$a]." ";
+          #echo $aficheVille[$a]." ";
           $a++;
         }
+        echo "<br>__________TESTE 3 mise en forme des proposition_____________<br>";
+
+      #  echo '<br> depar de .... a ..... ariver a ..... a...... prorser par......<br>';
+
+          for ($i=0; $i <= $conteur ; $i++) {
+            #Reponse
+            /* echo'<br> depar de '.$proposionDeTrager[$i][proposDepart]. ' a ' .$proposionDeTrager[$i][proposHeureDepart]. ' ariver a '
+            .$proposionDeTrager[$i][arriver]. ' a '.$proposionDeTrager[$i][proposHeureArriver]. ' prorser par '.$proposionDeTrager[$i][conducteure].'.'; */
+          }
+
+          echo "<br>_________FIN DE TESTE SUR TABLEAU _____________<br>";
+
+          echo "<br>_________TESTE SUR formulaire _____________<br>";
+          var_dump($_POST);
+
+          #simplifier les variable formulaire
+          $nom = $_POST ['nom'];
+          $prenom = $_POST ['prenom'];
+          $email = $_POST ['email'];
+          $tel = $_POST ['tel'];
+          $heure = $_POST ['heure'];
+          $choixDeVille = $_POST ['choixDeVille'];
+          $validation = $_POST['validation'];
 
 
+          if (isset ($validation))
+          {
+              if ((empty($nom)) and (empty($prenom)) and (empty($email)) and (empty($tel)) and (empty($heure)) and (isset ($choixDeVille)) )
+                {
+                  $Erreur01 = "vous navez pas rempli tout les champs";
+                }
+           }
+
+           echo ''.$Erreur01. '<br>';
 
 
        ?>
 
+        <h1>formulaire de covoiturage</h1>
 
+          <form class="formCovoite" action="formulaire02" method="post">
+
+               <p> <label for="nom"> ecriver votre nom :</label>
+               <input id="nom" type="text" name="nom" value=""></p>
+               <?php echo ''.$Erreur01. '<br>'; ?>
+
+               <p> <label for="prenom"> ecriver votre prenom :</label>
+               <input id="prenom" type="text" name="prenom" value=""></p>
+               <?php echo ''.$Erreur01. '<br>'; ?>
+
+               <p> <label for="email"> ecriver votre email :</label>
+               <input id="email" type="text" name="email" value=""></p>
+               <?php echo ''.$Erreur01. '<br>'; ?>
+
+               <p> <label for="tel"> ecriver votre telephone :</label>
+               <input id="tel" type="number" name="tel" value=""></p>
+               <?php echo ''.$Erreur01. '<br>'; ?>
+
+               <p> <label for="heure"> ecriver votre heure de depart :</label>
+               <input id="heure" type="time" name="heure" value=""></p>
+               <?php echo ''.$Erreur01. '<br>';  ?>
+
+               <p> <label for="choixDeVille"> Choisir vautre vile de Depart</label>
+               <select id="choixDeVille"  name= "choixDeVille">
+                <?php
+                   foreach ($aficheVille as $key => $value) {
+                   echo  '<option  value='.$key.'>' .$value. '</option>';
+                 };
+                 ?>
+               </select></p>
+               <?php echo ''.$Erreur01. '<br>'; ?>
+
+               <p>  <label for="validation">cliquer ici pour valider :</label>
+               <button id="validation" type="submit" name="validation" value="" >Valider</button> </p>
+
+
+        </form>
 
 
       </div>
