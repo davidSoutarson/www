@@ -26,35 +26,37 @@
           id => 8,['proposDepart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
 
         ];
-echo "<br>___________________p1____________________________<br>";
+//echo "<br>___________________p1____________________________<br>";
 /*cette parti me permet daficher tou le tableau $proposionDeTrager[] */
 
         foreach ($proposionDeTrager as $key => $value)
         {
-
            foreach ($value as $key => $value)
            {
-             echo '' .$value. ', ';
+          #   echo '' .$value. ', ';
+
           }
-          echo "<br>";
+        #  echo "<br>";
         };
 
-echo "<br>__________________p2_____________________________<br>";
+
+
+//echo "<br>__________________p2_____________________________<br>";
 /*avec cette partie de scripte je pour aficher une phrase de proposition en dur
 apre la validation de mon fpomulaire*/
         $villeDeparProposer = $proposionDeTrager[0][proposDepart];
         $VilledeparProposer = $proposionDeTrager[0][arriver];
         $heudeDeparProposer = $proposionDeTrager[0][proposHeureDepart];
 
-        echo'<br>' .$villeDeparProposer;
-        echo $VilledeparProposer;
-        echo $heudeDeparProposer;
-echo "<br>__________________p3_____________________________<br>";
+        #echo'<br>' .$villeDeparProposer;
+        #echo $VilledeparProposer;
+        #echo $heudeDeparProposer;
+//echo "<br>__________________p3_____________________________<br>";
 
 /*avec cette partie de scripte je pour aficher une frase de proposition de manier dinamique
 apre la validation de mon fpomulaire*/
         $id = $proposionDeTrager[id] ;#je recuper les id du tableau comme valeur max d'incrémentation
-        echo $id;
+      #  echo $id;
         $n = -1;#je declare mon conteur d'incrémentation a 0
         while ($n <= $id) {
           $n++;
@@ -62,12 +64,12 @@ apre la validation de mon fpomulaire*/
           $VilledeparProposer = $proposionDeTrager[$n][arriver];
           $heudeDeparProposer = $proposionDeTrager[$n][proposHeureDepart];
 
-          echo'<br>' .$villeDeparProposer;
-          echo $VilledeparProposer;
-          echo $heudeDeparProposer;
+          #echo'<br>' .$villeDeparProposer;
+          #echo $VilledeparProposer;
+          #echo $heudeDeparProposer;
         };
 
-echo "<br>__________________p4_____________________________<br>";
+//echo "<br>__________________p4_____________________________<br>";
 /* je vais pouvois efectuer des verification  avec cette partie */
         $id = $proposionDeTrager[id] ;#je recuper les id du tableau comme valeur max d'incrémentation
 
@@ -76,10 +78,10 @@ echo "<br>__________________p4_____________________________<br>";
           $n++;
           $villeDeparProposer = $proposionDeTrager[$n][proposDepart];
 
-          echo'<br>' .$villeDeparProposer;
+          #echo'<br>' .$villeDeparProposer;
         };
 
-echo "<br>__________________p5_____________________________<br>";
+//echo "<br>__________________p5_____________________________<br>";
           /* je vais pouvois efectuer le selecte avec cette partie */
           $conteur = -1 ;
           foreach ($proposionDeTrager as $kye=> $value) {
@@ -88,17 +90,18 @@ echo "<br>__________________p5_____________________________<br>";
 
             $ville = $proposionDeTrager[$conteur][proposDepart];
 
-            echo $option [$conteur] = " $ville ";
+            #echo $option [$conteur] = " $ville ";
             #echo "$conteur";
 
           }
 
 
-echo "<br>__________________test du fornulaire_____________________________<br>";
+//echo "<br>__________________test du fornulaire_____________________________<br>";
 
-var_dump($_POST);
+#var_dump($_POST);
 
-var_dump($option);
+#var_dump($option);
+#var_dump($option[1]);
 $nom = $_POST ['nom'];
 $prenom = $_POST ['prenom'];
 $email = $_POST ['email'];
@@ -107,6 +110,7 @@ $heure = $_POST ['heure'];
 $choixDeVille = $_POST ['choixDeVille'];
 $validation = $_POST['validation'];
 
+#verification des enter utilisateur
 if (isset ($validation))
 {
 
@@ -165,7 +169,7 @@ if (isset ($validation))
            <form class="formCovoite" action="formulaire" method="post">
 
                 <p> <label for="nom"> ecriver votre nom :</label>
-                <input id="nom" type="text" name="nom" value="" placeholder="<?php echo ''.$ereure_nom.' '; echo ''.$nomTrosLong.' ';  ?>"></p>
+                <input id="nom" type="text" name="nom" value="" placeholder="<?php echo ''.$ereure_nom.' '; echo ''.$nomTrosLong.' '; ?>"></p>
 
 
                 <p> <label for="prenom"> ecriver votre prenom :</label>
@@ -189,18 +193,41 @@ if (isset ($validation))
                     <option> <?php echo'' .$selectioner.''; ?>  </option>
                     <?php
                      $selectioner = [''];
-                  foreach ($option as $f=> $option ) {
-                     echo "<option = value = '$f'> $option </option>";
-                  }
+                  foreach ($option as $option=> $option ) {
+
+                       echo "<option = value = '$option'> $option </option>";
+
+                    }
 
                     ?>
               </select>  <?php echo ''.$ereure_ville.'';  ?>  </p>
-
 
               <p>  <label for="validation">cliquer ici pour valider :</label>
               <button id="validation" type="submit" name="validation" value="valider" >Valider</button> </p>
 
               <?php echo ''.$erreur01.''; ?>
+
+            <?php
+
+              if (
+                (isset ($validation))
+              and
+               (isset($choixDeVille))
+               )
+              {
+                echo ' <p> <label for="proposition"> Choisir parmie les ville de Depart </label>';
+                echo  ' <select id="proposition"  name= "proposition">';
+
+                  foreach ($proposionDeTrager as $key => $value)
+                  {
+                    foreach ($value as $key => $value)
+                    {
+                      echo "<option = value = '$value'> $value </option>";
+                    }
+                  }
+              }
+
+            ?>
 
     </main>
 

@@ -1,7 +1,13 @@
 *{
-
+margin: 0px;
+padding: 0px;
 list-style-type: none;
 
+}
+
+body{
+  background-image: url("./img/fonRoute.JPG");
+  width: 100%;
 }
 
 a{
@@ -9,6 +15,10 @@ a{
   color: black ;
 }
 
+p{
+  margin: 5px;
+
+}
 
 #wrapere{
   width: 650px ;
