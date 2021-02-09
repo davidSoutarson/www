@@ -5,10 +5,10 @@ list-style-type: none;
 
 }
 
-body{
+/*body{
   background-image: url("./img/fonRoute.JPG");
   width: 100%;
-}
+}*/
 
 a{
   text-decoration: none ;
@@ -24,7 +24,8 @@ p{
   width: 650px ;
  margin: 0 auto;
   border: 5px solid rgba( 250, 0, 0, 0.5);
-
+  background-image: url("./img/fonRoute.JPG");
+  width: 100%;
 }
 
 
