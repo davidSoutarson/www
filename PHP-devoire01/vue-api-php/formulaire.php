@@ -32,17 +32,6 @@
 
 
 
-foreach ($proposiondetrager as $key => $value)
-{
-  foreach ($value as $key => $value)
-{
-    echo '' .$value. ', ';
-
-}
-  echo "<br>";
-};
-
-
 var_dump($_POST);
 
 
