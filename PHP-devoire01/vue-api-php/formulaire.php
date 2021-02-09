@@ -42,31 +42,31 @@ var_dump($_POST);
 if (isset ($validation))
 {
 $validation = $_POST['validation'];
-    if (empty($nom))
+    if (!empty($nom))
     {
       $ereure_nom = "ecriver votre nom ici";
       $nom = $_POST ['nom'];
     }
 
-    if (empty($prenom))
+    if (!empty($prenom))
     {
       $ereure_prenom = "ecriver votre pernom ici";
       $prenom = $_POST ['prenom'];
     }
 
-    if (empty($email))
+    if (!empty($email))
     {
       $ereure_email = "ecriver votre emaile ici";
       $email = $_POST ['email'];
     }
 
-    if (empty($tel))
+    if (!empty($tel))
     {
       $ereure_tel = "ecriver votre n°téléphone ici";
       $tel = $_POST ['tel'];
     }
 
-    if (empty($heure))
+    if (!empty($heure))
     {
       $ereure_heure = " ecriver l'heure ici " ;
       $heure = $_POST ['heure'];
@@ -118,12 +118,12 @@ $validation = $_POST['validation'];
 
 
                 <p> <label for="heure"> ecriver votre heure de depart :</label>
-                <input id="heure" type="time" name="heure" value="" > <?php echo ''.$ereure_heure.' ';  ?></p>
+                <input id="heure" type="time" name="heure" value="" > </p>
 
 
                 <p> <label for="choixdeville"> choisir vautre vile de depart</label>
                   <select id="choixdeville"  name= "choixdeville">
-                    <option> <?php echo'' .$selectioner.''; ?>  </option>
+                  
                     <?php
 
                   foreach ($option as $option=> $option ) {
@@ -133,21 +133,16 @@ $validation = $_POST['validation'];
                     }
 
                     ?>
-              </select>  <?php echo ''.$ereure_ville.'';  ?>  </p>
+              </select>    </p>
 
               <p>  <label for="validation">cliquer ici pour valider :</label>
               <button id="validation" type="submit" name="validation" value="valider" >valider</button> </p>
 
-              <?php echo ''.$erreur01.''; ?>
+
 
             <?php
 
-              if (
-                (isset ($validation))
-              and
-               (isset($choixdeville))
-               )
-              {
+
                 echo ' <p> <label for="proposition"> choisir parmie les ville de depart </label>';
                 echo  ' <select "proposition"  name= "proposition">';
 
@@ -158,7 +153,7 @@ $validation = $_POST['validation'];
                       echo "<option = value = '$value'> $value </option>";
                     }
                   }
-              }
+
 
             ?>
 
