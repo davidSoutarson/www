@@ -98,8 +98,11 @@ $validation = $_POST['validation'];
 
 ?>
          <h1>formulaire de covoiturage</h1>
+<div class="contenair">
+
 
            <form class="formcovoite" action="formulaire" method="post">
+
 
                 <p> <label for="nom"> ecriver votre nom :</label>
                 <input id="nom" type="text" name="nom" value="" placeholder="<?php echo ''.$ereure_nom.''; ?>"></p>
@@ -123,7 +126,7 @@ $validation = $_POST['validation'];
 
                 <p> <label for="choixdeville"> choisir vautre vile de depart</label>
                   <select id="choixdeville"  name= "choixdeville">
-                  
+
                     <?php
 
                   foreach ($option as $option=> $option ) {
@@ -156,7 +159,7 @@ $validation = $_POST['validation'];
 
 
             ?>
-
+</div>
     </main>
 
     <?php include("footer.php"); ?>
