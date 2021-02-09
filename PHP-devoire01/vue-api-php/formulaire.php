@@ -123,7 +123,7 @@ $validation = $_POST['validation'];
                 <p> <label for="heure"> ecriver votre heure de depart :</label>
                 <input id="heure" type="time" name="heure" value="" > </p>
 
-
+<!--
                 <p> <label for="choixdeville"> choisir vautre vile de depart</label>
                   <select id="choixdeville"  name= "choixdeville">
 
@@ -137,7 +137,7 @@ $validation = $_POST['validation'];
 
                     ?>
               </select>    </p>
-
+-->
               <p>  <label for="validation">cliquer ici pour valider :</label>
               <button id="validation" type="submit" name="validation" value="valider" >valider</button> </p>
 
