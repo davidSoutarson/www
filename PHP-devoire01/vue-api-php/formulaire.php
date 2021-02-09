@@ -14,136 +14,79 @@
       <?php include("header.php");  ?>
 
       <main>
-        <?php
-        $proposionDeTrager = [
-          id => 0,['proposDepart'=>'Paris','arriver' => 'Nantes','proposHeureDepart'=>'11:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Thomas'],
-          id => 1,['proposDepart'=>'Oreléans','arriver' => 'Nantes','proposHeureDepart'=>'05:15','proposHeureArriver'=> '09:32' , 'conducteure' => 'Mathieu'],
-          id => 2,['proposDepart'=>'Dublin','arriver' => 'Tours','proposHeureDepart'=>'07:23','proposHeureArriver'=> '08:50' , 'conducteure' => 'Nathanaël'],
-          id => 3,['proposDepart'=>'Paris','arriver' => 'Oreléans','proposHeureDepart'=>'03:00','proposHeureArriver'=> '05:26' , 'conducteure' => 'Clément'],
-          id => 4,['proposDepart'=>'Nice','arriver' => 'Nice','proposHeureDepart'=>'10:00','proposHeureArriver'=> '12:09' , 'conducteure' => 'Audrey'],
-          id => 5,['proposDepart'=>'Nice','arriver' => 'Nantes','proposHeureDepart'=>'10:40','proposHeureArriver'=> '13:00' , 'conducteure' => 'Pollux'],
-          id => 6,['proposDepart'=>'Tours','arriver' => 'Tours','proposHeureDepart'=>'11:00','proposHeureArriver'=> '16:10' , 'conducteure' => 'Edourd'],
-          id => 7,['proposDepart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'16:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Priscilla'],
-          id => 8,['proposDepart'=>'Nice','arriver' => 'Anboise','proposHeureDepart'=>'12:00','proposHeureArriver'=> '12:34' , 'conducteure' => 'Charlotte'],
+<?php
+
+
+        $proposiondetrager = [
+          ['proposdepart'=>'paris','arriver' => 'nantes','proposheuredepart'=>'11:00','proposheurearriver'=> '12:34' , 'conducteure' => 'thomas'],
+          ['proposdepart'=>'oreléans','arriver' => 'nantes','proposheuredepart'=>'05:15','proposheurearriver'=> '09:32' , 'conducteure' => 'mathieu'],
+          ['proposdepart'=>'dublin','arriver' => 'tours','proposheuredepart'=>'07:23','proposheurearriver'=> '08:50' , 'conducteure' => 'nathanaël'],
+          ['proposdepart'=>'paris','arriver' => 'oreléans','proposheuredepart'=>'03:00','proposheurearriver'=> '05:26' , 'conducteure' => 'clément'],
+          ['proposdepart'=>'nice','arriver' => 'nice','proposheuredepart'=>'10:00','proposheurearriver'=> '12:09' , 'conducteure' => 'audrey'],
+          ['proposdepart'=>'nice','arriver' => 'nantes','proposheuredepart'=>'10:40','proposheurearriver'=> '13:00' , 'conducteure' => 'pollux'],
+          ['proposdepart'=>'tours','arriver' => 'tours','proposheuredepart'=>'11:00','proposheurearriver'=> '16:10' , 'conducteure' => 'edourd'],
+          ['proposdepart'=>'nice','arriver' => 'anboise','proposheuredepart'=>'16:00','proposheurearriver'=> '12:34' , 'conducteure' => 'priscilla'],
+          ['proposdepart'=>'nice','arriver' => 'anboise','proposheuredepart'=>'12:00','proposheurearriver'=> '12:34' , 'conducteure' => 'charlotte'],
 
         ];
-//echo "<br>___________________p1____________________________<br>";
-/*cette parti me permet daficher tou le tableau $proposionDeTrager[] */
-
-        foreach ($proposionDeTrager as $key => $value)
-        {
-           foreach ($value as $key => $value)
-           {
-          #   echo '' .$value. ', ';
-
-          }
-        #  echo "<br>";
-        };
 
 
 
-//echo "<br>__________________p2_____________________________<br>";
-/*avec cette partie de scripte je pour aficher une phrase de proposition en dur
-apre la validation de mon fpomulaire*/
-        $villeDeparProposer = $proposionDeTrager[0][proposDepart];
-        $VilledeparProposer = $proposionDeTrager[0][arriver];
-        $heudeDeparProposer = $proposionDeTrager[0][proposHeureDepart];
+foreach ($proposiondetrager as $key => $value)
+{
+  foreach ($value as $key => $value)
+{
+    echo '' .$value. ', ';
 
-        #echo'<br>' .$villeDeparProposer;
-        #echo $VilledeparProposer;
-        #echo $heudeDeparProposer;
-//echo "<br>__________________p3_____________________________<br>";
-
-/*avec cette partie de scripte je pour aficher une frase de proposition de manier dinamique
-apre la validation de mon fpomulaire*/
-        $id = $proposionDeTrager[id] ;#je recuper les id du tableau comme valeur max d'incrémentation
-      #  echo $id;
-        $n = -1;#je declare mon conteur d'incrémentation a 0
-        while ($n <= $id) {
-          $n++;
-          $villeDeparProposer = $proposionDeTrager[$n][proposDepart];
-          $VilledeparProposer = $proposionDeTrager[$n][arriver];
-          $heudeDeparProposer = $proposionDeTrager[$n][proposHeureDepart];
-
-          #echo'<br>' .$villeDeparProposer;
-          #echo $VilledeparProposer;
-          #echo $heudeDeparProposer;
-        };
-
-//echo "<br>__________________p4_____________________________<br>";
-/* je vais pouvois efectuer des verification  avec cette partie */
-        $id = $proposionDeTrager[id] ;#je recuper les id du tableau comme valeur max d'incrémentation
-
-        $n = -1;#je declare mon conteur d'incrémentation a 0
-        while ($n <= $id) {
-          $n++;
-          $villeDeparProposer = $proposionDeTrager[$n][proposDepart];
-
-          #echo'<br>' .$villeDeparProposer;
-        };
-
-//echo "<br>__________________p5_____________________________<br>";
-          /* je vais pouvois efectuer le selecte avec cette partie */
-          $conteur = -1 ;
-          foreach ($proposionDeTrager as $kye=> $value) {
-
-            $conteur ++ ;
-
-            $ville = $proposionDeTrager[$conteur][proposDepart];
-
-            #echo $option [$conteur] = " $ville ";
-            #echo "$conteur";
-
-          }
+}
+  echo "<br>";
+};
 
 
-//echo "<br>__________________test du fornulaire_____________________________<br>";
+var_dump($_POST);
 
-#var_dump($_POST);
 
-#var_dump($option);
-#var_dump($option[1]);
-$nom = $_POST ['nom'];
-$prenom = $_POST ['prenom'];
-$email = $_POST ['email'];
-$tel = $_POST ['tel'];
-$heure = $_POST ['heure'];
-$choixDeVille = $_POST ['choixDeVille'];
-$validation = $_POST['validation'];
 
-#verification des enter utilisateur
+
+
+
 if (isset ($validation))
 {
-
+$validation = $_POST['validation'];
     if (empty($nom))
     {
-      $ereure_nom = "Ecriver votre nom ici";
-
+      $ereure_nom = "ecriver votre nom ici";
+      $nom = $_POST ['nom'];
     }
 
     if (empty($prenom))
     {
-      $ereure_prenom = "Ecriver votre pernom ici";
+      $ereure_prenom = "ecriver votre pernom ici";
+      $prenom = $_POST ['prenom'];
     }
 
     if (empty($email))
     {
-      $ereure_email = "Ecriver votre emaile ici";
+      $ereure_email = "ecriver votre emaile ici";
+      $email = $_POST ['email'];
     }
 
     if (empty($tel))
     {
-      $ereure_tel = "Ecriver votre n°téléphone ici";
+      $ereure_tel = "ecriver votre n°téléphone ici";
+      $tel = $_POST ['tel'];
     }
 
     if (empty($heure))
     {
       $ereure_heure = " ecriver l'heure ici " ;
+      $heure = $_POST ['heure'];
     }
 
-    if (isset($choixDeVille))
+    if (isset($choixdeville))
     {
       $ereure_ville ="choiser vune ville" ;
+      $choixDeVille = $_POST ['choixDeVille'];
     }
     if(
         (!isset($_POST['validation']) )
@@ -167,10 +110,10 @@ if (isset ($validation))
 ?>
          <h1>formulaire de covoiturage</h1>
 
-           <form class="formCovoite" action="formulaire" method="post">
+           <form class="formcovoite" action="formulaire" method="post">
 
                 <p> <label for="nom"> ecriver votre nom :</label>
-                <input id="nom" type="text" name="nom" value="" placeholder="<?php echo ''.$ereure_nom.' '; echo ''.$nomTrosLong.' '; ?>"></p>
+                <input id="nom" type="text" name="nom" value="" placeholder="<?php echo ''.$ereure_nom.''; ?>"></p>
 
 
                 <p> <label for="prenom"> ecriver votre prenom :</label>
@@ -189,11 +132,11 @@ if (isset ($validation))
                 <input id="heure" type="time" name="heure" value="" > <?php echo ''.$ereure_heure.' ';  ?></p>
 
 
-                <p> <label for="choixDeVille"> Choisir vautre vile de Depart</label>
-                  <select id="choixDeVille"  name= "choixDeVille">
+                <p> <label for="choixdeville"> choisir vautre vile de depart</label>
+                  <select id="choixdeville"  name= "choixdeville">
                     <option> <?php echo'' .$selectioner.''; ?>  </option>
                     <?php
-                     $selectioner = [''];
+
                   foreach ($option as $option=> $option ) {
 
                        echo "<option = value = '$option'> $option </option>";
@@ -204,7 +147,7 @@ if (isset ($validation))
               </select>  <?php echo ''.$ereure_ville.'';  ?>  </p>
 
               <p>  <label for="validation">cliquer ici pour valider :</label>
-              <button id="validation" type="submit" name="validation" value="valider" >Valider</button> </p>
+              <button id="validation" type="submit" name="validation" value="valider" >valider</button> </p>
 
               <?php echo ''.$erreur01.''; ?>
 
@@ -213,13 +156,13 @@ if (isset ($validation))
               if (
                 (isset ($validation))
               and
-               (isset($choixDeVille))
+               (isset($choixdeville))
                )
               {
-                echo ' <p> <label for="proposition"> Choisir parmie les ville de Depart </label>';
-                echo  ' <select id="proposition"  name= "proposition">';
+                echo ' <p> <label for="proposition"> choisir parmie les ville de depart </label>';
+                echo  ' <select "proposition"  name= "proposition">';
 
-                  foreach ($proposionDeTrager as $key => $value)
+                  foreach ($proposiondetrager as $key => $value)
                   {
                     foreach ($value as $key => $value)
                     {
