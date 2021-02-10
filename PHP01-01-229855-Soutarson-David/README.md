@@ -19,8 +19,12 @@ en fontion de la vi choisi diferante intineraire lui seron proposer
 - Sélecton de ville de départ
 2. verifier si le formulaire et corement remplie par lutilisateur
 3. proposer une selection de ville corécte
+- filtre les repetion de ville
 4. aficher un mesage corécte pour chaque utilisateur
 
 #### DEMANDE 2
 proser les voyge posible detination
 Losque que lutilisateur clique sur recherche les destination corepondan a la vile de de depar son proposer
+
+5. fair coresponde la ville de depare au resuta
+- filtre les cosepondanse une vile pde depar peu proposer plusieur resuta
