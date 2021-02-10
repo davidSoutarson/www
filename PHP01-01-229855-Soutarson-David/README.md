@@ -18,7 +18,7 @@ en fontion de la vi choisi diferante intineraire lui seron proposer
 - Numero de teléphone
 - Sélecton de ville de départ
 2. verifier si le formulaire et corement remplie
-3. proposer une selection de ville corecte
-4. aficher un mesage crecte pour chaque utilisateur
+3. proposer une selection de ville corécte
+4. aficher un mesage corécte pour chaque utilisateur
 
 #### DEMANDE 2
