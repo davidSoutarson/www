@@ -17,8 +17,10 @@ en fontion de la vi choisi diferante intineraire lui seron proposer
 - Adresse email
 - Numero de teléphone
 - Sélecton de ville de départ
-2. verifier si le formulaire et corement remplie
+2. verifier si le formulaire et corement remplie par lutilisateur
 3. proposer une selection de ville corécte
 4. aficher un mesage corécte pour chaque utilisateur
 
 #### DEMANDE 2
+proser les voyge posible detination
+Losque que lutilisateur clique sur recherche les destination corepondan a la vile de de depar son proposer
