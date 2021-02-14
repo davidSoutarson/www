@@ -3,7 +3,7 @@
   <div class="logo">
 
   <a href="../index.php"> <img src="../img/logo-covoit.jpg"width="100" height="100" alt="logo representen un paneau de sigalisation "></a>
-    
+
   </div>
   <div class="navBar">
     <nav>
@@ -13,7 +13,7 @@
 
         <li> <a href="vue-api-php/formulaire.php">Je recherche un covoiturage</a>  </li>
 
-        <li> <a href="vue-api-php/aide.php">aide </a> </li>
+      
 
       </ul>
     </nav>
