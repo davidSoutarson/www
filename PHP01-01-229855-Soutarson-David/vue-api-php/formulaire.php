@@ -2,7 +2,7 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>fomulaire</title>
+    <title>formulaire</title>
  <link rel="stylesheet" href="../css/master.css">
   </head>
   <body>
@@ -31,22 +31,22 @@
 <!--  debut formulaire php _______________________________________________________________ -->
 
 <div class="box-nom ">
-          <p> <label for="nom">ecriver votre nom </label></p>
+          <p> <label for="nom">écrivez votre nom </label></p>
           <input type="text" name="nom" value=""  placeholder="">
           </div>
 
 <div class="box-prenom ">
-          <p> <label for="prenom">ecriver votre prenom </label></p>
+          <p> <label for="prenom">écrivez votre prénom </label></p>
           <input type="text" name="prenom" value="" placeholder="">
           </div>
 
 <div class="box-email ">
-          <p> <label for="email">ecriver votre email </label><p/>
+          <p> <label for="email">écrivez votre email </label><p/>
           <input type="text" name="email" value=""  placeholder="">
           </div>
 
 <div class="box-tel ">
-          <p> <label for="telephone">ecriver votre N° teléphone </label></p>
+          <p> <label for="telephone">écrivez votre N° téléphone </label></p>
           <input type="number" name="telephone" value=""  placeholder="">
           </div>
 
@@ -55,7 +55,7 @@
 
           <?php
 
-          echo '<p> <label for="ville_de_depart">choisiser votre ville</label></p>';
+          echo '<p> <label for="ville_de_depart">choisissez votre ville</label></p>';
           echo '<select id="ville_de_depart" class="" name="ville_de_depart">';
            foreach ($tabletrager as $tabletrager){
                    $ville_table = $tabletrager ['depart'];
@@ -72,7 +72,7 @@
           </select>
         </div>
 
-        <p> <label for="v_heure"> ecriver votre heure de depart :</label></p>
+        <p> <label for="v_heure"> écrivez votre heure de départ :</label></p>
         <input id="v_heure" type="time" name="v_heure" value="" >
 
 <div class="bouton">
@@ -82,23 +82,23 @@
 <?php
 # ___________ ci le fomulaire et vide _____________________________________________________________-->
 if(
-    (!isset($_POST['validation']) )//ci se nes pas valider
+    (!isset($_POST['validation']) )//si ce n'est pas validé
     OR
-    ( empty($_POST['nom']) ) //si la varible nom et vide
+    ( empty($_POST['nom']) ) //si la varible nom est vide
     OR
-    ( empty($_POST['prenom']) ) //si la varible prenon et vide
+    ( empty($_POST['prenom']) ) //si la varible prénom est vide
     OR
-    ( empty($_POST['email']) ) //si la varible emaile et vide
+    ( empty($_POST['email']) ) //si la varible email est vide
     OR
-    ( empty($_POST['telephone']) ) //si la varible tel et vide
+    ( empty($_POST['telephone']) ) //si la varible tel est vide
     OR
-    (!isset($_POST['ville_de_depart']) )//si choix de ville  exite pas
+    (!isset($_POST['ville_de_depart']) )//si choix de ville n'existe pas
     OR
     (empty($_POST['v_heure']) )
 
   )
           {
-            echo"vous naver pas remplie le formulaire";
+            echo"vous n'avez pas rempli le formulaire";
           }
 else {
   $validation = $_POST ['validation'];
@@ -123,7 +123,7 @@ else {
                 #echo"<p>nom et :'.$nom.''</p>";
             }
             else {
-              echo"<p>champ 01 nom 8) pas remplie</p>";
+              echo'<p id="erreur">champ 01 nom pas remplie</p>';
             }
 # 2 champ prenom____________________________________________________________________-->
             if (!empty($prenom))
@@ -131,17 +131,17 @@ else {
                 #echo"<p>prenom et :'.$prenom.''</p>";
             }
             else {
-              echo"<p>champ 02 nom 8) pas remplie</p>";
+              echo'<p id="erreur">champ 02 nom pas remplie</p>';
             }
 
 
 # 3 champ email___________________________________________________________________-->
           if (!empty($email))
           {
-            #echo"<p> maile et :'.$email.''</p>";
+            #echo"<p> mail et :'.$email.''</p>";
           }
           else {
-            echo"<p>champ 03 nom 8) pas remplie</p>";
+            echo'<p id="erreur">champ 03 nom pas remplie</p>';
           }
 
 # 4 champ telephone________________________________________________________________________-->
@@ -150,25 +150,25 @@ else {
               #echo"<p> numéro :'.$telephone.''</p>";
             }
             else {
-              echo"<p>champ 04 nom 8) pas remplie</p>";
+              echo'<p id="erreur">champ 04 nom pas remplie</p>';
             }
 
 #  5 champ vile a selectoner________________________________________________________________-->
 
             if (isset($ville_de_depart))
               {
-                echo'<p> ville sectioner :' .$ville_de_depart. '</p>';
+                echo'<p> ville selectionné :' .$ville_de_depart. '</p>';
              }
              else {
-               echo"<p>champ 05 nom 8) pas remplie</p>";
+               echo '<p id="erreur">vous n\'avez pas choisie de ville</p>';
              }
 #  6 champ vile a selectoner________________________________________________________________-->
             if (isset($ville_de_depart))
             {
-              echo'<p> ville sectioner :' .$v_heure. '</p>';
+              echo'<p> ville selectionné :' .$v_heure. '</p>';
             }
             else {
-              echo"<p>champ 05 nom 8) pas remplie</p>";
+              echo '<p id="erreur">champ 05 nom pas remplie</p>';
             }
 
 

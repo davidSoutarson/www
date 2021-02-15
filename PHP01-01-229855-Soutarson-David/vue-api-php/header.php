@@ -11,9 +11,9 @@
   <!-- liste lien pointant ver le ficher a aficher -->
         <li> <a href="../index.php">accueil</a>  </li>
 
-        <li> <a href="vue-api-php/formulaire.php">Je recherche un covoiturage</a>  </li>
+        <li> <a href="formulaire.php">Je recherche un covoiturage</a>  </li>
 
-      
+
 
       </ul>
     </nav>
