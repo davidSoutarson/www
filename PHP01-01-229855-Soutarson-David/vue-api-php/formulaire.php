@@ -32,22 +32,22 @@
 
 <div class="box-nom ">
           <p> <label for="nom">écrivez votre nom </label></p>
-          <input type="text" name="nom" value=""  placeholder="">
+          <input type="text" name="nom" value=""  placeholder=""  required autofocus>
           </div>
 
 <div class="box-prenom ">
           <p> <label for="prenom">écrivez votre prénom </label></p>
-          <input type="text" name="prenom" value="" placeholder="">
+          <input type="text" name="prenom" value="" placeholder=""  required autofocus>
           </div>
 
 <div class="box-email ">
           <p> <label for="email">écrivez votre email </label><p/>
-          <input type="text" name="email" value=""  placeholder="">
+          <input type="text" name="email" value=""  placeholder=""  required autofocus>
           </div>
 
 <div class="box-tel ">
           <p> <label for="telephone">écrivez votre N° téléphone </label></p>
-          <input type="number" name="telephone" value=""  placeholder="">
+          <input type="number" name="telephone" value=""  placeholder=""  required autofocus>
           </div>
 
 <div class="box-ville">
@@ -56,7 +56,7 @@
           <?php
 
           echo '<p> <label for="ville_de_depart">choisissez votre ville</label></p>';
-          echo '<select id="ville_de_depart" class="" name="ville_de_depart">';
+          echo '<select id="ville_de_depart" class="" name="ville_de_depart"  required >';
            foreach ($tabletrager as $tabletrager){
                    $ville_table = $tabletrager ['depart'];
 
@@ -227,6 +227,11 @@ foreach ($tabletrager as $tabletrager) {
 
       echo "<option  value ='.$p_conducters. ' par a' .$p_heure_depart.' heure de :' .$p_depart.'arive a' .$p_arriver.'a : '.$p_heure_arriver.>"
       .$p_conducters. ' par a' .$p_heure_depart.' heure de :' .$p_depart.'arive a' .$p_arriver.'a : '.$p_heure_arriver."</option>";
+
+
+redre le pro grame robutte
+cotrole isset resegre et afiche le ebndeqbut de prosedur
+
 
 }
 */
