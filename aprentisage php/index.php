@@ -113,32 +113,22 @@ function Bonjour(){
   echo "bonjour a tous";
 }
 Bonjour();
+echo '<p>_______ comprendre verification _______ </p>';
+$utilisateur = [
+    'id' => 0,[ 'prenom'=> 'David', 'sexe' => 'h',],
+    'id' => 1,[ 'prenom'=> 'Paule' , 'sexe' => 'h', ],
+    'id' => 2,[ 'prenom'=> 'Anne' , 'sexe' => 'f', ],
+    'id' => 3,[ 'prenom'=> 'Jean' , 'sexe' => 'h', ],
+    'id' => 4,[ 'prenom'=> 'Myriame' , 'sexe' => 'f', ],
+    'id' => 5,[ 'prenom'=> 'Damien' , 'sexe' => 'h', ],
+    'id' => 6,[ 'prenom'=> 'Cloer' , 'sexe' => 'f', ],
+    'id' => 7,[ 'prenom'=> 'Silvie' , 'sexe' => 'f', ],
+];
 
-$texte ="Les Évadés (1994)	9,2		Le parrain	2. Le parrain (1972)	9,1
-Le parrain, 2ème partie	3. Le parrain, 2ème partie (1974)	9,0
-The Dark Knight : Le Chevalier noir	4. The Dark Knight : Le Chevalier noir (2008)	9,0
-12 hommes en colère	5. 12 hommes en colère (1957)	8,9
-La liste de Schindler	6. La liste de Schindler (1993)	8,9
-Le Seigneur des anneaux : Le Retour du roi	7. Le Seigneur des anneaux : Le Retour du roi (2003)	8,9
-Pulp Fiction	8. Pulp Fiction (1994)	8,8
-Le Bon, la brute, le truand	9. Le Bon, la brute, le truand (1966)	8,8
-Le Seigneur des anneaux : La Communauté de l'anneau	10. Le Seigneur des anneaux : La Communauté de l'anneau (2001)	8,8
-Fight Club	11. Fight Club (1999)	8,8
-Forrest Gump	12. Forrest Gump (1994)	8,8
-Inception  13. Inception (2010)	8,7	"
+$homme = [];
+$femme = [];
 
-echo strlen("Les Évadés (1994)	9,2		Le parrain	2. Le parrain (1972)	9,1
-Le parrain, 2ème partie	3. Le parrain, 2ème partie (1974)	9,0
-The Dark Knight : Le Chevalier noir	4. The Dark Knight : Le Chevalier noir (2008)	9,0
-12 hommes en colère	5. 12 hommes en colère (1957)	8,9
-La liste de Schindler	6. La liste de Schindler (1993)	8,9
-Le Seigneur des anneaux : Le Retour du roi	7. Le Seigneur des anneaux : Le Retour du roi (2003)	8,9
-Pulp Fiction	8. Pulp Fiction (1994)	8,8
-Le Bon, la brute, le truand	9. Le Bon, la brute, le truand (1966)	8,8
-Le Seigneur des anneaux : La Communauté de l'anneau	10. Le Seigneur des anneaux : La Communauté de l'anneau (2001)	8,8
-Fight Club	11. Fight Club (1999)	8,8
-Forrest Gump	12. Forrest Gump (1994)	8,8
-Inception  13. Inception (2010)	8,7	").'<br>';
+
 
 ?>
 

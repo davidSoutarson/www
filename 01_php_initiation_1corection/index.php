@@ -21,7 +21,7 @@ if (isset($_POST['city'])) {
  		}
  	}
 }
-# 9* verifie si vile == valeu departure
+# 9* verifie si city == valeu departure et le stoc dans un nouveau tableau
 ?>
 <!DOCTYPE html>
 <html>
