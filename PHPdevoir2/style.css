@@ -1,0 +1,35 @@
+*{
+  list-style-type: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+#wraper{
+  width: 500px;
+  border: solid 2px black;
+}
+
+#titre-aplie{
+  color: gray;
+  font-family: impact;
+}
+
+.conteneur{
+  margin: 10px auto;
+  text-align: center;
+  width: 100px;
+}
+
+.choix{
+  width: 50px;
+  margin: 10px auto;
+  background-color: black;
+}
+
+.reponce{
+  margin: 10px auto;
+  width: 480px;
+  border: solid 2px black;
+}
