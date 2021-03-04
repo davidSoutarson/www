@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Recher de film</title>
-    <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
     <?php
@@ -21,50 +21,30 @@
              array('titre' => 'Fight Club' ,'annee'=>'1999' ,'description'=> 'Un employé de bureau insomniaque et un savonnier diable-peut-soin forment un club de combat souterrain qui évolue en quelque chose de beaucoup, beaucoup plus.'),
              array('titre' =>'Forrest Gump' ,'annee'=> '1994','description'=>'Les présidences de Kennedy et Johnson, les événements du Vietnam, du Watergate et d’autres événements historiques se déroulent à travers la perspective d’un homme de l’Alabama avec un QI de 75, dont le seul désir est d’être réuni avec sa bien-aimée d’enfance.' ),
              array('titre' =>'Inception ' ,'annee'=>'2010' ,'description'=>'Un voleur qui vole des secrets d’entreprise grâce à l’utilisation de la technologie de partage de rêves est donné la tâche inverse de planter une idée dans l’esprit d’un directeur général.'),
+
          );
+$anneeFilm = [];
+
+foreach ($film_disponible as $film_disponible)
+{
+  $anneeFilm [] = $film_disponible ['annee'];
+};
+
+  echo '<ul>';
+foreach ($anneeFilm as $anneeFilmListe) {
+  echo '<li>'.$anneeFilmListe. '</li>';
+};
+  echo '</ul>';
+
+  echo '<p><strong>' . $anneeFilm [4] . '</strong></p>';
+
+
+
     ?>
-    <div id="wraper">
-      <h1 id=titre-aplie> Les années film</h1>
-      <div class="conteneur">
-        <form class="chois_film" action="#" method="get">
-
-              <?php
-                $choiAnner = [];
-                $result_film = [];
-
-                foreach ($film_disponible as $film_disponible) {
-                  $choiAnner[] = $film_disponible['annee'];
-                  if ( ( $film_disponible['annee'] == $_GET['choisiser'] ) ){
-                  $result_film[] = '<p>filme a regader pour l\'anner :'.$film_disponible['annee'].'</p> <h3>'.$film_disponible['titre'].'</h3> <p> Description '.$film_disponible['description'].'</p>';
-                    }
-                }
-
-                echo "<ul>";
-                foreach ($choiAnner as $choiAnner) {
-
-                  echo '<div class="choix"> <li>  <a href= "index.php"> <input type="submit" name= "choisiser" value = '.$choiAnner.'> <a> </li> </div>';
-
-                }
-                echo "</ul>";
-                echo "</div>";
-
-                echo "<div class= reponce>";
-                if (isset($_GET['choisiser']) == $film_disponible['annee'])
-                    {
-                      if (!empty($_GET['choisiser']) == $film_disponible['annee'])
-                        {
-                        foreach ($result_film as $result_film) {
-                          echo '<p>'.$result_film .'</p>';
-                        }
-                      }
-                   }
-                   echo "</div>";
-            ?>
 
 
-        </form>
 
-    </div>
 
-    </body>
-  </html>
+
+  </body>
+</html>
