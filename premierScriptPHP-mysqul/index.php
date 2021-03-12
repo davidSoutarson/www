@@ -12,8 +12,8 @@
      while ($row = $result->fetch_array())
      {
        echo $row['ville_nom'] . '<br>';
-
-
      }
+
+     echo "teste";
 
      ?>
