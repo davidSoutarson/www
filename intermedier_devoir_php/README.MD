@@ -19,6 +19,24 @@ Les recherches peuvent être stockées dans une table user_searchs (par exemple)
 suivants :
 
 Id du user (user_id) dans la table user
+
 Id de la ville (ville_id) dans la table ville
 
 Ces deux derniers champs formant une clé unique.
+
+2) Créez un script de recherche permettant :
+
+a) **d’afficher** un **formulaire de recherche** où l’utilisateur **entre une ville** ;
+
+b) de **retrouver et d’afficher les détails d’une ville (si elle existe) lorsque l’utilisateur clique sur un lien** ;
+
+
+c) de stocker **dans la table user_search les villes recherchées par l’utilisateur**.
+
+3) **Améliorez** votre script **pour afficher** au-dessus ou en dessous de votre formulaire de recherche **les recherchesdéjà effectuées**.
+
+info(aide!)
+
+– **retrouvez ces recherches grâce à la table user_searchs** ;
+
+– **les urls doivent avoir** en paramètre **le numéro de la ville (ville_id)** afin de pouvoir afficher les détails concernant cette ville.
