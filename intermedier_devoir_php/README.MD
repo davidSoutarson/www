@@ -13,7 +13,7 @@ Vous **afficherez** ensuite en front-office, **uniquement pour cet internaute**,
 **Exemple** : si un utilisateur a recherché « Paris », « Rome » et « Ber » alors nous afficherons Paris et Rome.
 
 **Conseils**
-1) Commencez par designer votre base de données.
+1) **Commencez par designer votre base de données**.
 
 Les recherches peuvent être stockées dans une table user_searchs (par exemple) comportant les champs
 suivants :
