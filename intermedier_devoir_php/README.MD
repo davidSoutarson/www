@@ -17,6 +17,7 @@ Vous **afficherez** ensuite en front-office, **uniquement pour cet internaute**,
 
 Les recherches peuvent être stockées dans une table user_searchs (par exemple) comportant les champs
 suivants :
+
 Id du user (user_id) dans la table user
 Id de la ville (ville_id) dans la table ville
 
