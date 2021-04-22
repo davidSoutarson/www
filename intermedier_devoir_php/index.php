@@ -2,47 +2,34 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>suivi des recherches par internaute</title>
+    <title>réalisation d’un suivi des recherches par internaute</title>
   </head>
   <body>
-    <div id="wraper">
-      <header>
-        <h1>Le site des villes</h1>
+    <!-- utilisation des cookie ! -->
+
+    <header>
+      <div class="contener-nav">
+        <h1>brouionllons DEVOIRE 1 php Avencer </h1>
         <nav>
           <ul>
-            <li>acceuille</li>
-            <li>recherche</li>
-            <li>conextion
-        <ul>
-          <li><a href="vue/form_creer_cont.php">créer un cont</a></li>
-          <li> <a href="vue/form_conection.php">se conecter</a> </li>
-        </ul>
-      </li>
-            <li>Eta
-        <ul>
-          <li>Conecter</li>
-          <li>Non conecter</li>
-        </ul>
-      </li>
+            <li><a href="teste sessions.php">test les sessions 1</a></li>
+            <li> <a href="#">les cookies </a> </li>
           </ul>
         </nav>
-      </header>
+      </div>
 
-      <main>
+    </header>
+    <main>
+      <div class="contener-main">
 
-        <?php include "vue/form_recherche.php"; ?>
+      </div>
 
-      </main>
+    </main>
+    <footer>
+      <div class="contener-footer">
 
-      <footer>
-        <p>David</p>
-        <p>Soutatson</p>
-        <p>Formation :Integrateur-developpeur</p>
-        <p>Eleve N°229855<p>
-        
-      </footer>
-
-    </div>
+      </div>
+    </footer>
 
   </body>
 </html>
