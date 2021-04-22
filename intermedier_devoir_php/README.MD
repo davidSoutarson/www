@@ -40,3 +40,5 @@ info(aide!)
 – **retrouvez ces recherches grâce à la table user_searchs** ;
 
 – **les urls doivent avoir** en paramètre **le numéro de la ville (ville_id)** afin de pouvoir afficher les détails concernant cette ville.
+
+### Pour je doit metriser les rerquet Mysqul les sesions les cookie ###
