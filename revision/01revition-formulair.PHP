@@ -95,14 +95,87 @@
     <th>desscripltion</th>
     <tr>
       <td>boutton</td>
-      <td></td>
+      <td>Bouton cliquable (en générale avec JavaScript</td>
     </tr>
     <tr>
       <td>checkbox</td>
+      <td>Cases à cocher</td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>Choix d’une couleur</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>Date avec attributs (année, mois et jour), l’ordre dépend de la langue</td>
+    </tr>
+    <tr>
+      <td>datatime-locale</td>
+      <td>indique une date et une heure (année, mois, jour, minute, seconde, et fraction de seconde)</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>Une adresse e-mail</td>
+    </tr>
+    <tr>
+      <td>file</td>
+      <td>Pour sélectionner un fichier dans le but de l’uploader</td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>Champ caché pour l’utilisateur (permet d’envoyer des données invisibles pour l’utilisateur mais dont
+        on pourrait avoir besoin</td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td>Pour personnaliser le bouton submit (envoyer) à l’aide d’une image</td>
+    </tr>
+    <tr>
+      <td>month</td>
+      <td>Définit un mois et une année</td>
+    </tr>
+    <tr>
+      <td>number</td>
+      <td>Pour indiquer un nombre</td>
+    </tr>
+    <tr>
+      <td>password</td>
       <td></td>
     </tr>
     <tr>
+      <td>radio</td>
       <td></td>
+    </tr>
+    <tr>
+      <td>reset</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>search</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>submit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>tel</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>week</td>
       <td></td>
     </tr>
   </table>
