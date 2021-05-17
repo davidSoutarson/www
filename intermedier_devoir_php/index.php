@@ -12,7 +12,7 @@
         <h1>brouionllons DEVOIRE 1 php Avencer </h1>
         <nav>
           <ul>
-            <li><a href="teste sessions.php">test les sessions 1</a></li>
+            <li><a href="session/page_a.php">lien ver test les sessions 1</a></li>
             <li> <a href="#">les cookies </a> </li>
           </ul>
         </nav>
