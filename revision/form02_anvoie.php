@@ -12,19 +12,21 @@ session_start(); //inisialisation de la session
     <h1> Une revition sur les formulaire et leur tretemant </h1>
     <?php
 
-    if (isset( $_SESSION['errors']))
+
+ if (!empty( $_SESSION['errors']))
     {
-        foreach ($_SESSION as $errors )
+      $errors = $_SESSION ;
+        foreach ($errors as $key )
         {
-          foreach ($errors as $name => $alerte)
+          foreach ($key as $clef )
           {
-          echo $name. ' : ' . $alerte .'<br>';//afiche les ereurs a partir de la session créer danle fichier taitement
+          echo $clef. '<br>'; //afiche les ereurs a partir de la session créer danle fichier taitement
           }
         }
     }
 
-
-
+    session_unset();
+    session_destroy();
     ?>
     <form class="form_02" action="taitement.php" method="post">
       <input type="hidden" name="date" value="">
@@ -63,6 +65,11 @@ session_start(); //inisialisation de la session
       </fieldset>
 
     </form>
+
+    <h2>DEBUG :</h2>
+    <?php  session_unset();
+      //session_destroy();
+     var_dump($_SESSION) ?>
 
     <p>1 verifier si le formulaire tautalement remplie </p>
     <p> 2 je fais remplie la base de doner avec les profile utisateur compler </p>

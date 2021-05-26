@@ -21,8 +21,9 @@ if (!isset($_POST['condition_utilisater'])) {
 
 if(!empty($errors))
 {
-  session_start(); //creation d'une session
+ session_start(); //creation d'une session
   $_SESSION['errors'] = $errors;
+  $_SESSION['inputs'] = $_POST ;
   header('Location: form02_anvoie.php');
 }
 else {
