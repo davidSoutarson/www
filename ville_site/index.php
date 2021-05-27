@@ -17,3 +17,6 @@
       </div>
       <?php require('inc_menue.php') ?>
       <?php require('inc_footer.php') ?>
+
+      <p> <a href="admin/ajout.php">teste-ajouter</a> </p>
+      <p> <a href="admin/liste.php">teste sup liste</a> </p>

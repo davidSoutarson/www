@@ -9,7 +9,7 @@
   <body>
     <?php
 //récuperation des variables
-if (isset($_POST[submit_form])) // Avertissement: Utilisation de submit_form constantes non définies - supposé « submit_form » (cela lancera une erreur dans une future version de PHP) en E:\wamp64\www\ville_site\admin\ajout.php sur la ligne 12
+if (isset($_POST['submit_form'])) 
 {
   $ville_nom = $_POST['ville_nom'];
   $ville_texte = $_POST['ville_texte'];
