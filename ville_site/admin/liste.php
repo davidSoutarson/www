@@ -15,7 +15,6 @@ while ($row= $result->fetch_array())
 //4 Afichage
 ?>
   <ul>
-    <li> <a href="../index.php">Accueil</a></li>
 
     <?php foreach ($villes as $id => $ville) : ?>
       <li>

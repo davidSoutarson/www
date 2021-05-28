@@ -8,8 +8,8 @@
   </head>
   <body>
       <div class="presentation">
-        <h1>Accueil site des ville </h1>
-        <p> Tp de david soutarson: </p>
+        <h1>Accueil </h1>
+        <p> Tp de david soutarson: 229855 </p>
         <p>Bienvenue sur le mini-site consacre au villes.</p>
         <p>Ce cite utilise PHP et Mysql</p>
         <p>utisiler le menu de navigatrion pour consulterr les page du site</p>
@@ -17,6 +17,3 @@
       </div>
       <?php require('inc_menue.php') ?>
       <?php require('inc_footer.php') ?>
-
-      <p> <a href="admin/ajout.php">teste-ajouter</a> </p>
-      <p> <a href="admin/liste.php">teste sup liste</a> </p>

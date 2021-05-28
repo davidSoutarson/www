@@ -58,9 +58,9 @@ $texte = $row['ville_texte'];
     <p>Nom de la ville : <input type="text" name="ville_nom" value="<?php echo $nom ?>" ></p>
 
     <p>texte presentation </br>
-    <textarea name="ville_texte" cols="32" rows="8"/><?php echo $texte ?>></textarea>
+    <textarea  name="ville_texte" cols="32" rows="8"/><?php echo $texte ?>></textarea>
     </p>
-
+    <input type="hidden" name="ville_id" value="<?php echo $id ?>">
     <p> <input type="submit" name="submit_form" value="valider"></p>
 
   </form>

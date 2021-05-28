@@ -13,6 +13,7 @@ while ($row= $result->fetch_array())
 }
 //4 Afichage
 ?>
+<div class="menue">
   <ul>
     <li> <a href="index.php">Accueil</a></li>
 
@@ -20,4 +21,8 @@ while ($row= $result->fetch_array())
       <li> <a href="ville.php?id=<?php echo $id ?>"><?php echo $ville ?></
       a></li>
     <?php endforeach ?>
+
+  </br>
+      <li> <a href="admin/index.php"> Administration </a> </li>
   </ul>
+</div>
