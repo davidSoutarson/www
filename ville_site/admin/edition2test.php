@@ -15,7 +15,12 @@ if (isset($_POST['submit_form']))
   {
     $ville_nom = $_POST['ville_nom'];
     $ville_texte = $_POST['ville_texte'];
-    $ville_id = $_POST['ville_id'];
+    //$ville_id = $_POST['ville_id'];
+    //Partie pays
+    //$pays_nom=$_POST['pays_nom'];
+    //$pays_id=$_POST['pays_id'];
+
+
     //verification du contenue des variables
     if((empty($ville_nom)) OR empty($ville_texte))
       {
@@ -34,6 +39,7 @@ if (isset($_POST['submit_form']))
         }
       }
   }
+
 /* Partie 2 recuperation des variable des information de base et affichage dans le formulaire
 ----------------------------------------recuperation creation afichage se repette plusier fois------------------------------------------------*/
 //  récuperartion de la variable externe
@@ -42,15 +48,26 @@ if (isset($_POST['submit_form']))
 $result = $mysqli->query('SELECT ville_id , ville_nom, ville_texte,pays_id
   FROM villes WHERE ville_id = '. $id );
 
+//new
+$result2 = $mysqli->query('SELECT pays_id , pays_nom
+    FROM pays WHERE pays_id ='.$id);
+
 
 // création d'un nouvelle array
 $row = $result->fetch_array();
 
+//new
+$table_pays = $result2->fetch_array();
 
-// destiner a l'afichage
+// destiner a l'afichage villes
 $nom = $row['ville_nom'];
 $texte = $row['ville_texte'];
+$ville_id =$row['ville_id'];
 $ville_pays_id =$row['pays_id'];
+
+// destiner a l'afichage des pays
+$pays_id = $table_pays['pays_id'];
+$pays_nom = $table_pays['pays_nom'];
 /*----------------------recuperation creation afichage se repette plusier fois-------------------------------------------------------------------*/
   ?>
 
@@ -63,20 +80,29 @@ $ville_pays_id =$row['pays_id'];
     <p>texte presentation </br>
     <textarea  name="ville_texte" cols="32" rows="8"/><?php echo $texte ?>></textarea>
     </p>
+
     <input type="hidden" name="ville_id" value="<?php echo $id ?>">
+
+    <label for="pays_nom">a jouter  modifier un pays</label>
+    <p> <input type="text" name="pays_nom" value=""> </p>
+
+
     <p> <input type="submit" name="submit_form" value="valider"></p>
+
 
   </form>
 
+
+
+<p>ne fonction pas sans $id L53.ne fontione pas comme atendue code else doubler **</p>
+<?php foreach ($table_pays as $pays_id => $pays_nom):?>
+
+<?php if($ville_pays_id == $pays_id) :?>
+  <li> <input checked="checked" type="radio" name="pays_id" value="<?php echo $pays_id ?>" /> <?php echo "* if ! " .$pays_nom ?>  </li>
+  <?php else :?>
+    <li> <input type="radio" name="pays_id" value="<?php echo $pays_id ?>" /> <?php echo  "* else ? " .$pays_nom ?> </li>
+  <?php endif ?>
+  <?php endforeach ?>
+
   </body>
 </html>
-
-
-
-
-<!--CREATE TABLE Pets2 AS
-( SELECT champ1, champ2
-  FROM Pets
-  );
-
--->
