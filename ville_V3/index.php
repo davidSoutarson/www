@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <?php  requier('inc_menue.php'); ?>
+      <?php  require('inc_menue.php'); ?>
     </header>
     <main>
       <article class="page presentation">
