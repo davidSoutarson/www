@@ -9,7 +9,7 @@
   <body>
     <?php
 //récuperation des variables
-if (isset($_POST['submit_form'])) 
+if (isset($_POST['submit_form']))
 {
   $ville_nom = $_POST['ville_nom'];
   $ville_texte = $_POST['ville_texte'];
@@ -55,8 +55,8 @@ if (isset($_POST['submit_form']))
        <form  method="post">
          <p>Nom de la ville : <input type="text" name="ville_nom"></p>
 
-         <p>texte presentation </br>
-         <textarea name="ville_texte" cols="32" rows="8"></textarea>
+         <p>texte presentation:</br>
+           <textarea name="ville_texte" cols="32" rows="8"></textarea>
          </p>
 
          <p> <input type="submit" name="submit_form" value="valider"></p>

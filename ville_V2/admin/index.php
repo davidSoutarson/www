@@ -3,12 +3,15 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Accueil Administration</title>
+    <title>Administration</title>
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <!-- ipotese en lien avec les setion a metre dans une condition if identification administrateur -->
         <?php require('admin_menue.php') ?>
+<!-- _______________________________________________________ -->
+<h2>gestion de contenue</h2>
+  <?php include('liste.php') ?>
 <!-- _______________________________________________________ -->
     <h3 class="avie">espase admimistration </h3>
     <p class="avie"> Atention cette epase et reserver au personne etant otentifier comme administrateur !

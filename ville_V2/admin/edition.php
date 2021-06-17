@@ -1,116 +1,137 @@
 <?php require('../inc_conection.php');?>
+
+<?php
+//recup info et affichage dans form
+
+$id = $_GET['id'];
+
+//requête
+	$result = [];// insialisation
+	$result = $mysqli->query('	SELECT 	ville_id
+									,ville_nom
+									,ville_texte
+									,pays_id
+							FROM 	villes
+							WHERE 	ville_id = '.$id
+						);
+	//nouvel array
+	$row = $result -> fetch_array();
+
+	// variable destinée à l'affichage  uniter
+	$nom = $row['ville_nom'];
+	$texte = $row['ville_texte'];
+	$pays_id = $row['pays_id'];
+
+	$result = [];
+	$pays_liste = [];
+	$result = $mysqli->query('	SELECT DISTINCT		pays_id as pid
+													,pays_nom as pnom
+								FROM 				pays
+								ORDER BY 			pnom
+							');
+
+	while ($row = $result->fetch_array())// a pour une liste
+	{
+		$pays_liste_pid = $row['pid'];
+		$pays_liste_pnom = $row['pnom'];
+
+		$pays_liste[$pays_liste_pid]['pid'] = $pays_liste_pid;
+		$pays_liste[$pays_liste_pid]['pnom'] = $pays_liste_pnom;
+	}
+
+	/*Partie MAJ de la BDD
+	-----------------------------------------------------*/
+
+	if (isset($_POST['submit_form']))
+	{
+		$ville_nom = $_POST['ville_nom'];
+		$ville_texte = $_POST['ville_texte'];
+		$ville_id = $_POST['ville_id'];
+		$ville_pays_id = $_POST['pays_id'];
+
+		//verification du contenue des variables
+		if((empty($ville_nom)) OR empty($ville_texte))
+		  {
+			$message = '<p class="error"> vous devez saisir le nom d\'une ville et sa présentation. </p>';
+		  }
+		  else
+		  {
+			// requete UPDATE ?
+			if	(	$mysqli->query('	UPDATE 	villes
+										SET 	ville_nom 		= "'.$ville_nom.'"
+												, ville_texte 	= "'.$ville_texte.'"
+												, pays_id 		= "'.$ville_pays_id.'"
+										WHERE 	ville_id 		='.$ville_id
+									)
+				)
+			{
+				$message = '<p class="message">La mise à jour de la ville '. $ville_nom .' est effectuée.</p>';
+			}
+			else
+			{
+			  $message = '<p class="error">La mise à jour de la ville '. $ville_nom .' n\'est pas effectuée.</p>';
+			}
+		  }
+	}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>edition</title>
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
-  <body>
-    <?php
-/*Partie 1: gestion de la saissie et enregistrement
------------------------------------------------------*/
-//récuperation des variables du formulaire corespondant
-if (isset($_POST['submit_form']))
-  {
-    $ville_nom = $_POST['ville_nom'];
-    $ville_texte = $_POST['ville_texte'];
-    $ville_id = $_POST['ville_id'];
-    //verification du contenue des variables
-    if((empty($ville_nom)) OR empty($ville_texte))
-      {
-        $message = '<p class="error"> vous dever sesir le nom d\'une vile est sa présentation. </p>';
-      }
-      else
-      {
-        // requete UPDATE
-        if($mysqli->query('UPDATE villes SET ville_nom = " ' . $ville_nom . '", ville_texte = "'. $ville_texte .'" WHERE ville_id ='.$ville_id ))
-          {
-            $message = '<p class="message">La mise à jour de la ville '. $ville_nom .' est effectuée.</p>';
-          }
-        else
-        {
-          $message = '<p class="error">La mise à jour de la ville '. $ville_nom .' n\'est effectuée.</p>';
-        }
-      }
-  }
-/* Partie 2 recuperation des variable des information de base et affichage dans le formulaire
-----------------------------------------recuperation creation afichage se repette plusier fois------------------------------------------------*/
-//  récuperartion de la variable externe
-  $id = $_GET ['id'];
-//requete 1
-$result = $mysqli->query('SELECT ville_id
-                                ,ville_nom
-                                ,ville_texte
-                                ,pays_id
-                                FROM villes
-                                WHERE ville_id ='.$id );
+	<head>
+		<meta charset="utf-8">
+		<title>Edition</title>
+		<link rel="stylesheet" href="../css/style.css">
+	</head>
 
-  // création d'un nouvelle array
-  $row = $result->fetch_array();
+	<body>
+<?php include('admin_menue.php'); ?>
 
-//requet 2 realiser par profeseur 2/06/2021 pouver vous mespliquer les aliace
-  $result2 = $mysqli->query('SELECT DISTINCT(pays_nom),v.pays_id
-                            FROM pays p
-                            INNER JOIN villes v ON v.pays_id = p.pays_id
-                            ORDER BY pays_nom='. $id);
-/*comme dans la requet 2 result2  je recuper les  pays_nom je pance qu'il me faut une requet capable de recuperer aucie les pays_id */
+			<!--	1 . Modification de la page de mise à jour d’une ville	-->
+<h1>page edition administrateur</h1>
 
-$pays_row = $result2->fetch_array();
+		<div>
+			<h2>
+				Ajouter une ville
+			</h2>
 
+			<?php if(isset($message)) echo $message  ?>
 
-// destiner a l'afichage
-$nom = $row['ville_nom'];
-$texte = $row['ville_texte'];
-$ville_pays_id =$row['pays_id'];
+			<form  method="post">
+				<p>Nom de la ville : <input 	type="text"
+												name="ville_nom"
+												value="<?php echo $nom ?>" ></p>
+				<p>texte presentation:</br>
+				<textarea  	name="ville_texte"
+							cols="32"
+							rows="8"/>
+							<?php echo $texte ?> </textarea></p>
+				<input type="hidden" name="ville_id" value="<?php echo $id ?>"/>
 
-//destiner alafichage des pays
-$nom_pays = $pays_row['pays_nom']; //j'ais corijer sa le 03/06/2021
+				<?php foreach ($pays_liste as $plist) : ?>
 
-/*_____________________utisation de wille___03/06/2021______corection dans cette parti je recuper pas l'Allmagne___________________________*/
-while ($pays_row= $result2->fetch_array())
-  {
-    // code... 3.b2 creation d'un array pour afichage hors de la boucle les pays
-    //$pays [$pays_row['pays_nom']] = $row['pays_id'];// ce qui rand une patie de se tableau superflus   $pays = $pays_row['pays_nom'] ; ???
-    $pays [$pays_row['pays_id']] = $pays_row['pays_nom']; /*le probleme etait  du au ORDER BY pays_nom L 23*/
-  }
+					<?php if ($plist['pid'] == $pays_id ): ?>
+						<li class="bg_gris">
+						<input 	checked="checked"
+								type="radio"
+								name="pays_id"
+								value="<?php echo $pays_id ?> "/>
+						<?php echo $plist['pnom'] ?></li>
+					<?php else : ?>
+						<li> 	<input  type="radio"
+									name="pays_id"
+									value="<?php echo $plist['pid'] ?> "/>
+								<?php echo $plist['pnom'] ?>
+						</li>
 
-  ?>
-<?php echo var_dump($pays); ?>
-<?php echo var_dump($ville_pays_id); ?>
-<!-- _______________________________afichage ? pourai etre dans une parti reserver ???_____________________________________________-->
+					<?php endif ?>
+				<?php endforeach ?>
 
-<p>afichage pays non souter ou et l'Allmagne et pour quoi et elle partie il <br>
-  est inposible dapliquer la verification condition if  else: </p>
-<ul>
-  <?php foreach ($pays as $id => $pays) : ?>
+				<p> <input type="submit" name="submit_form" value="valider"></p>
 
-  <?php if ( $ville_pays_id == $id): ?>
-    <li> <input checked="checked" type="radio" name="pays" value="<?php echo $id ?> "><?php echo $pays ?></li>
-    <?php else : ?>
-    <li> <input  type="radio" name="pays" value="<?php echo $id ?> "><?php echo $pays ?></li>
-    <?php endif ?><!-- fin if condion $ville_pays_id == $pays_id  'du cour' -->
-  <?php endforeach ?>
-</ul>
-
-
-
-
-<div>
-  <h1>editer ville /modifier ville</h1>
-  <?php if(isset($message)) echo $message  ?>
-  <form  method="post">
-    <p>Nom de la ville : <input type="text" name="ville_nom" value="<?php echo $nom ?>" ></p>
-
-    <p>texte presentation </br>
-    <textarea  name="ville_texte" cols="32" rows="8"/><?php echo $texte ?>></textarea>
-    </p>
-    <input type="hidden" name="ville_id" value="<?php echo $id ?>">
-<!--_________________________afichage________________________________________-->
-
-    <p> <input type="submit" name="submit_form" value="valider"></p>
-  </form>
-
-
-  </body>
+			</form>
+		</div>
+	</body>
 </html>

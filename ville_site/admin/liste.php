@@ -21,8 +21,7 @@ while ($row= $result->fetch_array())
         <a href="../ville.php?id=<?php echo $id ?>"><?php echo $ville ?></a>
         <a href="edition.php?id=<?php echo $id ?>"> -[editer]- </a>
         <a href="suppression.php?id=<?php echo $id ?>"> [SUPPRIMER] </a>
-        <a href="edition2test.php?id=<?php echo $id ?>"> -[test_PROB]- </a>
-        <a href="edition2test_V2.php?id=<?php echo $id ?>"> -[test_PROB-V2]- </a>
+
       </li>
     <?php endforeach ?>
   </ul>

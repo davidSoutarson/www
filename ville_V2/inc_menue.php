@@ -22,11 +22,12 @@ while ($pays_row= $result2->fetch_array())
 ?>
 <div class="menue">
   <ul>
-    <li> <a href="index.php">Accueil</a></li>
+    <li> <a href="index.php">Accueil</a></li> </br>
 
     <?php foreach ($villes as $id => $ville) : ?>
-      <li> <a href="ville.php?id=<?php echo $id ?>"><?php echo $ville ?></
-      a></li>
+      <li>
+        <a href="ville.php?id=<?php echo $id ?>"><?php echo $ville ?></a>
+     </li>
     <?php endforeach ?>
 
   </br>
