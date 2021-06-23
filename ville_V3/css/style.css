@@ -1,0 +1,159 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+/*____________________________________________________________________________*/
+
+
+header{
+  border: 2px solid red;
+  width: 100%;
+  padding:15px;
+  margin: 5px;
+}
+
+h1{
+  color: red;
+}
+
+.recherche{
+  border: 2px solid red;
+  width: 100%;
+  padding:15px;
+  margin: 5px;
+}
+
+/*___________________________________________________________________________*/
+.menue-prinsipale{
+  border: 2px solid black;
+}
+
+nav{
+  width: 100%;
+  background-color: #424558;
+}
+
+nav > ul {
+  marging: 0px;
+  padding-right: 0px;
+}
+
+nav > ul::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+nav ul > li {
+  float: left;
+  position: relative;
+}
+
+nav >ul >li >a{
+  padding: 20px 30px;
+  color: #fff;
+}
+
+nav >ul >li:hover a{
+  padding: 15px 30px 20px 30px;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+.sousmenu{
+  display: none;
+}
+
+nav a{
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav li:hover .sousmenu{
+  display: inline-block;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  padding: 0px;
+  z-index: 1000;
+}
+
+.sousmenu li{
+  border-bottom: 1px solid #ccc;
+}
+
+.sousmenu li a{
+  padding: 15px 30px;
+  font-size: 13px;
+  color:#222538;
+  width: 150px;
+}
+/*________________suvole menue prinsipalele ______________________________*/
+.menue-accueil:hover {
+  border-top: 5px solid #BBB;
+  background-color: rgba(220, 220, 220, 0.15);
+}
+
+.menue-ville:hover{
+  border-top: 5px solid #0070bb;
+  background-color: rgba(000, 112, 192, 0.15);
+}
+.menue-pays:hover{
+  border-top: 5px solid #0070bb;
+  background-color: rgba(000, 112, 192, 0.15);
+}
+
+.menue-administration:hover{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228, 77, 38, 0.15);
+}
+
+.menue-uttilisateur:hover{
+    border-top: 5px solid #f1dc4f;
+    background-color: rgba(241, 211, 79, 0.15);
+}
+
+
+/*_______________aprence du sousmenue_________________________________________*/
+.menue-ville .sousmenu{
+  background-color: rgb(000, 112, 192);
+}
+
+
+.menue-pays .sousmenu{
+  background-color: rgb(000, 112, 192);
+}
+
+.menue-administration .sousmenu{
+  background-color: rgb(228, 77, 38);
+}
+
+.menue-uttilisateur .sousmenu{
+  background-color: rgb(241, 211, 79);
+}
+
+/*____________________survole du sous menue___________________________________*/
+
+.sousmenu li:hover a{
+  color: #EEE;
+  font-weight: bold;
+}
+
+.menue-ville .sousmenu li:hover{
+  background-color: rgb(000,155,200);
+}
+
+
+.menue-pays .sousmenu li:hover{
+  background-color: rgb(000,155,200);
+}
+
+.menue-administration .sousmenu li:hover{
+  background-color: rgb(210,77,60);
+}
+
+.menue-uttilisateur .sousmenu li:hover{
+  background-color: rgb(200,165,75);
+}
