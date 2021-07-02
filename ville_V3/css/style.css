@@ -205,3 +205,11 @@ h2 {
 .Resulta-recherche > ul li{
 border-bottom: 2px solid #C0C0C0 ;
 }
+
+/*_________________________forme New_User*/
+
+.form_New_User {
+  width: 500px;
+  border: 2px solid red;
+  margin: 0 auto;
+}

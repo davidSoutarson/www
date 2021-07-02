@@ -39,7 +39,7 @@
 
         <ul class="sousmenu">
           <!-- Utilisation de foreach sur variable isue base de donner user -->
-          <li > <a  href="#">nouvelle-conection</a> </li>
+          <li > <a  href="conexUser.php">nouvelle-conection</a> </li>
           <li > <a  href="#">Conecter</a> </li>
           <li > <a  href="#">Déconecter</a> </li>
         </ul>
