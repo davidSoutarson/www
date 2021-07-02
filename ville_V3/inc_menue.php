@@ -1,29 +1,35 @@
 <!-- inclustion des requette PHP Mysqé pour afichage -->
 <?php require('bdd_recherche.php'); ?>
+
+
+
 <div class="menue-prinsipale">
   <nav >
     <ul >
-      <li class="menue-accueil"> <a  href="#">Accueil</a> </li>
+      <li class="menue-accueil"> <a  href="index.php">Accueil</a> </li>
 
       <li class="menue-ville"> <a href="#"> Villes </a>
 
         <ul class="sousmenu">
           <!-- Utilisation de foreach sur variable isue base de donner ville -->
-          <li >  <a  href="#"> récup lien non ville 1 </a> </li>
-          <li >  <a  href="#"> récup lien non ville 2 </a> </li>
-          <li >  <a  href="#"> récup lien non ville 3 </a> </li>
-          <li >  <a  href="#"> récup lien non ville 4 </a> </li>
+          <?php foreach ($villes as $id => $ville) : ?>
+            <li>
+              <a href="ville.php?id=<?php echo $id ?>"><?php echo $ville ?></a>
+           </li>
+          <?php endforeach ?>
         </ul>
       </li>
 
       <li class="menue-pays"> <a href="#"> Pays </a>
 
         <ul  class="sousmenu">
-          <!-- Utilisation de foreach sur variable isue base de donner pays -->
-          <li >  <a  href="#"> récup lien non pays 1 </a> </li>
-          <li >  <a  href="#"> récup lien non pays 2 </a> </li>
-          <li >  <a  href="#"> récup lien non pays 3 </a> </li>
-          <li >  <a  href="#"> récup lien non pays 4 </a> </li>
+        <?php
+          while ($pays_row= $result2->fetch_array())
+          {
+            // code... 3.b creation d'un array pour afichage hors de la boucle
+           echo "<li> <a href='ville.php?id=$pays_row[pays_id]'>" .$pays_row['pays_nom']." </a> </li>" ;
+          }
+          ?>
         </ul>
       </li>
 
@@ -44,7 +50,7 @@
 
 <div class="recherche">
   <form class="barreR" method="post">
-    <input type="search" name="r" placeholder="RECHERCHE">
+    <input id=B-recherche type="search" name="r" placeholder="Efectuez une recherchesur Ville Site">
     <input id=R-bouton type="submit" name="envoyer" value="RECHERCHE">
   </form>
 </div>

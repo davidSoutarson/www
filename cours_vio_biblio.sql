@@ -72,8 +72,36 @@ WHERE a.nom
 /* 25- Quel est l'auteur avec le plus d'ouvrages ? */
 /* sans requête imbriquée *//* avec une requête imbriquée */
 
+//comende ok requette
+SELECT* FROM pays INNER JOIN villes ON pays.pays_id = villes.pays_id
 
 
+SELECT* FROM pays INNER JOIN villes ON pays.pays_id = villes.pays_id WHERE ville_id;
+SELECT* FROM pays INNER JOIN villes ON pays.pays_id = villes.pays_id;
+SELECT* FROM pays INNER JOIN villes ON pays.pays_id = villes.pays_id WHERE ville_id ORDER BY pays_nom??
+
+SELECT* FROM pays INNER JOIN villes ON pays.pays_id = villes.pays_id WHERE 'condition' ville_nom ORDER BY pays_nom??
+
+
+SELECT
+villes.ville_id,
+ville_nom,
+ville_texte,
+pays_nom,
+pays.pays_id
+  FROM pays
+    INNER JOIN villes ON pays.pays_id = villes.pays_id
+      WHERE pays_nom LIKE 'j%'
+        ORDER BY pays_nom;
+
+SELECT
+villes.ville_id ,
+ville_nom,
+ ville_texte,
+ pays_nom,
+ pays.pays_id
+    FROM pays
+     INNER JOIN villes ON pays.pays_id = villes.pays_id ;
 
  //test table
 

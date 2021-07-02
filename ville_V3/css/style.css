@@ -4,27 +4,36 @@
 }
 /*____________________________________________________________________________*/
 
-
-header{
-  border: 2px solid red;
-  width: 100%;
-  padding:15px;
-  margin: 5px;
-}
-
-h1{
-  color: red;
-}
-
 .recherche{
-  border: 2px solid red;
-  width: 100%;
-  padding:15px;
-  margin: 5px;
+  border: 2px solid #798081;
+  padding:10px;
+  background-color: #C0C0C0;
+}
+
+.barreR{
+  border: 4px double #EFEFEF;
+  padding:5px;
+  text-align: center;
+}
+
+#B-recherche{
+  width: 60%;
+  padding:5px;
+  border-radius:15px;
+  border: 2px solid rgb(210,202,236);
+}
+
+
+#R-bouton{
+  width: 15%;
+  padding:5px;
+  font-weight: bold;
+  border-radius:15px;
+  border: 2px solid rgb(147, 112, 219);
 }
 
 /*___________________________________________________________________________*/
-.menue-prinsipale{
+.menue-prinsipale {
   border: 2px solid black;
 }
 
@@ -156,4 +165,43 @@ nav li:hover .sousmenu{
 
 .menue-uttilisateur .sousmenu li:hover{
   background-color: rgb(200,165,75);
+}
+/*_______________main aparase et positon des articcle_______________________*/
+main > h1 {
+  color: #FFFFFF;
+  background-color: rgb(000,000,255);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:  200px 1fr 1fr;
+  grid-column-gap:20px;
+}
+
+.page-presentation{
+  background-color: #B0C4DE;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+.user-recherche{
+  display: flex;
+
+  justify-content: flex-end;
+  background-color:
+}
+
+.Resulta-recherche > ul{
+  list-style-type: none;
+  background-color: #7FFFD4;
+}
+
+.Resulta-recherche > ul li{
+border-bottom: 2px solid #C0C0C0 ;
 }
