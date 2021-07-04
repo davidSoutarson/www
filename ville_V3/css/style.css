@@ -3,6 +3,17 @@
   margin: 0px;
 }
 /*____________________________________________________________________________*/
+.danger{
+  color:red;
+}
+
+.atention{
+  color: orange;
+}
+
+.ok{
+  color: green;
+}
 
 .recherche{
   border: 2px solid #798081;
@@ -209,7 +220,8 @@ border-bottom: 2px solid #C0C0C0 ;
 /*_________________________forme New_User*/
 
 .form_New_User {
-  width: 500px;
-  border: 2px solid red;
-  margin: 0 auto;
+  width: 400px;
+  border: 2px solid black;
+    margin: 0 auto;
+  padding: 15px
 }
