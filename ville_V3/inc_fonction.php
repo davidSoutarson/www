@@ -19,6 +19,10 @@
     $pseudo = securisation($_POST['pseudo']);
     $email = securisation($_POST['email']);
 
-  
+#encodage mots de passe
+
+
+
+
 
     ?>

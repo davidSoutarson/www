@@ -2,7 +2,7 @@
 
 <?php if (isset($_POST['valider'])) {
   $valider = $_POST['valider'];
-  $mdp = $_POST['mdp'];
+
   $comfimez_mdp = $_POST['comfimez_mdp'];
   $mesage = "verifier vaux information";
   require('inc_fonction.php');
@@ -21,10 +21,10 @@ if (empty($nom)) {
   $mesage2 = "<p class = 'ok'> Ton nom est :".$nom. " </p>";
 }
 
-if (empty($speudo)) {
-  $mesage3 = "<p class ='atention'> champ Speudo n'est pas remplie </p>";
+if (empty($pseudo)) {
+  $mesage3 = "<p class='atention'> champ pseudo n'est pas remplie </p>";
 } else {
-  $mesage3 = "<p class = 'ok'> Ton Speudo est :".$speudo. " </p>";
+  $mesage3 = "<p class = 'ok'> Ton pseudo est :".$pseudo. " </p>";
 }
 
 if (empty($email)) {
@@ -33,23 +33,38 @@ if (empty($email)) {
   $mesage4 = "<p class = 'ok'> Ton email est :".$email. " </p>";
 }
 
-if (empty($mdp)) {
+if (empty($_POST['mdp'])) {
   $mesage5 = "<p class='atention'> champ Mots de passe n'est pas remplie </p>";
+  # desou pour eviter eruer de declaration
+  $mesage7 = "";
+  $mesage8 ="";
+
+}else {
+  $mdp = $_POST['mdp'];
+  $mesage5 = "<p class = 'ok'> mots passe remplie  </p>";
 }
 
 
-if (empty($comfimez_mdp)) {
+if (empty($_POST['comfimez_mdp'])) {
   $mesage6 = "<p class='atention'> champ Comfimez most n'est pas remplie </p>";
-  if( (!empty($comfimez_mdp)) AND (!empty($mdp)) ){
-    if ($comfimez_mdp == $mdp){
-      $mesage6 = "<p class='ok'> champ Comfimez est Mots de passe OK </p>";
-    }else {
-      $mesage6 = "<p> les champ mot de passe et Comfimez ne som pas identique </p>";
-    }
-  }
+  # desou pour eviter eruer de declaration
+  $mesage7 = "";
+  $mesage8 ="";
+
+}else {
+  $comfimez_mdp = $_POST['comfimez_mdp'];
+  $mesage6 = "<p class = 'ok'> Comfimez mots passe remplie  </p>";
 
 }
 
+if( (!empty($comfimez_mdp)) AND (!empty($mdp)) ){
+  $mesage7 = "<p> CHAMPS MOTS PASSE REMPLIE </p>";
+  if ($comfimez_mdp == $mdp){
+    $mesage8 = "<p class='ok'> les MOTS DE PASSE son Identique et Renplie </p>";
+  }else {
+    $mesage8 = "<p class = 'danger'> les champ mot de passe et Comfimez ne som pas identique </p>";
+  }
+}
 
 ?>
 
@@ -99,6 +114,8 @@ if (empty($comfimez_mdp)) {
 
         </form>
       </div>
+        <?php echo var_dump($_POST); ?>
+
       <?php if (isset($valider)): ?>
         <div class="reponse_form">
         <p>votre prenon est : <?php echo $prenom; ?></p>
@@ -118,6 +135,10 @@ if (empty($comfimez_mdp)) {
           echo "<br>". $mesage4 ."<br>";
           echo "<br>". $mesage5 ."<br>";
           echo "<br>". $mesage6 ."<br>";
+
+            echo "<br>". $mesage7 ."<br>";
+              echo "<br>". $mesage8 ."<br>";
+
           ?>
       </div>
 
