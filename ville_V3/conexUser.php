@@ -1,72 +1,57 @@
-<?php  require('inc_conextion.php'); ?>
+<?php  require('inc_conextion.php');
 
-<?php if (isset($_POST['valider'])) {
-  $valider = $_POST['valider'];
+if (!empty($_POST)) {
+    extract($_POST);
+    $valid = true;
 
-  $comfimez_mdp = $_POST['comfimez_mdp'];
-  $mesage = "verifier vaux information";
-  require('inc_fonction.php');
-}
+    if (isset($_POST['inscription'])) {
+      echo print_r($_POST)."<br>";
+      #gras extract recuperation et sinplifcation des variable
+      $prenom ="";
+       $nom = "";
+       $pseudo = "";
+       $email = "";
+       $password = "";
 
-if (empty($prenom)) {
-  $mesage1 = "<p class='atention'> champ Prenom n'est pas remplie </p>";
-} else {
-  $mesage1 = "<p class = 'ok'> Ton prenom est :".$prenom. " </p>";
-}
+       echo "<br> teste2".$_POST['password']."<br>";
 
+     function secur($modif){
+       $modif = (string) trim($modif);
+       $modif = (string) stripslashes($modif);
+       $modif = (string) strip_tags($modif);
+       $modif = (string) htmlspecialchars($modif);
+       return $modif;
+       }
 
-if (empty($nom)) {
-  $mesage2 = "<p class='atention'> champ Nom n'est pas remplie </p>";
-} else {
-  $mesage2 = "<p class = 'ok'> Ton nom est :".$nom. " </p>";
-}
+       $prenom = secur($_POST['prenom']);
+       $nom = secur($_POST['nom']);
+       $pseudo = secur($_POST['pseudo']);
+       $email = secur($_POST['email']);
+       $password = secur($_POST['password']);
 
-if (empty($pseudo)) {
-  $mesage3 = "<p class='atention'> champ pseudo n'est pas remplie </p>";
-} else {
-  $mesage3 = "<p class = 'ok'> Ton pseudo est :".$pseudo. " </p>";
-}
-
-if (empty($email)) {
-  $mesage4 = "<p class='atention'> champ email n'est pas remplie </p>";
-} else {
-  $mesage4 = "<p class = 'ok'> Ton email est :".$email. " </p>";
-}
-
-if (empty($_POST['mdp'])) {
-  $mesage5 = "<p class='atention'> champ Mots de passe n'est pas remplie </p>";
-  # desou pour eviter eruer de declaration
-  $mesage7 = "";
-  $mesage8 ="";
-
-}else {
-  $mdp = $_POST['mdp'];
-  $mesage5 = "<p class = 'ok'> mots passe remplie  </p>";
-}
+       echo "tont prenom :".$prenom."sa marche<br>";
+       echo "tont prenom :".$nom."sa marche<br>";
+       echo "tont speudo :".$pseudo."sa marche<br>";
+       echo "tont email :".$email."sa marche<br>";
+       echo "tont mots de passe :".$password."sa marche<br>";
 
 
-if (empty($_POST['comfimez_mdp'])) {
-  $mesage6 = "<p class='atention'> champ Comfimez most n'est pas remplie </p>";
-  # desou pour eviter eruer de declaration
-  $mesage7 = "";
-  $mesage8 ="";
 
-}else {
-  $comfimez_mdp = $_POST['comfimez_mdp'];
-  $mesage6 = "<p class = 'ok'> Comfimez mots passe remplie  </p>";
+         if ($valid) {
+            $password =crypt($password,'$6$rounds=5000$usesomesillystringforsalt$');
 
-}
 
-if( (!empty($comfimez_mdp)) AND (!empty($mdp)) ){
-  $mesage7 = "<p> CHAMPS MOTS PASSE REMPLIE </p>";
-  if ($comfimez_mdp == $mdp){
-    $mesage8 = "<p class='ok'> les MOTS DE PASSE son Identique et Renplie </p>";
-  }else {
-    $mesage8 = "<p class = 'danger'> les champ mot de passe et Comfimez ne som pas identique </p>";
-  }
+
+           $mysqli->query('INSERT INTO user
+             ( nom,prenom,speudo,user_password,user_login )
+             VALUES
+             ("'. $prenom .'", "'. $nom .'","'. $pseudo .'","'. $password .'","'. $email .'" )');
+         }
+    }
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -80,66 +65,41 @@ if( (!empty($comfimez_mdp)) AND (!empty($mdp)) ){
       <?php require('inc_menue.php');?>
     </header>
     <main>
-      <h1> nouvelle ulilisateure</h1>
+      <h1> inscription nouvelle ulilisateure</h1>
 
       <div class="form_New_User">
         <form class="New_User" action="conexUser.php" method="post">
 
           <p>
             <label for="prenom">Tapez votre Prenom :</label>
-             <input  id= "prenom" type="text" name="prenom" autocomplete="off" placeholder="prenom" >
+             <input  id= "prenom" type="text" name="prenom" placeholder="prenom">
           </p>
           <p>
             <label for="nom">Tapez votre Nom :</label>
-             <input  id= "nom" type="text" name="nom"  placeholder="nom" >
+             <input  id= "nom" type="text" name="nom" placeholder="nom" >
           </p>
           <p>
             <label for="pseudo">Tapez votre Pseudo :</label>
-             <input  id= "pseudo" type="text" name="pseudo"  placeholder="pseudo" >
+             <input  id= "pseudo" type="text" name="pseudo" placeholder="pseudo" >
           </p>
           <p>
             <label for="email">Tapez votre email:</label>
-             <input  id= "email" type="email" name="email"  placeholder="nom.prenom@gmail.com" >
+             <input  id= "email" type="email" name="email" placeholder="nom.prenom@gmail.com" >
           </p>
           <p>
             <label for="mdp">Tapez votre Mots de passe:</label>
-            <input  id="mdp" type="password" name="mdp" placeholder="mots de passe" >
-          </p>
-          <p>
-            <label for="comfimez_mdp">Confirmez votre Mots de passe:</label>
-            <input  id="comfimez_mdp" type="password" name="comfimez_mdp" placeholder="mots de passe" >
+            <input  id="mdp" type="password" name="password" placeholder="mots de passe" >
           </p>
 
-          <p> <input type="submit" name="valider" value="valider" > </p>
+
+
+          <p> <input type="submit" name="inscription" value="s'inscrire"> </p>
 
         </form>
       </div>
         <?php echo var_dump($_POST); ?>
 
-      <?php if (isset($valider)): ?>
-        <div class="reponse_form">
-        <p>votre prenon est : <?php echo $prenom; ?></p>
-        <p>votre non est : <?php echo $nom; ?></p>
-        <p>votre speudo est : <?php echo $pseudo; ?></p>
-        <p>votre email est : <?php echo $email; ?></p>
-        <p> <?php echo $mesage; ?> </p>
-        </div>
-      <?php endif; ?>
 
-      <div class="alerte">
-        <?php
-
-          echo "<br>". $mesage1 ."<br>";
-          echo "<br>". $mesage2 ."<br>";
-          echo "<br>". $mesage3 ."<br>";
-          echo "<br>". $mesage4 ."<br>";
-          echo "<br>". $mesage5 ."<br>";
-          echo "<br>". $mesage6 ."<br>";
-
-            echo "<br>". $mesage7 ."<br>";
-              echo "<br>". $mesage8 ."<br>";
-
-          ?>
       </div>
 
 
