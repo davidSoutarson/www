@@ -1,5 +1,5 @@
-<!-- inclustion des requette PHP Mysqé pour afichage -->
-<?php require('bdd_recherche.php'); ?>
+<?php
+require('bdd_recherche.php'); ?>
 
 
 
@@ -23,13 +23,11 @@
       <li class="menue-pays"> <a href="#"> Pays </a>
 
         <ul  class="sousmenu">
-        <?php
-          while ($pays_row= $result2->fetch_array())
-          {
-            // code... 3.b creation d'un array pour afichage hors de la boucle
-           echo "<li> <a href='ville.php?id=$pays_row[pays_id]'>" .$pays_row['pays_nom']." </a> </li>" ;
-          }
-          ?>
+          <?php foreach ($pays as $id => $pays) : ?>
+            <li>
+              <a href="pays.php?id=<?php echo $id ?>"><?php echo $pays ?></a>
+           </li>
+          <?php endforeach ?>
         </ul>
       </li>
 
@@ -39,7 +37,8 @@
 
         <ul class="sousmenu">
           <!-- Utilisation de foreach sur variable isue base de donner user -->
-          <li > <a  href="conexUser.php">nouvelle-conection</a> </li>
+          <li > <a  href="creerUser.php">nouvelle-conection</a> </li>
+          <li> <a href="conectionUser.php">conextion</a> </li>
           <li > <a  href="#">Conecter</a> </li>
           <li > <a  href="#">Déconecter</a> </li>
         </ul>

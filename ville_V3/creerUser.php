@@ -5,15 +5,13 @@ if (!empty($_POST)) {
     $valid = true;
 
     if (isset($_POST['inscription'])) {
-      echo print_r($_POST)."<br>";
+
       #gras extract recuperation et sinplifcation des variable
       $prenom ="";
        $nom = "";
        $pseudo = "";
        $email = "";
        $password = "";
-
-       echo "<br> teste2".$_POST['password']."<br>";
 
      function secur($modif){
        $modif = (string) trim($modif);
@@ -29,27 +27,24 @@ if (!empty($_POST)) {
        $email = secur($_POST['email']);
        $password = secur($_POST['password']);
 
-       echo "tont prenom :".$prenom."sa marche<br>";
-       echo "tont prenom :".$nom."sa marche<br>";
-       echo "tont speudo :".$pseudo."sa marche<br>";
-       echo "tont email :".$email."sa marche<br>";
-       echo "tont mots de passe :".$password."sa marche<br>";
-
-
 
          if ($valid) {
-            $password =crypt($password,'$6$rounds=5000$usesomesillystringforsalt$');
+           session_start();
+
+           $_SESSION['prenom'] = $prenom;
+           $_SESSION['nom'] = $nom;
+           $_SESSION['pseudo'] = $pseudo;
 
 
-
-           $mysqli->query('INSERT INTO user
-             ( nom,prenom,speudo,user_password,user_login )
-             VALUES
-             ("'. $prenom .'", "'. $nom .'","'. $pseudo .'","'. $password .'","'. $email .'" )');
          }
     }
 }
 
+//David
+//Soutarson
+//DS
+// triplaxs@gmail.com
+//amoure2020
 ?>
 
 
@@ -97,7 +92,7 @@ if (!empty($_POST)) {
 
         </form>
       </div>
-        <?php echo var_dump($_POST); ?>
+
 
 
       </div>
