@@ -25,6 +25,7 @@ $texte = $row['ville_texte'];
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/style.css">
+      <link rel="icon" href="./image/icon.ico">
       <title><?php echo $nom ?></title>
   </head>
   <body>

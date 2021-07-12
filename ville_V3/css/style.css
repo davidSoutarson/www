@@ -15,6 +15,10 @@
   color: green;
 }
 
+ #prenom , #nom , #pseudo {
+  color: pink;
+}
+
 .recherche{
   border: 2px solid #798081;
   padding:10px;

@@ -6,6 +6,7 @@ require('inc_conextion.php'); //conextion bdd ?>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./image/icon.ico">
     <title>Accueil</title>
   </head>
   <body>
