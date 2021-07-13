@@ -1,5 +1,8 @@
-<?php session_start();
-require('inc_conextion.php'); //conextion bdd ?>
+<?php
+require 'fonc_conecter.php';
+forcer_user_connecter();
+require 'inc_conextion.php';
+ //conextion bdd ?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -16,10 +19,8 @@ require('inc_conextion.php'); //conextion bdd ?>
     <main>
       <h1>Accueil villes site</h1>
       <h2>bonjour:<?php
-
-        echo $_SESSION['prenom'];
-        echo $_SESSION['nom'];
-         echo $_SESSION['pseudo']; ?></h2>
+        echo $_SESSION['prenom']. " " .$_SESSION['nom'] ."</br> Vautre speudo :"
+          .$_SESSION['pseudo'] ; ?></h2>
 
     <div class="grid">
 

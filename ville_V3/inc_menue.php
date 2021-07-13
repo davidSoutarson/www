@@ -38,9 +38,9 @@ require('bdd_recherche.php'); ?>
         <ul class="sousmenu">
           <!-- Utilisation de foreach sur variable isue base de donner user -->
           <li > <a  href="creerUser.php">nouvelle-conection</a> </li>
-          <li> <a href="conectionUser.php">conextion</a> </li>
+          <li> <a href="conextion.php">conextion</a> </li>
           <li > <a  href="#">Conecter</a> </li>
-          <li > <a  href="#">Déconecter</a> </li>
+          <li class="rouge" > <a  href="deconecter.php">Déconecter</a> </li>
         </ul>
       </li>
     </ul>

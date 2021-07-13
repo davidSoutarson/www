@@ -15,7 +15,7 @@
   color: green;
 }
 
- #prenom , #nom , #pseudo {
+#prenom,#nom,#pseudo,#email {
   color: blue;
 }
 
@@ -180,6 +180,10 @@ nav li:hover .sousmenu{
 
 .menue-uttilisateur .sousmenu li:hover{
   background-color: rgb(200,165,75);
+}
+
+.menue-uttilisateur .sousmenu .rouge:hover{
+  background-color: rgb(255, 0, 0);
 }
 /*_______________main aparase et positon des articcle_______________________*/
 main > h1 {
