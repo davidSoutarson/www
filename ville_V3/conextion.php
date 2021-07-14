@@ -11,6 +11,7 @@ $valid = ture;
           && $_POST['password'] === '123' ){
             session_start();
             $_SESSION['connecte'] = 1 ;
+
             header('Location: index.php');
           }else {
             $alerte = "identification incorecte";
@@ -19,6 +20,7 @@ $valid = ture;
 }
  require('inc_conextion.php');
 //declaration variable vide
+
 
 ?>
 
@@ -63,7 +65,7 @@ $valid = ture;
         </form>
       </div>
       <div >
-        <?php require 'creerUser.php' ?>
+
       </div>
     </main>
   </body>

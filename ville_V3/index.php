@@ -18,9 +18,7 @@ require 'inc_conextion.php';
     </header>
     <main>
       <h1>Accueil villes site</h1>
-      <h2>bonjour:<?php
-        echo $_SESSION['prenom']. " " .$_SESSION['nom'] ."</br> Vautre speudo :"
-          .$_SESSION['pseudo'] ; ?></h2>
+      <h2>bonjour: </h2>
 
     <div class="grid">
 

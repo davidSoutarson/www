@@ -1,8 +1,6 @@
 <?php
 require('bdd_recherche.php'); ?>
 
-
-
 <div class="menue-prinsipale">
   <nav >
     <ul >
@@ -33,8 +31,11 @@ require('bdd_recherche.php'); ?>
 
 
       <li class="menue-administration"> <a  href="#">Administration</a> </li>
-      <li class="menue-uttilisateur"> <a  href="#"> Utilisateur </a>
+        <ul class="sousmenu">
+          <li> <a href="/admin/index.php"> Administration accueil </a> </li>
+          </ul>
 
+      <li class="menue-uttilisateur"> <a  href="#"> Utilisateur </a>
         <ul class="sousmenu">
           <!-- Utilisation de foreach sur variable isue base de donner user -->
           <li > <a  href="creerUser.php">nouvelle-conection</a> </li>
