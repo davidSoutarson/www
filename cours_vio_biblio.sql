@@ -119,3 +119,5 @@ INNER JOIN villes
 WHERE villes.pays_id GROUP BY
 pays_nom
 ORDER BY pays_nom/*
+
+// fr es al ru it ja

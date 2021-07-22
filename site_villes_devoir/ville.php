@@ -1,9 +1,15 @@
-<?php require 'header.php';?>
+<?php
+require 'menu.php';
+?>
 
 <?php
+//srypte
 #### variable declaration ####
 
 $id = $_GET['id']; #recuperation id lien url avec GET
+
+/* LES varible suivente son déclarer pour eviter une Erreur de tipe undefine variable
+sans l'utlisation de conditionelle */
 
 $ville_nomP = '';
 $ville_texteP ='';
@@ -31,13 +37,11 @@ while ($row= $result->fetch_array(MYSQLI_BOTH)) {
 
 }
 
-
  ?>
 <!-- afichage html -->
-
-<?php require 'menu.php'; ?><!-- afichage du nemue -->
-
-<main>
+<?php
+  require 'bar_de_recherche.php';
+ ?>
 
   <h2>page des villes</h2>
 
@@ -58,6 +62,6 @@ while ($row= $result->fetch_array(MYSQLI_BOTH)) {
 
 </article>
 
-</main>
+
 
 <?php require 'footeur.php';?>

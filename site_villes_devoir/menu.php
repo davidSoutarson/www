@@ -1,5 +1,14 @@
 <?php require 'header.php'; ?>
 
+<?php
+//srypte
+ ?>
+<!-- afichage html -->
+
+<div class="logot">
+  <h1>image logot</h1>
+</div>
+
 <nav>
   <ul>
     <li> <a href="index.php"> accueil</a> </li>
