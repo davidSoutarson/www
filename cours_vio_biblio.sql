@@ -41,7 +41,7 @@ SELECT prenom, nom FROM Auteur WHERE nat ="francaise" AND prenoms="Paul" like tr
 /* 9- Quels sont les noms des auteurs de nationalité anglaise ou espagnole ? */
 SELECT nom FROM Auteur WHERE nat in ('angaise','espagnole')
 /* 10- Quels sont les noms des auteurs qui n'ont pas la nationalité française ? */
-SELECT nom FROM Auteur WHERE nat not-in ('angaise','espagnole')
+SELECT nom FROM Auteur WHERE nat NOT IN ('angaise','espagnole')
 /* 11- Combien y a-t-il d'auteurs de nationalité française ? */
 SELECT count(distinct(nat)) as nb_nat FROM auteur
 /* 12- Combien y a-t-il de nationalités ? */

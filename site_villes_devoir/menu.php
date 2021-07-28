@@ -13,8 +13,16 @@
   <ul>
     <li> <a href="index.php"> accueil</a> </li>
 
-    <li> <a href="ville.php?id=''">ville</a> </li>
-    <li> <a href="pays.php?id=''">pays</a> </li>
+    <li> <a href="ville.php?id=''">ville</a>
+        <ul>
+          <li> <?php require 'recherche_villes.php' ?></li>
+        </ul>
+  </li>
+    <li> <a href="pays.php?id=''">pays</a>
+        <ul>
+          <li> <?php require 'recherche_pays.php' ?></li>
+        </ul>
+    </li>
 
     <li> <a href="admin/index"></a>Admimistrateur
       <ul>

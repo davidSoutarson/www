@@ -28,9 +28,9 @@ while ($row= $result->fetch_array(MYSQLI_BOTH)) {
 
 /* Tableau associatif et numérique  utilisation mode optinelle MYSQLI_BOTH EN argumet de la fontion fetch_array()*/
 $requet = 'SELECT ville_id,ville_nom,ville_texte FROM villes WHERE ville_id='.$id;
-$result = $mysqli->query($requet);
+$result2 = $mysqli->query($requet);
 
-while ($row= $result->fetch_array(MYSQLI_BOTH)) {
+while ($row= $result2->fetch_array(MYSQLI_BOTH)) {
   $ville_idP = $row['ville_id'];
   $ville_nomP = $row['ville_nom'];
   $ville_texteP =$row['ville_texte'];

@@ -20,7 +20,7 @@ $requet='SELECT pays_nom
                   FROM pays INNER JOIN villes ON pays.pays_id = villes.pays_id';
 $result = $mysqli->query($requet);
 
-if (  isset($_POST['recherher'])  ) {
+if (  isset($_POST['recherher_pays'])  ) {
     $ok = 1 ;
 
     if ( empty($_POST['input_recherche'])) {
@@ -78,15 +78,15 @@ if (  isset($_POST['recherher'])  ) {
  <div class="bar_de_recherche">
    <form class="bdr" action="" method="post">
 
-     <p> <label for="input_recherche">bar de recherhe </label> </p>
-     <p><?php echo $alert ?></p>
-     <p> <input id=input_recherche type="search" name="input_recherche" value="" placeholder="Sesiser votre recherhe">
+     <p> <label for="input_recherche"> recherher un pays :</label> 
 
-        <input id=R-bouton type="submit" name="recherher" value="RECHERCHER"> </p>
+      <input id=input_recherche type="search" name="input_recherche" value="" placeholder="Sesiser votre recherhe">
 
+        <input id=R-bouton type="submit" name="recherher_pays" value="RECHERCHER"> </p>
+        <p><?php echo $alert ?></p>
    </form>
 
-   <article class="resulta_recherche">
+
 
      <?php if ($ok == 1): ?>
 
@@ -97,18 +97,7 @@ if (  isset($_POST['recherher'])  ) {
 
      <?php endif; ?>
 
-   </article>
-   <article class="resulta_recherche">
 
-     <?php if ($ok == 1): ?>
 
-       <h3> recherhe selectioner une ville </h3>
-       <?php foreach ($villesbd as $id => $ville): ?>
-         <li> <a href="ville.php?id=<?php echo $id ?>"><?php echo $ville ?></a>  </li>
-       <?php endforeach; ?>
-
-     <?php endif; ?>
-
-   </article>
 
  </div>
