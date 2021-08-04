@@ -12,5 +12,4 @@ function securisation($donnees){
   return $donnees;
 }
 
-
  ?>

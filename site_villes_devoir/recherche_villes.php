@@ -33,7 +33,7 @@ if (  isset($_POST['recherher_villes'])  ) {
             if (isset($_POST['input_recherche'])AND !empty($_POST['input_recherche'])) {
               $recherche = ($_POST['input_recherche']);
               $recherche = trim($recherche); // suprime les espase
-              $recherche = strip_tags($recherche); // suprime les entre indsirable <u> paris </u>
+              $recherche = strip_tags($recherche); // suprime les entre indsirable <strong> paris </strong>
 
 
               $R = $recherche.'%';
