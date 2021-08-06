@@ -1,5 +1,6 @@
 <?php
-require 'menu.php';
+require 'header.php';
+require './fonction/inp_secur_fonc.php';
 ?>
 
 <?php
@@ -10,6 +11,21 @@ $result = $mysqli->query($requet);
  ?>
 
 <!-- afichage html -->
+
+<div class="logot">
+  <h1>image logot</h1>
+</div>
+
+<nav>
+  <ul>
+    <li> <a href="#"></a>Uilisateur
+      <ul>
+        <li> <a href="new_user.php"> nouvelle Utilisateur</a> </li>
+        <li> <a href="conection.php"> Ce conectez</a> </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
   <h2> Formulaire de Conection </h2>
 

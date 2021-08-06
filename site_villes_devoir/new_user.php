@@ -1,38 +1,27 @@
 <?php
-require 'menu.php';
-//require 'header.php'; //quand terminer
+session_start();
+if (isset($_SESSION['compte_cree']))
+header('location:index.php');
+//require 'menu.php';
+require 'header.php';
 require './fonction/inp_secur_fonc.php';
 ?>
 
 <?php
-$requet= 'SELECT * FROM user ';
-    $result = $mysqli->query($requet);
+$requet= 'SELECT nom, prenom , pseudo, user_loging FROM user ';
+$result = $mysqli->query($requet);
 
-   while ($row = $result-> fetch_array(MYSQLI_BOTH)){
-     $BD_id = $row['user_id'];
-     $BD_nom = $row['nom'];
-     $BD_prenom = $row['prenom'];
-     $BD_pseudo = $row['pseudo'];
-     $BD_loging = $row['user_loging'];
-     $BD_password = $row['user_password'];
-
-     $user_nom_id[$BD_id] = $BD_nom;
-     $user_prenom_id[$BD_id] = $BD_prenom;
-     $user_pseudo_id[$BD_id] = $BD_pseudo;
-     $user_loging_id[$BD_id] = $BD_loging;
-     $user_password_id[$BD_id] = $BD_password;
-   }
-?>
-<?php
+$mailexist = FALSE;
+$pseudoexist = FALSE;
+$Mpassexist = FALSE;
 
 
 
-
-var_dump($_POST);
+//var_dump($_POST);
 
 #si le Formulaire est envoyer
   if (isset($_POST['valider'])){
-
+      $envoie = TRUE;
 
     if( !empty($_POST['input_nom'])
        AND
@@ -86,54 +75,134 @@ var_dump($_POST);
 
                       if (filter_var($input_loging,FILTER_VALIDATE_EMAIL)) {
 
-                        if ($input_password == $input_password2) {
-                          $requet2 = 'INSERT INTO user (nom,prenom,pseudo,user_loging,user_password) VALUES ("'. $input_nom .'","'. $input_prenom .'","'. $input_pseudo .'","'. $input_loging .'","'. $input_password .'")' ;
-                          $result2 = $mysqli->query( $requet2 );
-                          $mesage = "voutre compte a bien été crée ! ";
-                           }else {
-                             $ereur = "veau mots de passe ne coresponde pas !";
-                           }
+                          $requet2= 'SELECT COUNT(*) FROM user WHERE user_password =  "'.$input_password.'" ';
+                          $result2 = $mysqli->query($requet2);
 
-                        }else {
-                          $ereur ="votre email nes pas valide !";
-                        }
-                      }else {
-                            $ereur = "veau aderse Email ne coresponde pas !";
-                          }
+                            while ($row = $result2-> fetch_array(MYSQLI_BOTH))
+                                {
+                                  $Mpassexist = $row['COUNT(*)'];
+                                }
+
+                          $requet3= 'SELECT * FROM user WHERE user_loging =  "'.$input_loging.'" ';
+                          $result3 = $mysqli->query($requet3);
+
+                            while ($row = $result3-> fetch_array(MYSQLI_BOTH))
+                                {
+                                  $mailexist = $row['user_loging'];
+                                }
+
+                          $requet4= 'SELECT * FROM user WHERE  pseudo = "'.$input_pseudo.'" ';
+                          $result4 = $mysqli->query($requet4);
+
+                            while ($row = $result4-> fetch_array(MYSQLI_BOTH))
+                                {
+                                  $pseudoexist = $row['pseudo'];
+                                }
+
+                  if (!$pseudoexist) {
+                    if (!$mailexist) {
+                      if (!$Mpassexist) {
+
+                          if ($input_password == $input_password2) {
+                            if ($envoie) {
+                              $requet2 = 'INSERT INTO user (nom,prenom,pseudo,user_loging,user_password) VALUES ("'. $input_nom .'","'. $input_prenom .'","'. $input_pseudo .'","'. $input_loging .'","'. $input_password .'")' ;
+                              $result2 = $mysqli->query( $requet2 );
+                              $requet= 'SELECT nom, pseudo, user_loging FROM user WHERE nom = "'.$input_nom.'" AND pseudo = "'.$input_pseudo.'" AND user_loging = "'.$input_loging.'" ';
+                              $result = $mysqli->query($requet);
+                              while ($row = $result-> fetch_array(MYSQLI_BOTH))
+                                  {
+                                    $BD_nom = $row['nom'];
+                                    $BD_pseudo = $row['pseudo'];
+                                    $BD_emaile =$row['user_loging'];
+                                  }
+
+                              $mesage ="<p> voutre compte a bien été crée ! </p>";
+                              session_start(); //-- creation de session pour envoi ou partage
+
+                              $_SESSION['conectez'] = $conectez = TRUE;
+
+                              $_SESSION['compte_cree'] = $mesage;
+                              $_SESSION['compt_nom'] = $BD_nom;
+                              $_SESSION['compt_pseudo'] = $BD_pseudo;
+                              $_SESSION['compt_maile'] = $BD_emaile;
+
+                              header('location:index.php');
+                            }
+
+                            }else {
+                                    $ereur = "veau mots de passe ne coresponde pas !";
+                                  }
 
 
-                }  else {
-                $ereur = "votre Email ne doit depasser 50 caractéres !";
-                }
+                       }else {
+                         $ereur = "Votre mots de passe est déja utilisée !";
+                         $envoie = FALSE;
+                       }
 
-     }else {
-         $ereur = "tout les champs doive etre completer !";
-       }
+                     }else {
+                       $ereur = "Votre email est déja utilisée !";
+                       $envoie = FALSE;
+                     }
+
+                  }else {
+                    $ereur = "Votre pseudo est déja utilisée !";
+                    $envoie = FALSE;
+                  }
+          }else {
+                  $ereur ="votre email nes pas valide !";
+                                      }
+  }else {
+          $ereur = "Veaux aderse Email ne coresponde pas !";
+        }
+
+
+} else {
+        $ereur = "votre Email ne doit depasser 50 caractéres !";
+        }
+
+}else {
+        $ereur = "tout les champs doive etre completer !";
+      }
+
 }
 
  ?>
 
 <!-- afichage html -->
 
+<div class="logot">
+  <h1>image logot</h1>
+</div>
+
+<nav>
+  <ul>
+    <li> <a href="#"></a>Uilisateur
+      <ul>
+        <li> <a href="new_user.php"> nouvelle Utilisateur</a> </li>
+        <li> <a href="conection.php"> Ce conectez</a> </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
   <h2> Formulaire d'insription </h2>
 
 <article class="">
 
   <div class="alert">
-<p>____________________________________________</p>
+
   <?php if (isset($ereur)) {
-    echo $ereur;
+    echo $ereur ."<br>";
   } ?>
 
   <?php if (isset($mesage)) {
-    echo $mesage;
+    echo $mesage."<br>";
   } ?>
-<p>________________________________________</p>
+
+  </div>
 
   <form class="" action="" method="post">
 
-
-    </div>
 
     <div class="form_gour">
         <p> <label for="input_nom">Taper votre Nom :</label>
@@ -187,9 +256,9 @@ var_dump($_POST);
     </div>
 
     <div class="form_gour">
-        <label for="input_loging">Confirmer votre Email :</label>
+        <label for="input_loging2">Confirmer votre Email :</label>
         <input type="email"
-                id="input_loging"
+                id="input_loging2"
                 name="input_loging2"
                 <?php if (isset($input_loging2)): ?>
                        <?php echo "value='".$input_loging."'" ?>
@@ -220,9 +289,8 @@ var_dump($_POST);
 
     </div>
 
-
-
     <div class="">
+
       <input type="submit" name="valider" value="valider">
     </div>
 

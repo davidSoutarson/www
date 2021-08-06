@@ -1,7 +1,7 @@
 <?php
+session_start(); //inisialisation de la session
 require 'header.php';
 require 'menu.php';
-
 ?>
 
 <?php
@@ -27,6 +27,16 @@ $result = $mysqli->query($requet);
     <p> Salutation personaliser !!!</p>
 
     <p> Proposion de recher personaliser !!!</p>
+
+
+      <?php
+         echo $_SESSION['compte_cree'];
+         echo"<p> Bomjour :".$_SESSION['compt_nom'] ."</p>";
+         echo"<p> pseudo utilisateure :". $_SESSION['compt_pseudo'] ."</p>";
+         echo'<p> votre email :' .$_SESSION['compt_maile'] .'</p>';
+         
+         var_dump($_SESSION)
+      ?>
 
   </article>
 
