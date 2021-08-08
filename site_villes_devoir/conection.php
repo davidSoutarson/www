@@ -11,8 +11,15 @@ $requet='SELECT * FROM user';
 $result = $mysqli->query($requet);
 
 if (isset($_POST['connexion'])) {
-  $envoie = TRUE;
-      //var_dump($_POST);
+
+      var_dump($_POST);
+
+      $input_pseudo =securisation($_POST['input_pseudo']);
+      $input_loging =securisation($_POST['input_email']);
+      $input_password = sha1($_POST['input_password']);
+var_dump($_POST);
+
+    $envoie = TRUE;
 
   if (!empty($_POST['input_pseudo'])
     AND
@@ -22,7 +29,7 @@ if (isset($_POST['connexion'])) {
     {
       $input_pseudo =securisation($_POST['input_pseudo']);
       $input_loging =securisation($_POST['input_email']);
-      $input_password =sha1 ($_POST['input_password']);
+      $input_password = sha1 ($_POST['input_password']);
 
       $requet='SELECT * FROM user WHERE pseudo = "'.$input_pseudo.'"  AND user_loging = "'.$input_loging.'" AND user_password ="'.$input_password.'" ';
       $result = $mysqli->query($requet);
@@ -70,6 +77,7 @@ if (isset($_POST['connexion'])) {
     <li> <a href="#"></a>Uilisateur </li>
     <p>si vous n'aver pas dejat un compte cliqez sur nouvelle utilisateure</p>
       <ul>
+      <!--  <li>  <a href="index.php">teste go accueil</a>   </li> -->
         <li> <a href="new_user.php"> nouvelle Utilisateur</a> </li>
         <li> <a href="conection.php"> Ce conectez</a> </li>
       </ul>
@@ -115,8 +123,7 @@ if (isset($_POST['connexion'])) {
   </div>
   </form>
 
-
-    <?php var_dump($_POST) ?>
+    <?php //var_dump($_POST) ?>
 </article>
 
 <?php require 'footeur.php'; ?>

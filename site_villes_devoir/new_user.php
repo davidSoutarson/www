@@ -27,6 +27,8 @@ $Mpassexist = FALSE;
       $input_password =sha1 ($_POST['input_password']);
       $input_password2 =sha1 ($_POST['input_password2']);
 
+
+
     if( !empty($_POST['input_nom'])
        AND
        !empty($_POST['input_prenom'])
@@ -118,8 +120,8 @@ $Mpassexist = FALSE;
                               session_start(); //-- creation de session pour envoi ou partage et il prix en compte
                               $_SESSION['compte_cree'] = $mesage;
                               $_SESSION['compt_nom'] ="<p> Bomjour :". $BD_nom ."</p>";
-                              $_SESSION['compt_pseudo'] = "<p> pseudo utilisateure :". $BD_pseudo ."</p>";
-                              $_SESSION['compt_maile'] = '<p> votre email :' . $BD_emaile ."</p>";
+                              $_SESSION['compt_pseudo'] = "<p>Votre pseudo utilisateur :". $BD_pseudo ." sera ulilisée lors de vos prochaine connexion .</p>";
+                              $_SESSION['compt_maile'] = "<p> votre email utilisateur :" . $BD_emaile ."sera ulilisée lors de vos prochaine connexion </p>";
 
                               $_SESSION['conectez']= "";
                               $_SESSION['conect_pseudo'] = "";

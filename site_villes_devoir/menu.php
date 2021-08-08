@@ -24,14 +24,14 @@
         </ul>
     </li>
 
-    <li> <a href="admin/index"></a>Admimistrateur
+    <li> <a href="admin/index.php">Admimistrateur</a></li>
       <ul>
-        <li> <a href="#"> Conection admin</a> </li>
-        <li> <a href="#"> Creation</a> </li>
-        <li> <a href="#"> Deconection admin</a> </li>
+        <li> <a href="admin/admin_conection_user.php"> Conection admin</a> </li>
+        <li> <a href="admin/admin_new_user.php"> Creation</a> </li>
+        <li> <a href="admin/deconecter2.php"> Deconection admin</a> </li>
       </ul>
     </li>
-    <li> <a href="#"></a>Uilisateur
+    <li> <a href="#">Uilisateur</a></li>
       <ul>
         <li> <a href="new_user.php"> nouvelle Utilisateur</a> </li>
         <li> <a href="conection.php"> Ce conectez</a> </li>
