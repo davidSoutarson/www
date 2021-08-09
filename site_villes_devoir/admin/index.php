@@ -76,6 +76,9 @@ while ($pays_row= $result2->fetch_array())
 
         <h2>Gestion des Villes et Pays.</h2>
 
+        <li><a href="ajoutDEPays.php">FONCTION ajouter un Pays</a></li>
+        <li><a href="ajout.php">FONCTION ajouter une Villes</a></li>
+
         <p>liste ville</p>
           <ul>
             <?php foreach ($villes as $id => $ville) : ?>

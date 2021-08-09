@@ -9,11 +9,11 @@ contient la conection a la base de donner
 
  <!DOCTYPE html>
  <html lang="fr" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="/css/master.css">
-     <link rel="icon" href="../image/icon.ico">
-     <title>tp villes site</title>
-   </head>
-   <body>
-     <main>
+ <head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="/css/master.css">
+   <link rel="icon" href="../image/icon.ico">
+   <title>tp villes site</title>
+ </head>
+ <body>
+   <main>

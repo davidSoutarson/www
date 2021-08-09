@@ -107,18 +107,20 @@ $Mpassexist = FALSE;
                             if ($envoie) {
                               $requet2 = 'INSERT INTO user (nom,prenom,pseudo,user_loging,user_password) VALUES ("'. $input_nom .'","'. $input_prenom .'","'. $input_pseudo .'","'. $input_loging .'","'. $input_password .'")' ;
                               $result2 = $mysqli->query( $requet2 );
-                              $requet= 'SELECT nom, pseudo, user_loging FROM user WHERE nom = "'.$input_nom.'" AND pseudo = "'.$input_pseudo.'" AND user_loging = "'.$input_loging.'" ';
+                              $requet= 'SELECT user_id,nom, pseudo, user_loging FROM user WHERE nom = "'.$input_nom.'" AND pseudo = "'.$input_pseudo.'" AND user_loging = "'.$input_loging.'" ';
                               $result = $mysqli->query($requet);
                               while ($row = $result-> fetch_array(MYSQLI_BOTH))
                                   {
                                     $BD_nom = $row['nom'];
                                     $BD_pseudo = $row['pseudo'];
                                     $BD_emaile =$row['user_loging'];
+                                    $user_id = $row['user_id'];
                                   }
 
                               $mesage ="<p> voutre compte a bien été crée ! </p> ";
                               session_start(); //-- creation de session pour envoi ou partage et il prix en compte
                               $_SESSION['compte_cree'] = $mesage;
+                              $_SESSION['user_id'] = $user_id ;
                               $_SESSION['compt_nom'] ="<p> Bomjour :". $BD_nom ."</p>";
                               $_SESSION['compt_pseudo'] = "<p>Votre pseudo utilisateur :". $BD_pseudo ." sera ulilisée lors de vos prochaine connexion .</p>";
                               $_SESSION['compt_maile'] = "<p> votre email utilisateur :" . $BD_emaile ."sera ulilisée lors de vos prochaine connexion </p>";

@@ -1,4 +1,9 @@
 <?php
+session_start(); //inisialisation de la session
+if (!isset($_SESSION['compte_cree']) AND !isset($_SESSION['conectez']) ) {
+  header('location:conection.php');
+}
+
 require 'menu.php';
 ?>
 

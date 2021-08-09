@@ -86,7 +86,7 @@ $id = $_GET['id'];
 
 		<div>
 			<h2>
-				Ajouter une ville
+				modifier une ville
 			</h2>
 
 			<?php if(isset($message)) echo $message  ?>

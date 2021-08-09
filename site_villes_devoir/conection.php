@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 require 'header.php';
 require './fonction/inp_secur_fonc.php';
 ?>
@@ -37,9 +37,15 @@ var_dump($_POST);
 
       if ($row_conect == 1) {
 
+        while ($row = $result-> fetch_array(MYSQLI_BOTH))
+            {
+              $user_id = $row['user_id'];
+            }
+
         $mesage ="<p> Conection reusie: Bien venue  ! </p> ";
-        session_start();
+        //session_start();
         $_SESSION['conectez'] = $mesage;
+        $_SESSION['user_id'] = $user_id ;
         $_SESSION['conect_pseudo'] ="<p> Bomjour :". $input_pseudo ."</p>";
         $_SESSION['conect_loging'] = '<p> votre email :'. $input_loging ."</p>";
 

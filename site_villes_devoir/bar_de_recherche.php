@@ -1,4 +1,8 @@
 <?php
+//session_start(); //inisialisation de la session
+if (!isset($_SESSION['compte_cree']) AND !isset($_SESSION['conectez']) ) {
+  header('location:conection.php');
+}
 
 $result = "";
 $row = "";
@@ -69,6 +73,9 @@ if (  isset($_POST['recherher'])  ) {
 
 }else {
   $ok= 0;
+//INSERT INTO `user_searchs` (`user_searchs_id`, `user_id`, `ville_id`, `pays_id`) VALUES ('1', '1', '1', '1');
+//  $user_id = $_SESSION['user_id'];
+//echo "<p> teste ".$id ."||".$user_id ." </p>";
 }
 
  ?>
@@ -93,6 +100,18 @@ if (  isset($_POST['recherher'])  ) {
        <h3>recherhe selectioner un pays</h3>
      <?php foreach ($paysbd as $id => $pays) : ?>
          <li> <a href="pays.php?id=<?php echo $id ?>"><?php echo $pays ?></a>  </li>
+         <?php
+         //teste recuperation  des variable user_id et user_ville APRES utilistion recherche_villes :) siconecter bien
+         $user_id = $_SESSION['user_id'];
+
+         $_SESSION['pays_id'] = $id;
+
+         $pays_id[] = $_SESSION['pays_id'];
+
+         $_SESSION['pays_id'] = $pays_id;
+
+         echo " pays_id ".print_r($pays_id) ."||user_id:".$user_id ;
+         ?>
        <?php endforeach ?>
 
      <?php endif; ?>
@@ -105,6 +124,19 @@ if (  isset($_POST['recherher'])  ) {
        <h3> recherhe selectioner une ville </h3>
        <?php foreach ($villesbd as $id => $ville): ?>
          <li> <a href="ville.php?id=<?php echo $id ?>"><?php echo $ville ?></a>  </li>
+
+         <?php
+         //teste recuperation  des variable user_id et user_ville APRES utilistion recherche_villes :) siconecter bien
+         $user_id = $_SESSION['user_id'];
+
+         $_SESSION['ville_id'] = $id;
+
+         $ville_id[] = $_SESSION['ville_id'];
+
+         $_SESSION['ville_id'] = $ville_id;
+
+         echo " ville_id ".print_r($ville_id) ."||user_id:".$user_id ;
+         ?>
        <?php endforeach; ?>
 
      <?php endif; ?>

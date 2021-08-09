@@ -45,9 +45,10 @@ $result = $mysqli->query($requet);
 
           }
 
-         //var_dump($_SESSION);
+         var_dump($_SESSION);
       }
 
+      print_r($_SESSION['ville_id'])
       ?>
 
   </article>
