@@ -13,7 +13,7 @@
 <nav>
 
   <ul>
-    <li> <a href="index.php"> accueil_admin</a> </li>
+
     <li> <a href="../index.php"> accueil_visiteur</a> </li>
 
     <li><a href="#">ville ou pays</a>
@@ -24,7 +24,7 @@
     </li>
 
 
-    <li> <a href="#">getion des droits Admi</a>
+    <li> <a href="index.php"> accueil_admin</a> </li>
       <ul>
         <li> <a href="admin_conection_user.php"> Conection admin</a> </li>
         <li> <a href="admin_new_user.php"> Creation new admin</a> </li>

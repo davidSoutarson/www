@@ -254,7 +254,7 @@ $Mpassexist = FALSE;
 
     <div class="champ">
         <label for="input_loging2">Confirmer votre Email :</label>
-        <input type="email" id="input_loging2" name="input_loging2"
+        <input type="text" id="input_loging2" name="input_loging2"
         <?php if (isset($input_loging2)): ?>
         <?php echo "value='".$input_loging."'" ?>
         <?php endif; ?>placeholder="Email"></p>

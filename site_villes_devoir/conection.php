@@ -54,6 +54,9 @@ var_dump($_POST);
         $_SESSION['compt_pseudo']="";
         $_SESSION['compt_maile']="";
 
+      /*  $_SESSION['pays_id'] = "" ;
+        $_SESSION['ville_id'] = "" ;*/
+
         if ($envoie ) {
          header('location:index.php');
         }

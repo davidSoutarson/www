@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION['compte_cree']) AND !isset($_SESSION['conectez']) ) {
+  header('location:conection.php');
+}
+
 $result = "";
 $row = "";
 
@@ -70,8 +74,6 @@ if (  isset($_POST['recherher_villes'])  ) {
 }else {
   $ok= 0;
 
-  //INSERT INTO `user_searchs` (`user_searchs_id`, `user_id`, `ville_id`, `pays_id`) VALUES ('1', '1', '1', '1');
-
 }
 
 ?>
@@ -102,15 +104,22 @@ if (  isset($_POST['recherher_villes'])  ) {
 
         <?php
         //teste recuperation  des variable user_id et user_ville APRES utilistion recherche_villes :) siconecter bien
-        $user_id = $_SESSION['user_id'];
+        $_SESSION['user_id'];
+
+
 
         $_SESSION['ville_id'] = $id;
-
         $ville_id[] = $_SESSION['ville_id'];
-
         $_SESSION['ville_id'] = $ville_id;
 
-        echo " ville_id ".print_r($ville_id) ."||user_id:".$user_id ;
+
+
+        $_SESSION['ville_nom'] = $ville;
+        $ville_nom[] = $_SESSION['ville_nom'];
+        $_SESSION['ville_nom'] = $ville_nom;
+
+
+
         ?>
 
       <?php endforeach; ?>

@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($_SESSION['compte_cree']) AND !isset($_SESSION['conectez']) ) {
+  header('location:conection.php');
+}
+
 $result = "";
 $row = "";
 
@@ -70,8 +74,6 @@ if (  isset($_POST['recherher_pays'])  ) {
 }else {
   $ok= 0;
 
-  //INSERT INTO `user_searchs` (`user_searchs_id`, `user_id`, `ville_id`, `pays_id`) VALUES ('1', '1', '1', '1');
-
 }
 
 ?>
@@ -110,7 +112,18 @@ if (  isset($_POST['recherher_pays'])  ) {
 
         $_SESSION['pays_id'] = $pays_id;
 
-        echo " pays_id ".print_r($pays_id) ."||user_id:".$user_id ;
+
+        $_SESSION['pays_nom'] = $pays;
+
+        $pays_nom[] = $_SESSION['pays_nom'];
+
+        $_SESSION['pays_nom'] = $pays_nom;
+
+
+
+
+
+
         ?>
 
       <?php endforeach ?>

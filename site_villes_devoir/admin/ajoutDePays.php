@@ -48,7 +48,7 @@ if (isset($_POST['submit_form']))
         VALUES
         ("'. $pays_nom .'", "'.$pays_nom.'")'))
         {
-          $message =  '<p class="message">Ajout de pays: '.$pays_nom.' est efectuer </p>';
+          $message =  '<p class="message">Ajout de pays: '.$pays_nom.' est efectuer  <li> <a href="index.php"> accueil_admin</a> </li> </p>';
         }
         else
         {

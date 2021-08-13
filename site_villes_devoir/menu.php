@@ -40,6 +40,7 @@
 
     <li> <a href="#">Uilisateur</a>
       <ul>
+        <li><a href="afichag_user_recherche.php">afichage_user_recherche</a> </li>
         <li> <a href="new_user.php"> nouvelle Utilisateur</a> </li>
         <li> <a href="conection.php"> Ce conectez</a> </li>
         <li> <a href="deconecter.php">  Ce deconecter</a> </li>

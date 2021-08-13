@@ -59,7 +59,9 @@ if (isset($_POST['submit_form']))
         VALUES
         ("'. $ville_nom .'", "'. $ville_texte .'" ,"'.$id_pays.'")'))
         {
-          $message =  '<p class="message">Ajout de la ville: '.$ville_nom.' est efectuer '.$id_pays.' </p>';
+          $message =  '<p class="message">Ajout de la ville: '.$ville_nom.' est efectuer '.$id_pays.' <li> <a href="index.php"> accueil_admin</a> </li>  </p>';
+
+
         }
         else
         {
