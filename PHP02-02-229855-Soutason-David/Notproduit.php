@@ -8,6 +8,7 @@ while ($row = $result->fetch_array(MYSQLI_BOTH) ){
   $id_produit = $row['id_produit'];
   $nom_produit = $row['nom_produit'];
   $prix_produit = $row['prix_produit'];
+  
 
   $produitNIP[$id_produit][$nom_produit] = $prix_produit;
 
@@ -26,31 +27,38 @@ while ($row = $result->fetch_array(MYSQLI_BOTH) ){
     <h1>Not produit</h1>
 
     <article class="presentation">
-      <p class="prod">Not produit</p>
-      <p>Afiche la lisete de tout not produit et leur infomation</p>
+      <div class="entete">
+      <h2>Faite vautre choi parmie not produit</h2>
+      <p>ice vous pouvez ajoutere les produits au panier.</p>
+      <p>Vautre panier sera sovegader pandant 15 joure</p>
+      </div>
+      <p class="acroche">Afiche la lisete de tout not produit et leur infomation</p>
 
         <?php foreach ($produitNIP as $id => $b): ?>
           <div class="produit">
-            <form class="" action="" method="post">
-
-            <?php echo "<p>".$id. "</p>"?>
-
+            <form class="" action="Mon_panier.php" method="post">
+              <ul>
             <?php foreach ($b as $nom => $prix): ?>
 
             <?php
-              echo "<p>".$nom. "</p>";
+              echo "<li>".$nom."</li>";
 
-              echo"<p> " .$prix. ".00 € </p>";
+               $prix = number_format($prix,2,',','');
+
+               echo "<li>".$prix."</li>";
             ?>
             <?php endforeach; ?>
 
-              <button type="submit" name="ajouter">Ajouter au panier</button>
+                </ul>
+                <?php  $id ?>
+              <button class="btnAjP" type="submit" name="ajouter" value=<?php echo $id; ?>>Ajouter au panier</button>
+
             </form>
           </div>
 
         <?php endforeach; ?>
 
+        <?php var_dump($_POST) ?>
+
     </article>
  </main>
-
- <?php  require 'footeur.php';  ?>

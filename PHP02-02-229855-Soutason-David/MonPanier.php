@@ -26,7 +26,8 @@
       <p>nom: , prenom:</p>
       <p>email:</p>
       <p>vautre litete de produit comender :</p>
-      <p>nom_produit: prix_uniter: quantiter desisrer:</p>
+
+      <p>nom_produit: prix_uniter: ?quantiter desisrer:?</p>
       <p>quantiter total_article:</p>
       <p>total_prix:</p>
 

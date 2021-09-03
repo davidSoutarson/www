@@ -1,11 +1,14 @@
 *{
   margin: 0px;
   padding: 0px;
+  list-style-type: none;
 }
 
 #wrapeur{
   width: 100%;
 }
+
+/* entete du site + logo + navigation */
 
 header{
     border: 2px solid black;
@@ -18,6 +21,8 @@ header{
   border-right: 2px solid green;
 }
 
+/*menu*/
+
 nav{
     width: 80%;
     margin: 0 auto;
@@ -27,7 +32,6 @@ nav{
 }
 
 nav ul{
-    list-style-type: none;
     display: flex;
 }
 
@@ -79,17 +83,51 @@ nav > ul li:hover .sous{
     font-size: 12px;
 }
 
+/* article et contenue texte des pages */
+
+article.texte {
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgb(206,206,206);
+}
+
+.entete{
+  margin: 10px;
+
+}
+
+.acroche{
+  margin: 30px;
+  color: rgb(49,140,231);/*bleux roi*/
+}
+
+.presentation h3 {
+  margin-bottom: 15px;
+}
+
+.presentation li{
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.mon-devoir{
+  width: 90%;
+  margin: 5px auto;
+  background-color: RGBa(96,96,96,0.2); /*Gris*/
+  color: rgb(49,140,231);/*bleux roi*/
+}
 
 
+/*formulaire client */
 
 h1 {
-  color: green;
+  color:rgb(49,140,231);/*bleux roi*/
 }
 
 
 .client {
   margin: 0 auto;
-  width: 30%;
+  width: 60%;
   border: 2px solid gray;
 
 }
@@ -101,6 +139,14 @@ h1 {
 
 .ereur {
   color: red;
+}
+
+
+.alert{
+display: block;
+background-color: red;
+width: 80%;
+margin: 0 auto;
 }
 
 .client label {
@@ -123,20 +169,56 @@ h1 {
   width: 20%;
 }
 
+/* les produits */
+
 article.presentation{
   display: block;
   margin: 0 auto;
-  width: 80%
+  width: 80%;
+  background-color: rgb(206,206,206);
 }
 
-p.prod {
-  color: red;
+h2.prod {
+margin: 15px;
 }
+
+
+
+input#produit_id{
+  display: block;
+  width: 100px;
+  background-color: rgb(206,206,206);
+  border: none;
+  margin: 5px;
+}
+
+input#produit_nom{
+  display: block;
+  width: 100px;
+  background-color: rgb(206,206,206);
+  border: none;
+  margin: 5px;
+}
+
+input#produit_prix{
+  display: block;
+  width: 100px;
+  background-color: rgb(206,206,206);
+  border: none;
+  margin: 5px;
+}
+
 
 div.produit {
   width: 150px;
-  height: 150px;
+  height: auto;
   border: 2px solid red;
   margin: 5px;
   display: inline-block;
+}
+
+
+ .btnAjP {
+   display: flex;
+   margin: 0 auto;
 }

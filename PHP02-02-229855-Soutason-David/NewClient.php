@@ -6,6 +6,9 @@ require 'header.php';
 #email_client
 #passeword_client
 
+$emailExist = FALSE;
+$passExist = FALSE;
+
 if (isset($_POST['valider'])) {
 
   if (!empty($_POST['input_nom'])) {
@@ -16,7 +19,7 @@ if (isset($_POST['valider'])) {
   }
 
   if (!empty($_POST['input_prenom'])) {
-      $input_prenom =($_POST['input_prenom']);
+    $input_prenom =($_POST['input_prenom']);
   } else {
     $ereur_prenom = "le champ prenom doit etre remplie";
     $ereur = "Tout les champ doive etre remplie";
@@ -50,6 +53,91 @@ if (isset($_POST['valider'])) {
     $ereur = "Tout les champ doive etre remplie";
   }
 
+  if( !empty($_POST['input_nom'])
+  AND
+  !empty($_POST['input_prenom'])
+  AND
+  !empty($_POST['input_email'])
+  AND
+  !empty($_POST['input_conf_email'])
+  AND
+  !empty($_POST['input_password'])
+  AND
+  !empty($_POST['input_conf_password']) ) { #si le Formulaire et totalememt remplie
+
+    if ($input_email == $input_conf_email) { #controle maile identique
+
+      if (filter_var($input_email,FILTER_VALIDATE_EMAIL)) { #controle email valide
+
+        #cretion variable emailExite passwordExite
+
+        $requet1= 'SELECT * FROM clients WHERE email_client =  "'.$input_email.'" ';
+        $result1 = $mysqli->query($requet1);
+
+        while ($row = $result1-> fetch_array(MYSQLI_BOTH))
+        {
+          $emailExist = $row['email_client'];
+        }
+
+        $requet2= 'SELECT COUNT(*) FROM clients WHERE passeword_client =  "'.$input_password.'" ';
+        $result2 = $mysqli->query($requet2);
+
+        while ($row = $result2-> fetch_array(MYSQLI_BOTH))
+        {
+          $passExist = $row['COUNT(*)'];
+        }
+
+          if(!$emailExist){
+
+
+          }else {
+            $emailUtiliser = "L'Email sesie et dejat utiliser ";
+          }
+
+          if (!$passExist){
+
+          }else{
+            $passUtiliser = "Le mots de passe sesie et dejat utiliser ";
+          }
+
+            if (!$passExist AND !$passExist) {
+              if ($input_password == $input_conf_password) { #controle mots de passe identique
+
+                #requet dinsertion
+                $requet3 = 'INSERT INTO clients (nom_cilent,prenom_client,email_client,passeword_client) VALUES ("'. $input_nom .'","'. $input_prenom .'","'. $input_email .'","'. $input_password .'")' ;
+                $result3 = $mysqli->query( $requet3 );
+
+                $requet= 'SELECT id_client , nom_client, prenom_client , email_client FROM user WHERE nom_client = "'.$input_nom.'" AND prenom_client = "'.$input_prenom.'" AND email_client = "'.$input_email.'" ';
+                $result = $mysqli->query($requet);
+                while ($row = $result-> fetch_array(MYSQLI_BOTH))
+                    {
+                      $BD_nom = $row['nom_client'];
+                      $BD_pseudo = $row['prenom_client'];
+                      $BD_emaile =$row['email_client'];
+                      $BD_client_id = $row['id_client'];
+                    }
+
+
+                $mesage = "Vautre incription et terminer mercie";
+
+                #cration de cookie info client pour panier
+
+
+              }
+            }
+
+
+      }else {
+        $ereur3 ="votre email nes pas valide !";
+      }
+
+    }else {
+      $ereur3 = "Les Email sesie ne sont pas identique";
+    }
+
+  }else {
+    $ereur2 = "Tout les champ doive etre remplie Atention";
+  }
 
 }
 
@@ -71,13 +159,23 @@ if (isset($_POST['valider'])) {
 
         <div class="alert">
 
-        <?php if (isset($ereur)) {
-          echo $ereur ."<br>";
-        } ?>
+          <?php if (isset($ereur)) {
+            echo $ereur ."<br>";
+          } ?>
 
-        <?php if (isset($mesage)) {
-          echo $mesage."<br>";
-        } ?>
+          <?php if (isset($ereur2)) {
+            echo $ereur2 ."<br>";
+          } ?>
+
+          <?php if (isset($passUtiliser)) {
+            echo $passUtiliser ."<br>";
+          } ?>
+
+          <?php if (isset($emailUtiliser)) {
+            echo $emailUtiliser ."<br>";
+          } ?>
+
+
 
         </div>
 
@@ -135,7 +233,11 @@ if (isset($_POST['valider'])) {
           } ?>
         </p>
 
-         <input class="bouton" type="submit" name="valider" value="valider">
+        <input class="bouton" type="submit" name="valider" value="valider">
+
+        <?php if (isset($mesage)) {
+          echo $mesage."<br>";
+        } ?>
 
       </form>
 

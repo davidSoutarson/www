@@ -68,6 +68,10 @@ if (isset($_POST['envoyer'])) {
           echo $mesage."<br>";
         } ?>
 
+    
+
+        </div>
+
         <p>
           <label for="input_nom">Nom</label>
           <input id="input_nom" type="text" name="input_nom" value="" placeholder="Nom">
