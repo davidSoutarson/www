@@ -1,6 +1,7 @@
 <?php
 session_start();
 session_destroy();
+require 'header.php';
 
 $mesage = "vous vous éte bien deconecter : <button ><a href='index.php'> Accueil </a></button >";
 
@@ -20,3 +21,5 @@ $mesage = "vous vous éte bien deconecter : <button ><a href='index.php'> Accuei
        <?php echo $mesage; ?>
 
     </article>
+  </main>
+  <?php require 'footeur.php'; ?>
