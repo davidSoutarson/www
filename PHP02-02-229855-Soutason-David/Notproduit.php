@@ -14,6 +14,35 @@ while ($row = $result->fetch_array(MYSQLI_BOTH) ){
   $produitINQP[$id_produit][$nom_produit][$quantiter_produit] = $prix_produit;
 
 }
+#transmition de donner
+/*
+if (isset($_POST['ajouter'])) {
+  $qte = $_POST['quantiter'];
+  $id_produit = $_POST['ajouter'];
+
+  $_SESSION['panier'][$id_produit] = $qte;
+
+  $prodAjou=$_SESSION['panier'];
+
+  foreach ($prodAjou as $id_p => $quantiter_produit ){
+    echo "<p>______________________________ </p> ";
+    echo 'id produit: '.$id_p.'<br> quantiter: '.$quantiter_produit .'<br>';
+    $requet ='SELECT * FROM produit WHERE id_produit='.$id_p;
+    $result = $mysqli->query($requet);
+
+    while ($row = $result->fetch_array(MYSQLI_BOTH) ){
+      #$id_produitc = $row['id_produit'];
+      $BD_nom_produitc = $row['nom_produit'];
+      $BD_prix_produitc = $row['prix_produit'];
+    }
+
+    echo $BD_nom_produitc."<br>";
+    echo "prix unitaire:".$BD_prix_produitc."<br>";
+    echo "total_produit = ".$total_produit = $BD_prix_produitc * $quantiter_produit ."<br>";
+    echo "<p>______________________________ </p> ";
+  }
+
+}*/
 
 ?>
 <title>Not produit</title>
@@ -39,15 +68,15 @@ while ($row = $result->fetch_array(MYSQLI_BOTH) ){
           <div class="produit">
             <form class="formProduit" action="MonPanier.php" method="post">
               <ul>
-                <?php  echo "<li class='Lp'>".$id."</li>" ;
-                $_SESSION['prod_id'] = $id;
+                <?php
+                  echo "<li class='Lp'>".$id."</li>" ;
                 ?>
 
                 <?php foreach ($b as $nom => $quantiter_prix): ?>
 
                   <?php
                   echo "<li class='Lp'>".$nom."</li>";
-                  $_SESSION['prod_nom'] = $nom;
+
                   ?>
 
                   <?php foreach ($quantiter_prix as $quantiter => $prix): ?>
@@ -59,12 +88,9 @@ while ($row = $result->fetch_array(MYSQLI_BOTH) ){
                     <?php
                     #icie je formate le nonbre pour aficher 2 desimale.
                     $prix =number_format($prix,2,',',' ');
+                    echo "<li>".$prix."€</li>";
                     ?>
 
-                    <?php
-                      echo "<li>".$prix."€</li>";
-                      $_SESSION['prod_prix'] = $prix;
-                    ?>
                   <?php endforeach; ?>
                 <?php endforeach; ?>
 

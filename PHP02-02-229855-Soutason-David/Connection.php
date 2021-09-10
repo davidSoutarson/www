@@ -46,7 +46,7 @@ if (isset($_POST['envoyer'])) {
        $row_conect = $result->num_rows;
 
       if($row_conect == 1){
-
+          $mesage= "Conection reusie";
         while ($row = $result-> fetch_array(MYSQLI_BOTH))
             {
               $BD_nom = $row['nom_client'];
@@ -55,9 +55,13 @@ if (isset($_POST['envoyer'])) {
               $BD_client_id = $row['id_client'];
             }
 
-        $mesage= "Conection reusie";
+
         session_start();
           $_SESSION['info_client'] = $BD_client_id."<br>".$BD_prenom."<br>".$BD_nom."<br>".$BD_email;
+
+
+      }else {
+        $mesage= "echec conection";
       }
 
    }
