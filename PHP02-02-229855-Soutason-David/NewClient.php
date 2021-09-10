@@ -100,28 +100,27 @@ if (isset($_POST['valider'])) {
             $passUtiliser = "Le mots de passe sesie et dejat utiliser ";
           }
 
-            if (!$passExist AND !$passExist) {
+            if (!$passExist AND !$emailExist) {
               if ($input_password == $input_conf_password) { #controle mots de passe identique
 
                 #requet dinsertion
-                $requet3 = 'INSERT INTO clients (nom_cilent,prenom_client,email_client,passeword_client) VALUES ("'. $input_nom .'","'. $input_prenom .'","'. $input_email .'","'. $input_password .'")' ;
+                $requet3 = 'INSERT INTO clients (nom_client,prenom_client,email_client,passeword_client) VALUES ("'. $input_nom .'","'. $input_prenom .'","'. $input_email .'","'. $input_password .'")' ;
                 $result3 = $mysqli->query( $requet3 );
 
-                $requet= 'SELECT id_client , nom_client, prenom_client , email_client FROM user WHERE nom_client = "'.$input_nom.'" AND prenom_client = "'.$input_prenom.'" AND email_client = "'.$input_email.'" ';
+               $requet= 'SELECT id_client , nom_client, prenom_client , email_client FROM clients WHERE nom_client = "'.$input_nom.'" AND prenom_client = "'.$input_prenom.'" AND email_client = "'.$input_email.'" ';
                 $result = $mysqli->query($requet);
                 while ($row = $result-> fetch_array(MYSQLI_BOTH))
                     {
                       $BD_nom = $row['nom_client'];
-                      $BD_pseudo = $row['prenom_client'];
-                      $BD_emaile =$row['email_client'];
+                      $BD_prenom = $row['prenom_client'];
+                      $BD_email = $row['email_client'];
                       $BD_client_id = $row['id_client'];
                     }
 
 
                 $mesage = "Vautre incription et terminer mercie";
-
-                #cration de cookie info client pour panier
-
+              session_start();
+                $_SESSION['info_client'] ="id client:" .$BD_client_id."<br> prenom :".$BD_prenom."<br> nom :".$BD_nom."<br> email :".$BD_email;
 
               }
             }

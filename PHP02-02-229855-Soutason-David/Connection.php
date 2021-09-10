@@ -1,10 +1,5 @@
 <?php
 require 'header.php';
-#id_client
-#nom_cilent
-#prenom_client
-#email_client
-#passeword_client
 
 if (isset($_POST['envoyer'])) {
 
@@ -30,7 +25,6 @@ if (isset($_POST['envoyer'])) {
   }
 
 
-
   if (!empty($_POST['input_password'])) {
     $input_password =sha1 ($_POST['input_password']);
   } else {
@@ -38,8 +32,38 @@ if (isset($_POST['envoyer'])) {
     $ereur = "Tout les champ doive etre remplie";
   }
 
+   if (!empty($input_nom)
+   AND
+    !empty($input_prenom)
+   AND
+    !empty($input_email)
+   AND
+    !empty($input_password)) {
 
+      $requet= 'SELECT * FROM clients WHERE nom_client = "'.$input_nom.'" AND prenom_client = "'.$input_prenom.'" AND email_client = "'.$input_email.'" AND passeword_client = "'.$input_password.'" ';
+       $result = $mysqli->query($requet);
+
+       $row_conect = $result->num_rows;
+
+      if($row_conect == 1){
+
+        while ($row = $result-> fetch_array(MYSQLI_BOTH))
+            {
+              $BD_nom = $row['nom_client'];
+              $BD_prenom = $row['prenom_client'];
+              $BD_email = $row['email_client'];
+              $BD_client_id = $row['id_client'];
+            }
+
+        $mesage= "Conection reusie";
+        session_start();
+          $_SESSION['info_client'] = $BD_client_id."<br>".$BD_prenom."<br>".$BD_nom."<br>".$BD_email;
+      }
+
+   }
 }
+
+
 
 
 ?>
@@ -54,7 +78,6 @@ if (isset($_POST['envoyer'])) {
 
     <article class="presentation">
 
-
       <form class="client" action="" method="post">
         <p>connection client</p>
 
@@ -68,7 +91,7 @@ if (isset($_POST['envoyer'])) {
           echo $mesage."<br>";
         } ?>
 
-    
+
 
         </div>
 

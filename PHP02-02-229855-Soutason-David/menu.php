@@ -17,6 +17,7 @@
         <ul class="sous">
           <li > <a href="NewClient.php"> Nouveau Client </a> </li>
           <li > <a href="Connection.php"> Connection </a> </li>
+          <li > <a href="deconnection.php"> Deconnection </a> </li>
         </ul>
       </li>
 

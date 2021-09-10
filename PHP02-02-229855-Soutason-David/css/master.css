@@ -182,7 +182,31 @@ h2.prod {
 margin: 15px;
 }
 
+div.allprod{
+  margin: 0 auto;
+  width: 80%;
+}
 
+div.produit {
+  width: auto;
+  height: auto;
+  border: 2px solid red;
+  margin: 2% 2% 2% 2%;
+  display: inline-block;
+}
+
+.formProduit{
+  padding: 0px;
+  margin: 5px;
+  height: auto;
+  width: auto;
+  max-width: 190px;
+}
+
+li.Lp{
+  margin: 10px 0px;
+  padding: 0px;
+}
 
 input#produit_id{
   display: block;
@@ -209,12 +233,11 @@ input#produit_prix{
 }
 
 
-div.produit {
-  width: 150px;
-  height: auto;
-  border: 2px solid red;
-  margin: 5px;
-  display: inline-block;
+input#quantiter{
+  width: auto;
+  background-color: rgb(206,206,206);
+  padding: 2px;
+  border: 2px solid white;
 }
 
 

@@ -1,64 +1,81 @@
 <?php
- require 'header.php';
+session_start();
+require 'header.php';
 
- $requet ='SELECT * FROM produit';
- $result = $mysqli->query($requet);
+$requet ='SELECT * FROM produit';
+$result = $mysqli->query($requet);
 
 while ($row = $result->fetch_array(MYSQLI_BOTH) ){
   $id_produit = $row['id_produit'];
   $nom_produit = $row['nom_produit'];
   $prix_produit = $row['prix_produit'];
-  
+  $quantiter_produit = $row['quantiter_produit'];
 
-  $produitNIP[$id_produit][$nom_produit] = $prix_produit;
+  $produitINQP[$id_produit][$nom_produit][$quantiter_produit] = $prix_produit;
 
 }
 
- ?>
+?>
 <title>Not produit</title>
 </head>
 <body>
-<div id='wrapeur'>
+  <div id='wrapeur'>
 
-</div>
- <?php  require 'menu.php';  ?>
+  </div>
+  <?php  require 'menu.php';  ?>
 
- <main>
+  <main>
     <h1>Not produit</h1>
-
     <article class="presentation">
       <div class="entete">
-      <h2>Faite vautre choi parmie not produit</h2>
-      <p>ice vous pouvez ajoutere les produits au panier.</p>
-      <p>Vautre panier sera sovegader pandant 15 joure</p>
+        <h2>Faite vautre choi parmie not produit</h2>
+        <p>ice vous pouvez ajoutere les produits au panier.</p>
+        <p>Vautre panier sera sovegader pandant 15 joure</p>
       </div>
       <p class="acroche">Afiche la lisete de tout not produit et leur infomation</p>
 
-        <?php foreach ($produitNIP as $id => $b): ?>
+
+        <?php foreach ($produitINQP as $id => $b): ?>
           <div class="produit">
-            <form class="" action="Mon_panier.php" method="post">
+            <form class="formProduit" action="MonPanier.php" method="post">
               <ul>
-            <?php foreach ($b as $nom => $prix): ?>
+                <?php  echo "<li class='Lp'>".$id."</li>" ;
+                $_SESSION['prod_id'] = $id;
+                ?>
 
-            <?php
-              echo "<li>".$nom."</li>";
+                <?php foreach ($b as $nom => $quantiter_prix): ?>
 
-               $prix = number_format($prix,2,',','');
+                  <?php
+                  echo "<li class='Lp'>".$nom."</li>";
+                  $_SESSION['prod_nom'] = $nom;
+                  ?>
 
-               echo "<li>".$prix."</li>";
-            ?>
-            <?php endforeach; ?>
+                  <?php foreach ($quantiter_prix as $quantiter => $prix): ?>
+                    <?php
+                      echo "<li class='Lp'> <label for='quantiter'>Quantiter de produit a ajouter au panier:</label>
+                      <input type='number' id='quantiter' name='quantiter' value='0' min='1' max='$quantiter' > </li>"
+                      ?>
 
-                </ul>
-                <?php  $id ?>
+                    <?php
+                    #icie je formate le nonbre pour aficher 2 desimale.
+                    $prix =number_format($prix,2,',',' ');
+                    ?>
+
+                    <?php
+                      echo "<li>".$prix."€</li>";
+                      $_SESSION['prod_prix'] = $prix;
+                    ?>
+                  <?php endforeach; ?>
+                <?php endforeach; ?>
+
+              </ul>
+
               <button class="btnAjP" type="submit" name="ajouter" value=<?php echo $id; ?>>Ajouter au panier</button>
 
             </form>
           </div>
 
-        <?php endforeach; ?>
-
-        <?php var_dump($_POST) ?>
-
+      <?php endforeach; ?>
+</div>
     </article>
- </main>
+  </main>
