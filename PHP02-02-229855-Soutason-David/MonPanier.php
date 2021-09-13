@@ -60,9 +60,7 @@ if (isset($_POST['ajouter'])) {
         <?php
         if (!empty($_SESSION['produits'])){
 
-
         $b = 0;
-
 
         while ($n > $b) {
           $b++;
