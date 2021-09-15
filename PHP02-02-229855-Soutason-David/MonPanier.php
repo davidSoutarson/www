@@ -1,43 +1,13 @@
 <?php
 session_start();
-require 'header.php';
-
 if(!empty($_SESSION['info_client'])){
+  #memo time() segonde minute heur jour ,
   setcookie('info_client',$_SESSION['info_client'],time()+60*60*24*15,null,null,false,true);
+
 }
-if (isset($_POST['ajouter'])) {
-  $qte = $_POST['quantiter'];
-  $id_produit = $_POST['ajouter'];
-  $n= "";
-  $_SESSION['ajout'][$id_produit] = $qte;
+   print_r($_COOKIE);
 
-  $prodAjou=$_SESSION['ajout'];
-
-  foreach ($prodAjou as $id_p => $quantiter_produit ){
-    $requet ='SELECT * FROM produit WHERE id_produit='.$id_p;
-    $result = $mysqli->query($requet);
-
-    while ($row = $result->fetch_array(MYSQLI_BOTH) ){
-      $id_produitc = $row['id_produit'];
-      $BD_nom_produitc = $row['nom_produit'];
-      $BD_prix_produitc = $row['prix_produit'];
-    }
-    #creation dune session info produits
-    $n++ ; #incrémentateur de nombre produtui a ajouter
-
-    $table['produit'] = '<br> <p>id produit: '.$id_p.'<p>
-    </p>'.$BD_nom_produitc.'</p>
-    <p> quantiter: '.$quantiter_produit .'</p>
-    <p> prix unitaire:'.$BD_prix_produitc.'</p>
-    <p> total_produit = '.$total_produit = $BD_prix_produitc * $quantiter_produit .'</p>
-    <p>nombre de produit ajouter: '.$n.' </p> <br>' ;
-
-    $_SESSION['produits'][$n]= $table['produit'];
-
-
-  }
-}
-
+require 'header.php';
 
 ?>
 <title>Mon Panier</title>
@@ -55,33 +25,23 @@ if (isset($_POST['ajouter'])) {
       <?php if (!empty($_SESSION['info_client'])): ?>
         <p>Panier de :</p>
         <p><?php echo $_COOKIE['info_client'] ?></p>
+        <!--
+        #si client et bien connecter ou Inscription efectuer est la session nes pas vide
+        #aficher le Cookie ($ajoutDeProduit) contenent la setion serialize($produits).
+        # array_sum(colne ) ?
+      -->
 
+          <p><?php echo ($_COOKIE['contenu_panier'])?></p>
 
-        <?php
-        if (!empty($_SESSION['produits'])){
-
-        $b = 0;
-
-        while ($n > $b) {
-          $b++;
-        $_SESSION['produits'][$b];
-
-        echo $_SESSION['produits'][$b];
-
-        }
-      }
-
-        ?>
-
-      <?php else: ?>
-        <p>Utilisateur est deconecter ou pas encore inscrie </p>
-        <p>pour vous inscrie <a href="NewClient.php">Nouveau Client </a> </p>
-        <p>pour vous connecter <a href="Connection.php"> Connection </a> </p>
-      <?php endif; ?>
+    <?php else: ?>
+      <p>Utilisateur est deconecter ou pas encore inscrie </p>
+      <p>pour vous inscrie <a href="NewClient.php">Nouveau Client </a> </p>
+      <p>pour vous connecter <a href="Connection.php"> Connection </a> </p>
+    <?php endif; ?>
 
 
 
-    </article>
-  </main>
+  </article>
+</main>
 
-  <?php require 'footeur.php';  ?>
+<?php require 'footeur.php';  ?>
