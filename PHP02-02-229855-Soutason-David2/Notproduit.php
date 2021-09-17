@@ -78,7 +78,7 @@ while ($row = $result->fetch_array(MYSQLI_BOTH) ){
       <?php if (isset($_COOKIE['panier'])): ?>
         <div class="produit">
         <p>vautre panier contien des produits</p>
-        <p>ajouter il y a mois 15 jour</p>    
+        <p>ajouter il y a mois 15 jour</p>
          <button> <a href="MonPanier.php">voire mon panier</a> </button>
 
        </div>

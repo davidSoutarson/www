@@ -1,0 +1,247 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#wrapeur{
+  width: 100%;
+}
+
+/* entete du site + logo + navigation */
+
+header{
+    border: 2px solid black;
+    display: flex;
+}
+
+.logo {
+  width: 20%;
+  /*height: 80px;*/
+  border-right: 2px solid green;
+}
+
+/*menu*/
+
+nav{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+nav > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > a::after{
+    content:"▼";
+    font-size: 12px;
+}
+
+/* article et contenue texte des pages */
+
+article.texte {
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgb(206,206,206);
+}
+
+.entete{
+  margin: 10px;
+
+}
+
+.acroche{
+  margin: 30px;
+  color: rgb(49,140,231);/*bleux roi*/
+}
+
+.presentation h3 {
+  margin-bottom: 15px;
+}
+
+.presentation li{
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.mon-devoir{
+  width: 90%;
+  margin: 5px auto;
+  background-color: RGBa(96,96,96,0.2); /*Gris*/
+  color: rgb(49,140,231);/*bleux roi*/
+}
+
+
+/*formulaire client */
+
+h1 {
+  color:rgb(49,140,231);/*bleux roi*/
+}
+
+
+.client {
+  margin: 0 auto;
+  width: 60%;
+  border: 2px solid gray;
+
+}
+
+.client p{
+  display: flex;
+  margin: 2%;
+}
+
+.ereur {
+  color: red;
+}
+
+
+.alert{
+display: block;
+background-color: red;
+width: 80%;
+margin: 0 auto;
+}
+
+.client label {
+  display: block;
+  width: 35%;
+  border: 2px solid gray;
+  padding: 5px;
+}
+
+.client input{
+  display: block;
+  width: 65%;
+  border: 2px solid black;
+  margin-left: 5%;
+  padding: 5px;
+}
+
+.client .bouton{
+  margin: 2% auto;
+  width: 20%;
+}
+
+/* les produits */
+
+article.presentation{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  background-color: rgb(206,206,206);
+}
+
+h2.prod {
+margin: 15px;
+}
+
+div.allprod{
+  margin: 0 auto;
+  width: 80%;
+}
+
+div.produit {
+  width: auto;
+  height: auto;
+  border: 2px solid red;
+  margin: 2% 2% 2% 2%;
+  display: inline-block;
+}
+
+.formProduit{
+  padding: 0px;
+  margin: 5px;
+  height: auto;
+  width: auto;
+  max-width: 190px;
+}
+
+li.Lp{
+  margin: 10px 0px;
+  padding: 0px;
+}
+
+input#produit_id{
+  display: block;
+  width: 100px;
+  background-color: rgb(206,206,206);
+  border: none;
+  margin: 5px;
+}
+
+input#produit_nom{
+  display: block;
+  width: 100px;
+  background-color: rgb(206,206,206);
+  border: none;
+  margin: 5px;
+}
+
+input#produit_prix{
+  display: block;
+  width: 100px;
+  background-color: rgb(206,206,206);
+  border: none;
+  margin: 5px;
+}
+
+
+input#quantiter{
+  width: auto;
+  background-color: rgb(206,206,206);
+  padding: 2px;
+  border: 2px solid white;
+}
+
+
+ .btnAjP {
+   display: flex;
+   margin: 0 auto;
+}
