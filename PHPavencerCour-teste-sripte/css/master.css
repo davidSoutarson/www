@@ -1,0 +1,48 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+
+.titre-principale{
+  color: lightblue ;
+}
+
+.titre, .segondair{
+  color: lightgreen;
+}
+
+.segondair {
+  background-color: red;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100%;
+}
+
+.lesBasePHP{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width:calc( (100% /12)*4 );
+
+}
+
+.phpMiniAp{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  width:calc( (100% /12)*7 );
+  margin: 0 auto;
+}
+
+.centrai{
+  text-align: center;
+}
