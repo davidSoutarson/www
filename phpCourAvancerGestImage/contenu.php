@@ -1,6 +1,6 @@
 <?php
-require ('class/image.php');
-$image = new Image ();
+require ('class/Image.php');
+$image = new Image();
 $images = $image->getImages(IMAGE_DIR_PATH);
 ?>
 <ul>

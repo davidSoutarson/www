@@ -1,7 +1,7 @@
 <?php
-require(config.php);
+require('config.php');
 require('class/image.php');
-$image = new image();
+$image = new Image();
 $images = $image->getImages(IMAGE_DIR_PATH);
  ?>
 <h1><php echo WEB_TITLE ?><h1>
