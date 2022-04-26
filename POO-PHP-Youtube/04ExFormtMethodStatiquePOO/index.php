@@ -4,11 +4,9 @@ require 'text.php';
 
 $form = new Form($_POST);
 
-var_dump(Text::withtZero(4));
-
+var_dump(Text::pubicwithtZero(4));
 
 ?>
-
 
 <form action="#" method="post">
   <?php

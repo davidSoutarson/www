@@ -19,6 +19,7 @@ if($harry->mort()){
   echo "Hary a survécu avec " . $harry->getVie() . " poin de vie <br>";
 }
 
-echo $merlin->getNom();
+$harry->regenerer();
+echo $merlin->getNom() . $harry->getVie() . " poin de vie <br>" ;
 
  ?>
