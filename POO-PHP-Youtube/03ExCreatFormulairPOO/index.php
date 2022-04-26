@@ -18,7 +18,6 @@ echo $form->submit();
 var_dump($form);
 
 
-
 $form = new Form();
 echo $form->input('aze');
 echo $form->input('aze');
