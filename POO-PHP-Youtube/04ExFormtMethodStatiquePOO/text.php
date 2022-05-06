@@ -8,8 +8,9 @@ class Text{
 private static $sufifix = "€";
 
 const EX_MA_CONSTANTE = " Ceci es une contante";
-
+#method et proprieter
 /*
+#method et proprieter
 * @param int $chiffre <10 ecrie  01 a 09
 */
 public static function pubicwithtZero($chiffre){
