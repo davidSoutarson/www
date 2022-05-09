@@ -43,7 +43,7 @@ var_dump($handle_image);// $handle est le nom traditionnel donné aux variables 
 
 while (false !== ($entry_image = readdir($handle_image))) {
   var_dump($entry_image);
+
+  echo "<p> <img src= 'E:/wamp64/www/projet_image/image/$entry_image'> </p>";
 }
-
-
- ?>
+?>
