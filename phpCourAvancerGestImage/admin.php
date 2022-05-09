@@ -1,6 +1,6 @@
 <?php
 require('config.php');
-require('class/image.php');
+require('class02/Image.php');
 $image = new Image();
 $images = $image->getImages(IMAGE_DIR_PATH);
  ?>
