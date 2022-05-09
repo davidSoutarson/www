@@ -42,8 +42,10 @@ $handle_image = opendir('E:/wamp64/www/projet_image/image');//chemin complait du
 var_dump($handle_image);// $handle est le nom traditionnel donné aux variables contenant des informations de Répertoires.
 
 while (false !== ($entry_image = readdir($handle_image))) {
-  var_dump($entry_image);
-
-  echo "<p> <img src= 'E:/wamp64/www/projet_image/image/$entry_image'> </p>";
+  //var_dump($entry_image);
+  if( $entry_image != "." && $entry_image != "..")
+  {
+  echo "<p> <img src='../image/$entry_image'  alt= 'bien bien ou son les images'> </p>";
+  }
 }
 ?>
